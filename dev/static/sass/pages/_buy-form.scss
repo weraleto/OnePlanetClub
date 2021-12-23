@@ -1,0 +1,8 @@
+form.buy-form {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @include md {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

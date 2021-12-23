@@ -1,0 +1,155 @@
+.form {
+
+}
+
+.form__card {
+  // @extend %flex-center;
+  // justify-content: space-between;
+  position: relative;
+  @include lg {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+  @include sm {
+    text-align: center;
+  //   padding: 45px 20px;
+  }
+}
+
+.form__col {
+  // @extend %col-2;
+  &.left {
+    max-width: 730px;
+  }
+  &.center {
+    text-align: center;
+  }
+}
+
+.form__description {
+  margin-top: 40px;
+  font-size: 18px;
+  @include sm {
+    margin-top: 20px;
+  }
+}
+
+.order-form {
+  max-width: 972px;
+  width: 100%;
+  margin-top: 60px;
+  @include lg {
+    max-width: none;
+  }
+  @include sm {
+    margin-top: 20px;
+  }
+}
+
+.form__btn {
+  @extend %btn-button;
+  @extend %btn-md;
+  @extend %btn-yellow-shadowed;
+
+  background-color: #FC5349;
+
+  text-decoration: none;
+  
+  &.green {
+    @extend %btn-green;
+  }
+  &.blue {
+    @extend %btn-primary;
+  }
+  //margin-top: 35px !important;
+}
+
+.form-with-btn-row {
+  @extend %flex-center;
+  justify-content: space-between;
+  @include lg {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+}
+
+.checkbox-wrap {
+  margin: 30px 0 70px;
+  .form-group {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  @include sm {
+    margin: 10px 0 50px;
+  }
+  // font-size: 18px;
+//   max-width: 200px;
+//   @include lg {
+//     max-width: none;
+//     margin-bottom: 35px;
+//   }
+}
+
+
+
+//////
+
+
+.inputs-wrap {
+  @extend %flex;
+}
+
+.form-row {
+  @extend %flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  @include sm {
+    flex-direction: column;
+  }
+}
+
+.form-col-2 {
+  width: 48.5%;
+  @include sm {
+    width: auto;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.label {
+  display: block;
+  width: 100%;
+}
+
+.input {
+  @extend %input;
+}
+
+.checkbox {
+  @extend %checkbox;
+  &.green {
+    @extend %checkbox_green;
+  }
+}
+
+.checkbox-label {
+  @extend %checkbox-label;
+  a {
+    color: $main-blue-color;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.textarea {
+  @extend %textarea;
+}
+
+.form-error-text {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #FC5349;
+}

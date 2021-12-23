@@ -1,0 +1,83 @@
+{% set socials = [
+  {'img': '/static/img/general/inst.svg', 'href': 'https://instagram.com/One_Planet_Club'},
+  {'img': '/static/img/general/fb-footer.svg', 'href': '/'},
+  {'img': '/static/img/general/vk-footer.svg', 'href': '/'},
+  {'img': '/static/img/general/youtube.svg', 'href': 'https://www.youtube.com/channel/UCek2Vt015BuTRNXa9wf3ELw'},
+  {'img': '/static/img/general/tg-footer.svg', 'href': '/'},
+] %}
+{% set info_links = [
+  {'label': 'О нас', 'href': 'about-us.html'},
+  {'label': 'Правовая информация', 'href': '/'},
+  {'label': 'Контакты', 'href': '/'},
+  {'label': 'Отзывы', 'href': '/'},
+] %}
+{% set study_links = [
+  {'label': 'Название курса', 'href': '/'},
+  {'label': 'Бесплатные материалы', 'href': '/'},
+] %}
+{% set partner_links = [
+  {'label': 'С чего начать', 'href': '/'},
+  {'label': 'Пакеты', 'href': '/'},
+] %}
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-top__left">
+      <div class="footer-top__logo">
+        {% include "logo.twig" with {logo_type: '-white'} %}
+      </div>
+      <div class="footer-top__text">Просто стать лучше</div>
+      <div class="footer-top__social">
+        {% for item in socials %}
+          <a class="footer-top__social-item" target="_blank" href="{{ item.href }}">
+            <img src="{{ item.img }}" alt="">
+          </a>
+        {% endfor %}
+      </div>
+      <a href="#" class="footer-top__text-subscribe">Подписаться на рассылку</a>
+    </div>
+    <div class="footer-top__center">
+      <div class="footer-top__header">Информация</div>
+      <ul class="footer-top__nav">
+        {% for item in info_links %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer-top__center">
+      <div class="footer-top__header">Обучение</div>
+      <ul class="footer-top__nav">
+        {% for item in study_links %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer-top__right">
+      <div class="footer-top__header">Партнерка</div>
+       <ul class="footer-top__nav">
+        {% for item in partner_links %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+      {# <div class="footer-top__contacts">
+        <div class="footer-top__contacts__item">
+          <img src="/static/img/general/email.svg" alt="">
+          <a class="footer-top__contacts__item-text" href="mailto:{{ email }}">{{ email }}</a>
+        </div>
+        <div class="footer-top__contacts__item">
+          <img src="/static/img/general/phone.svg" alt="">
+          <div>
+            {% for tel in phones %}
+              <a class="footer-top__contacts__item-text" href="tel:{{ tel }}">{{ tel }}</a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="footer-top__contacts__item">
+          <img src="/static/img/general/address.svg" alt="">
+          <span class="footer-top__contacts__item-text">{{ address }}</span>
+        </div>
+      </div> #}
+    </div>
+  </div>
+  {% include "plicies.twig" %}
+</footer>

@@ -1,0 +1,312 @@
+{% extends "../../layouts/en/default.twig" %}
+
+{% set features_pluses = [
+  {
+    'img': '/static/img/general/icon-ok.png',
+    'title': 'Сonveniently',
+    'text': 'Study at a convenient time from anywhere',
+  },
+  {
+    'img': '/static/img/general/icon-experts.png',
+    'title': 'Experts',
+    'text': 'Learn from experts who cannot be reached offline',
+  },
+  {
+    'img': '/static/img/general/icon-support.png',
+    'title': 'Support team',
+    'text': 'A curated service that will be by your side',
+  },
+  {
+    'img': '/static/img/general/icon-earth.png',
+    'title': 'Community',
+    'text': 'International community and new friends around the world',
+  },
+] %}
+
+{% block content %}
+  <section class="promo wihout-offset">
+    <div class="promo__wrapper">
+      <img src="/static/img/general/sticker.svg" alt="">
+      <div class="promo__title">Learn NLP with<br/> its founder <br/><span class ="color-green">Frank Pucelik</span></div>
+  {#
+      <div id="typed-strings2">
+        <p>NLP is used by parents<br>to make children obey and learn well</p>
+        <p>NLP is used by girls<br>to choose the right man</p>
+        <p>NLP is used by men<br>to build self-confidence</p>
+        <p>NLP is also used<br>to protect against manipulation</p>
+        <p>NLP is used by entrepreneurs<br>to build a strong team</p>
+        <p>NLP is used by teachers and trainers<br>to help students achieve better results</p>
+        <p>NLP is used by freelancers<br>to sell their services more expensive</p>
+        <p>NLP is used by politicians<br>to influence voters' opinion</p>
+        <p>NLP is used by programmers and lawyers<br>to become leaders</p>
+        <p>NLP is used by everyone who sells himself<br>to successfully close deals</p>
+        <p>NLP is also used<br>to protect against manipulation</p>
+        <p>NLP is used by couples<br>to build relationships and keep families together</p>
+        <p>NLP is used by men<br>to create a successful business faster</p>
+        <p>NLP is also used<br>to let go of past relationships</p>
+        <p>NLP is used by girls<br>to accept and love themselves</p>
+        <p>NLP is already being used by adults<br>to build relationships with parents</p>
+      </div>
+  #}
+      <div id="typed-strings2">
+        <p>NLP is used by parents,^100000</p>
+        <p>NLP is used by girls,^100000</p>
+        <p>NLP is used by men,^100000</p>
+        <p>NLP is used including,^100000</p>
+        <p>NLP is used by entrepreneurs,^100000</p>
+        <p>NLP is used by teachers and trainers,^100000</p>
+        <p>NLP is used by freelancers,^100000</p>
+        <p>NLP is used by politicians,^100000</p>
+        <p>NLP is used by programmers and lawyers,^100000</p>
+        <p>NLP is used by everyone who sells himself,^100000</p>
+        <p>NLP is used including,^100000</p>
+        <p>NLP is used by married couples,^100000</p>
+        <p>NLP is used by men,^100000</p>
+        <p>NLP is used including,^100000</p>
+        <p>NLP is used by girls,^100000</p>
+        <p>NLP is already used by adults,</p>
+      </div>
+      <div id="typed-strings3">
+        <p>so that children obey and study well^3000</p>
+        <p>to choose the right man^3000</p>
+        <p>to develop self-confidence^3000</p>
+        <p>to defend against manipulation^3000</p>
+        <p>to build a strong team^3000</p>
+        <p>so that students achieve better results^3000</p>
+        <p>to sell your services more expensive^3000</p>
+        <p>to influence the opinion of voters^3000</p>
+        <p>to become leaders^3000</p>
+        <p>to successfully close deals^3000</p>
+        <p>to defend against manipulation^3000</p>
+        <p>to improve relationships and keep the family^3000</p>
+        <p>to create a successful business faster^3000</p>
+        <p>to let go of past relationships^3000</p>
+        <p>to accept and love yourself^3000</p>
+        <p>to improve relationships with parents</p>
+      </div>
+      <div class="promo__subtitle" >
+        <span id="typed2"></span><br>
+        <span id="typed3"></span>
+      </div>
+      <div class="promo__links">
+        <a class="promo__links-link" href="https://my.oneplanet.club">Start training for free</a>
+        <a class="promo__links-link" href="useful-free.html">Free materials</a>
+      </div>
+    </div>
+    <div class="promo__video-wrap" id="hand-trigger">
+      <img src="/static/img/general/laptop-video.png" alt="">
+      <div class="promo__video-frame-wrap">
+        <iframe
+          class="promo__video-frame"
+          src="https://player.vimeo.com/video/468581776"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="promo__additional__plus-blue_3 js-rotate"></div>
+{#    <div class="promo__additional__triangle-blue"></div>#}
+    <div class="promo__additional__plus-blue js-rotate"></div>
+    <div class="promo__additional__arrow">
+      <img src="/static/img/general/arrow-spiral.svg" alt="">
+    </div>
+    <div class="promo__additional__rectangle"></div>
+    {#    <div class="promo__additional__plus-blue_2 js-rotate"></div>#}
+  </section>
+
+  {% include '../../partials/en/features.twig' %}
+
+{#
+  <section class="cources bg-grey">
+    <div class="slider">
+      <div class="slider__header">
+        <div class="title"><span class="color-blue">Author's</span> courses</div>
+        <div class="slider__header__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev cources__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next cources__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="slider__blocks-wrap">
+        <div class="slider__blocks cources__slider-blocks">
+          {% for item in cources %}
+            {% include "../../partials/slider-item.twig" %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="cources__additional__triangle-pink"></div>
+    <div class="cources__additional__plus-blue js-rotate"></div>
+    <div class="cources__additional__plus-orange js-rotate"></div>
+  </section>
+#}
+
+  {% include "../../partials/en/about-author.twig" with {class: 'bg-grey'} %}
+
+  <section class="new-cources bg-grey">
+    <div class="slider">
+      <div class="slider__header">
+        <div class="title">Available in<span class = "color-orange"> 2021</span></div>
+        <div class="slider__header__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev new-cources__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next new-cources__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="slider__blocks-wrap">
+        <div class="slider__blocks new-cources__slider-blocks">
+          {% for item in new_cources %}
+            {% include "../../partials/slider-item.twig" %}
+          {% endfor %}
+        </div>
+        <div class="slider__read-more">
+          {% include "../../partials/en/read-more.twig" %}
+        </div>
+      </div>
+    </div>
+    <div class="new-cources__additional-plus-green js-rotate"></div>
+    <div class="new-cources__additional-plus-blue js-rotate"></div>
+  </section>
+
+  <section class="usefulness">
+    <div class="usefulness__row">
+      <div class="usefulness__col left">
+        <div class="title usefulness__title">Why learn soft skills and NLP at all?</div>
+        <ul class="usefulness__ul">
+          <li
+            class="usefulness__ul-li"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1500"
+          >
+            Strengthen family and relationships with children or parents
+          </li>
+          <li
+            class="usefulness__ul-li"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1500"
+          >
+            Create a successful business or career faster, increase income
+          </li>
+          <li
+            class="usefulness__ul-li"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1500"
+          >
+            Understand yourself, find inner comfort and tranquility
+          </li>
+          <li
+            class="usefulness__ul-li"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1500"
+          >
+            Understand people, avoid many mistakes and not waste time
+          </li>
+          <li
+            class="usefulness__ul-li"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1500"
+          >
+            Learn something faster than before
+          </li>
+        </ul>
+        <a class="usefulness__btn" href="">Start learning</a>
+      </div>
+      <div class="usefulness__col right">
+        <div class="usefulness__img-wrap">
+          <img src="/static/img/general/desktop-video.png" alt="">
+          <div class="usefulness__frame-wrap">
+            <iframe
+              class="usefulness__frame"
+              src="https://player.vimeo.com/video/468581776"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="usefulness__additional-arrow"></div>
+    <div class="usefulness__additional-circle-yellow"></div>
+    <div class="usefulness__additional-circle-green"></div>
+  </section>
+
+  <section class="features">
+    <div class="features-inner">
+      <div class="features__card">
+        <div class="title"><span class="color-blue">Pros</span> of learning with us</div>
+        <div class="features__card__row">
+          <div class="features__card__row__col left">
+
+            {% for item in features_pluses %}
+              <div class="features__card-item">
+                <div class="features__card-item__img-wrap">
+                  <img src="{{ item.img }}" alt="">
+                </div>
+                <div class="features__card-item__text">
+                  <div class="features__card-item__text__title">{{ item.title }}</div>
+                  <div class="features__card-item__text__text">{{ item.text }}</div>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+          <div class="features__card__row__col right">
+            <div
+              class="features__img-wrap"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-anchor-placement="top-bottom"
+            >
+              <img class="features__img" src="/static/img/general/big-thumbls-up.png" alt="">
+            </div>
+            <div class="features__additional-circle"></div>
+          </div>
+
+        </div>
+        <div class="features__additional-circle-blue"></div>
+        <div class="features__additional-circle-pink"></div>
+      </div>
+      <div class="features__additional-circle-yellow"></div>
+    </div>
+  </section>
+
+  <section class="free-materials">
+    <div class="slider">
+      <div class="slider__header">
+        <div class="title"><span class="color-blue">Free</span> materials</div>
+        <div class="slider__header__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev free-materials__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next free-materials__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="slider__blocks-wrap">
+        <div class="slider__blocks free-materials__slider-blocks">
+          {% for item in free_materials %}
+            {% include "../../partials/slider-item.twig" %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="free-materials__additional-plus js-rotate"></div>
+  </section>
+
+  {% include "../../partials/en/form.twig" %}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% set about_author = [
+  {
+    'img': '/static/img/general/thumbs-up.png',
+    'text': 'World renowned trainer with hundreds of thousands of positive reviews',
+  },
+  {
+    'img': '/static/img/general/rocket.png',
+    'text': 'One of the three creators of the world famous NLP system',
+  },
+  {
+    'img': '/static/img/general/icon-features-9.png',
+    'text': 'Has been conducting its own training programs for 45 years. His methods have been tested by hundreds of thousands of people from the CIS, Europe and Asia',
+  },
+  {
+    'img': '/static/img/general/people.png',
+    'text': 'Trained over 8,000 psychologists to work with war veterans since 2014',
+  },
+  {
+    'img': '/static/img/general/top.png',
+    'text': 'Author of one of the most effective rehabilitation programs for drug addicted youth in the history of the United States',
+  },
+] %}
+
+<section class="about-author {{ class }}">
+  <div class="about-author__card">
+    <div class="about-author__card__row">
+      <div class="about-author__card__row__col left">
+        <div class="about-author__card__author">AUTHOR OF COURSES</div>
+        <div class="about-author__card__name">Frank Pucelik</div>
+
+        {% for item in about_author %}
+          <div class="about-author__card-item">
+            <div class="about-author__card-item__img-wrap">
+              <img src="{{ item.img }}" alt="">
+            </div>
+            <span class="about-author__card-item__text">{{ item.text }}</span>
+          </div>
+        {% endfor %}
+
+      </div>
+      <div class="about-author__card__row__col right">
+        <div class="author-img-wrap"></div>
+        <div class="author-additional-circle"></div>
+      </div>
+
+    </div>
+    <a class="about-author__btn" href="about-frank.html">More details</a>
+    <div class="about-author__additional-fill-circle"></div>
+    <div class="about-author__additional-line"></div>
+    <div class="about-author__additional-circle"></div>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+
+/* ========================= ABOUT US STORIES ============================= */
+
+.slider-stories__wrapper {
+    padding-top: 56px;
+}
+
+.about-us__stories-header {
+    @extend .about-us__platform-header;
+  }
+  
+  .about-us__stories-row__wrapper {
+    position: relative;
+  }
+  
+  .about-us__stories-arrows {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 15;
+    cursor: pointer;
+    @include xs {
+      left: -5px;
+      right: -5px;
+    }
+  }
+  
+  .about-us__stories-item__inner{
+    max-width: calc(100% - 160px);
+    background-color: $main-bg;
+    padding: 25px 65px 60px;
+    border-radius: 44px;
+    margin: auto;
+
+    @include lg {
+      max-width: calc(100% - 80px);
+      padding: 25px 30px 40px;
+    }
+    @include sm {
+      border-radius: 30px;
+      max-width: calc(100% - 60px);
+    }
+    @include xs {
+      padding: 10px 15px 20px;
+    }
+  
+  }
+  
+  .about-us__stories-item {
+    text-align: center;
+  }
+  .about-us__stories-item__text {
+    @include xs {
+      font-size: 14px;
+    }
+  }
+  
+  .about-us__stories-item__iframe-wrap {
+    width: 100%;
+    min-height: 460px;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    border-radius: 64px;
+      @include lg {
+        min-height: calc((100vw - 100px) * .51);
+      }
+      @include sm {
+        border-radius: 30px;
+      }
+  }
+  
+  .about-us__stories__frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 64px;
+    @include sm {
+      border-radius: 30px;
+    }
+  }
+  
+  
+  

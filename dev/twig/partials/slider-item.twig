@@ -1,0 +1,15 @@
+<div class="slider__blocks-item-wrap {{ item.card_color }}">
+  <div class="slider__blocks-item">
+    <div class="slider__blocks-item__img">
+      <img src="{{ item.img }}" alt="">
+    </div>
+    <div class="slider__blocks-item__text">
+      {# <div class="slider__blocks-item__text__theme">{{ item.theme }}</div> #}
+      <div class="slider__blocks-item__text__title color-blue">{{ item.title }}</div>
+      {% if item.text != '' %}
+        <div class="slider__blocks-item__text__description">{{ item.text }}</div>
+      {% endif %}
+      {# {% include "read-more.twig" %} #}
+    </div>
+  </div>
+</div>

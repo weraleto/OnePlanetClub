@@ -1,0 +1,67 @@
+{% set about_author_col_1 = [
+  {
+    'img': '/static/img/general/thumbs-up.png',
+    'text': 'Всемирно известный тренер <div class="about-highlight">с сотнями тысяч</div> положительных отзывов',
+  },
+  {
+    'img': '/static/img/general/rocket.png',
+    'text': 'Один из трех <div class="about-highlight">создателей</div> всемирно известной системы НЛП',
+  },
+  {
+    'img': '/static/img/general/icon-features-9.png',
+    'text': '<div class="about-highlight">45 лет ведет</div> свои обучающие программы. Его методики проверены сотнями тысяч людей из СНГ, Европы и Азии',
+  },
+] %}
+{% set about_author_col_2 = [
+  {
+    'img': '/static/img/general/people.png',
+    'text': 'С 2014 года обучил <div class="about-highlight">более 8000</div> психологов для работы с ветеранами боевых действий',
+  },
+  {
+    'img': '/static/img/general/top.png',
+    'text': 'Автор одной из самых эффективных <div class="about-highlight">за всю историю США</div> программы по реабилитации для наркозависимой молодежи',
+  },
+] %}
+
+<section class="about-author {{ class }}">
+  <div class="about-author__card">
+      <div class="about-author__card__author title">АВТОР КУРСОВ</div>
+      <div class="about-author__card__name color-green">Фрэнк Пьюселик</div>
+    <div class="about-author__card__row">
+
+      <div class="about-author__card__row__col left">
+        
+        <div class="author-img-wrap"></div>
+        {# <div class="author-additional-circle"></div> #}
+      </div>
+
+      <div class="about-author__card__row__col right">
+        <div class="about-author__card-items__wrapper">
+          <div class="about-author__card-items">
+            {% for item in about_author_col_1 %}
+              <div class="about-author__card-item" data-aos="fade-up">
+                <span class="about-author__card-item__text">{{ item.text }}</span>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="about-author__card-items">
+            {% for item in about_author_col_2 %}
+              <div class="about-author__card-item" data-aos="fade-up">
+                <span class="about-author__card-item__text">{{ item.text }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% if not disableMoreButton %}
+          {# <a class="about-author__btn" href="about-frank.html">Подробнее</a> #}
+          <a class="about-author__btn" href="/about-frank.html">Подробнее</a>
+        {% endif %}
+      </div>
+    </div>
+    
+    {# <div class="about-author__additional-fill-circle"></div> #}
+    {# <div class="about-author__additional-line"></div> #}
+    {# <div class="about-author__additional-circle"></div> #}
+  </div>
+</section>

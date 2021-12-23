@@ -1,0 +1,111 @@
+{% set features = [
+  {
+    title: 'A quality product on a popular topic',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-1.png',
+  },
+  {
+    title: 'Auto funnels sell instead of you',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-2.png',
+  },
+  {
+    title: 'High% of payments',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-3.png',
+  },
+  {
+    title: 'The ability to create a "white" source of passive income online',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-4.png',
+  },
+  {
+    title: 'Maintain your reputation',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-5.png',
+  },
+  {
+    title: 'Free niche in a growing market',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-6.png',
+  },
+  {
+    title: 'No need to become a doctor or consultant, be yourself',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-7.png',
+  },
+  {
+    title: 'Online courses are in demand during quarantine and the need will only grow',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-8.png',
+  },
+  {
+    title: 'Do business from anywhere with people from anywhere in the world',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-9.png',
+  },
+  {
+    title: 'Easy start with minimal investment and a complete system',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-10.png',
+  },
+  {
+    title: 'Fast payback and the ability to combine',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-11.png',
+  },
+  {
+    title: 'Wide audience - for parents, for women, for men',
+    subtitle: 'We do not like it when someone imposes something on someone, and we do our best so that partners can only share their referral link to free trial materials. And share your emotions, impressions.',
+    dot_img: '/static/img/general/icon-features-12.png',
+  },
+] %}
+
+
+<section class="earnings-features">
+  <div class="title earnings-features__title"><span class="color-blue">Аdvantages</span> One Planet Club</div>
+  <div class="earnings-features__subtitle">
+   Why is this the best offer for those who want to create a long-term growing source of income with the ability to do business from anywhere in the world with people who are pleasant to themselves
+  </div>
+  <div class="earnings-features__row">
+    <div class="earnings-features__row-col right">
+      <div class="earnings-features__dots">
+        {% for dot in features %}
+          <div class="earnings-features__dots-item">
+            <img src="{{ dot.dot_img }}" alt="">
+            <div class="earnings-features__dots-item__count">
+              {% if loop.index < 10 %}
+                0{{ loop.index }}
+              {% else %}
+                {{ loop.index }}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="earnings-features__row-col left">
+      <div class="earnings-features__items-wrap">
+        <div class="earnings-features__items">
+          {% for item in features %}
+            <div class="earnings-features__items-item">
+              <div class="earnings-features__items-item__title">{{ item.title }}</div>
+              <div class="earnings-features__items-item__subtitle">{{ item.subtitle }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="slider__header__arrows earnings-features__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev earnings-features__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next earnings-features__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="earnings-features__additional-circle-blue"></div>
+  <div class="earnings-features__additional-plus-orange js-rotate"></div>
+</section>
+

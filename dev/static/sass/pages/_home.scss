@@ -1,0 +1,661 @@
+/* ========================= INDEX HEADER ============================= */
+
+.index-header__wrapper {
+  padding-bottom: 67px;
+  position: relative;
+
+  @include lg {
+    display: flex;
+  }
+  @include sm {
+    flex-direction: column;
+  }
+}
+
+.index-header-text {
+    @extend %flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include lg {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+}
+.index-header-text__item {
+    flex: 1 1 50%;
+    max-width: 560px;
+
+    p {
+      padding-top: 25px;
+      font-weight: 500;
+    }
+    
+    @include lg {
+      flex: 1;
+    }
+
+    @include md {
+      width: 100%;
+      flex: 1;
+
+      p {
+        padding: 0;
+      }
+    }
+}
+
+.index-header__additional__rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 25%;
+  z-index: -2;
+  background: url('../img/general/beige-circle.svg') no-repeat;
+  background-size: cover;
+  background-position-y: 100%;
+}
+.index-header__additional__circle {
+  @include additional-circle(135, $main-bg);
+  bottom: 0;
+  left: 20%;
+  z-index: -1;
+  @include sm {
+    left: 5%;
+  }
+}
+
+.index-header-pics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: calc(100% - 50px);
+
+  &__item {
+    position: relative;
+    &.head-pic-2 {
+      transform: translateY(-5%);
+    }
+    &.head-pic-3::before {
+      @include before;
+      height: auto;
+      width: auto;
+      bottom: -45px;
+      right: -30px;  
+      background: url('../img/general/become_better.svg') no-repeat right bottom;
+      background-size: cover;
+    }
+    @include lg {
+      &:not(:nth-child(3)) {
+        display: none;
+      }
+    }
+    @include sm {
+      max-width: 80%;
+    }
+  }
+
+  @include sm {
+    justify-content: flex-end
+  }
+}
+
+/* ========================= PROMO ============================= */
+
+.promo {
+  @extend %flex;
+  flex-direction: column;
+  padding-top: 100px;
+  overflow: hidden;
+  padding-bottom: 90px;
+  // align-items: center;
+  @include lg {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // padding-bottom: 0;
+    // margin-bottom: 100px;
+  }
+  @include sm {
+    align-items: center;
+    // padding-top: 135px;
+  }
+}
+
+.promo__wrapper {
+  display: flex;
+  flex-direction: column;
+  // margin-top: 20px;
+  margin-bottom: 87px;
+
+  @include lg {
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include sm {
+    margin-bottom: 60px;
+  }
+
+}
+
+
+.promo__title {
+  @extend %title-great;
+  margin-bottom: 30px;
+  
+  text-align: left;
+  @include lg {
+    text-align: center;
+  }
+}
+
+.promo__subtitle {
+  // max-width: 500px;
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.3;
+  text-align: left;
+
+  //max-width: 500px;
+  //margin-bottom: 40px;
+  //font-size: 23px;
+  //line-height: 1.3;
+  //text-align: left;
+  //margin-left: -130px;
+  // color: #313131;
+  @include lg {
+    text-align: center;
+    font-size: 24px;
+  }
+  @include xs {
+    font-size: 18px;
+  }
+  #typed2 + .typed-cursor {
+    color: #3B67FF;
+  }
+  #typed3 + .typed-cursor {
+    color: #31AC89;
+  }
+}
+
+.promo__links {
+  @extend %flex-center;
+  @include md {
+    flex-direction: column;
+  }
+}
+
+.promo__links-link {
+  @extend %btn-link;
+  @extend %btn-md;
+  border: 1px solid $main-blue-color;
+  &:first-child {
+    @extend %btn-primary;
+    @extend %btn-yellow-shadowed;
+  }
+  &:nth-child(2) {
+    background-color: #fff;
+    &:hover {
+      color: rgba(#3258DA, 0.9);
+    }
+  }
+  &:not(:last-child) {
+    margin-right: 35px;
+    @include md {
+      margin-right: 0;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.promo__video-wrap {
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  min-height: 460px;
+  max-width: 71.5%;
+  border-radius: 63px;
+  overflow: hidden;
+  // min-height: 500px;
+  // min-width: 71.5%;
+  @include lg {
+    min-height: calc(71.5vw * 0.51);
+  }
+  @include md {
+    border-radius: 30px;
+  }
+  @include xs {
+    margin-bottom: 30px;
+    max-width: 90%;
+    min-height: calc((100vw - 30px) * 0.51);
+  }
+ 
+
+}
+
+.promo__video-frame-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.promo__video-frame {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 63px;
+  @include md {
+    border-radius: 30px;
+  }
+  // overflow: hidden;
+  // border-radius: 10px;
+}
+
+
+.promo__additional__circle-great {
+  position: absolute;
+  width: 421px;
+  height: 421px;
+  right: 0;
+  background: url('../img/general/additional-circle-ind.svg') no-repeat center center;
+  background-size: cover;
+  top: 50%;
+  transform: translate(20%,-27%);
+  z-index: -1;
+
+  @include md {
+    width: 300px;
+    height: 300px;
+    top: unset;
+    bottom: 30px;
+    transform: translate(30%, 0%);
+  }
+}
+
+
+
+/* ========================= COURCES ============================= */
+
+.cources {
+  padding-top: 155px;
+  @include xxl {
+    padding-top: 110px;
+  }
+  @include sm {
+    padding-top: 85px;
+    padding-bottom: 55px !important;
+  }
+}
+
+.cources__additional__triangle-pink {
+  @extend %additional-triangle-pink;
+  top: 315px;
+  left: 0;
+  @include lg {
+    display: none;
+  }
+}
+
+.cources__additional__plus-blue {
+  @extend %additional-plus-blue;
+  bottom: 250px;
+  left: calc(#{$container-offset} + 20px);
+  @include xxl {
+    left: calc(#{$container-offset-xxl} + 20px);
+  }
+  @include lg {
+    display: none;
+  }
+}
+
+.cources__additional__plus-orange {
+  @extend %additional-plus-orange;
+  bottom: 400px;
+  right: calc(#{$container-offset} + 15px);
+  @include xxl {
+    right: calc(#{$container-offset-xxl} + 15px);
+  }
+  @include xl {
+    display: none;
+  }
+}
+
+
+/* ========================= NEW COURCES ============================= */
+
+// блок на будущее
+
+// .new-cources {
+//   padding-top: 60px;
+// }
+
+// .new-cources__additional-triangle-pink {
+//   @extend %additional-triangle-pink;
+//   top: -45px;
+//   left: 30px;
+//   //left: calc(#{$container-offset} - 185px);
+//   @include xxl {
+//     top: 25px;
+//   }
+//   @include lg {
+//     display: none;
+//   }
+// }
+
+// .new-cources__additional-plus-green {
+//   @extend %additional-plus-green;
+//   bottom: 400px;
+//   left: calc(#{$container-offset} - 60px);
+//   @include xxl {
+//     left: calc(#{$container-offset-xxl} + 40px);
+//   }
+//   @include lg {
+//     display: none;
+//   }
+// }
+
+// .new-cources__additional-plus-blue {
+//   @extend %additional-plus-blue;
+//   top: 225px;
+//   right: calc(#{$container-offset} - 50px);
+//   @include xxl {
+//     right: calc(#{$container-offset-xxl} + 10px);
+//   }
+//   @include xl {
+//     display: none;
+//   }
+// }
+
+
+/* ========================= USEFULNESS ============================= */
+
+
+.usefulness {
+  padding-top: 80px;
+  // @include xxl {
+  //   padding-top: 200px;
+  // }
+  // @include lg {
+  //   padding-top: 130px;
+  // }
+}
+
+.usefulness__inner {
+  position: relative;
+}
+
+.usefulness__title {
+  @extend %title-great;
+  position: relative;
+  margin-bottom: 60px;
+  max-width: 439px;
+  @include sm {
+    margin-bottom: 30px;
+  }
+
+}
+
+.usefulness__row {
+  @extend %flex;
+  justify-content: space-between;
+  @include lg {
+    flex-direction: column-reverse;
+  }
+}
+
+.usefulness__col {
+  @extend %col-2;
+  &.left {
+    max-width: 439px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include xxl {
+      margin-left: 80px;
+    }
+    @include xl {
+      margin-left: 0;
+    }
+    @include lg {
+      margin-left: 45px;
+      max-width: none;
+      width: 86%;
+    }
+    @include sm {
+      margin-left: 0;
+      width: auto;
+    }
+  }
+  &.right {
+    @include lg {
+      align-self: center;
+      margin-bottom: 85px;
+      display: flex;
+      width: 100%;
+    }
+    @include md {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.usefulness__ul {
+  @extend %default-style;
+  margin: 0 0 60px !important;
+  // @include sm {
+  //   margin: 40px0 !important;
+  // }
+}
+
+.usefulness__ul-li {
+  position: relative;
+  padding-left: 37px;
+  letter-spacing: 0.5px;
+  color: #313131;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: $main-blue-color;
+    border-radius: 50%;
+  }
+}
+
+.usefulness__btn {
+  @extend %btn-link;
+  @extend %btn-md;
+  @extend %btn-primary;
+  @extend %btn-yellow-shadowed;
+  min-width: 385px;
+  text-align: center;
+  position: relative;
+  @include sm {
+    min-width: unset;
+    max-width: 385px;
+    margin: auto;
+  }
+  @include xs {
+    max-width: unset;
+    width: 100%;
+  }
+}
+
+
+.usefulness__img-wrap {
+  min-height: 408px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 63px;
+  position: relative;
+  @include lg {
+    max-width: 71.5%;
+    min-height: calc((71.5vw - 90px) * 0.59);
+    margin: auto;
+  }
+  @include sm {
+    border-radius: 30px;
+    max-width: 90%;
+    min-height: calc((90vw - 60px) * 0.59);
+  }
+}
+
+.usefulness__frame-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  
+}
+
+.usefulness__frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 63px;
+  @include sm {
+    border-radius: 30px;
+  }
+}
+
+
+.usefulness__additional-circle {
+  position: absolute;
+  background: url('../img/general/additional-circle-usf.svg') no-repeat;
+  background-size: contain;
+  width: 476px;
+  height: 463px;
+  right: 130px;
+  top: 0;
+  transform: translateY(-50%);
+  @include lg {
+    right: -50px;
+  }
+  @include md {
+    width: 350px;
+    height: 350px;
+    transform: translate(30%, -80%);
+  }
+}
+
+
+/* ========================= FREE MATERIALS ============================= */
+
+.free-materials {
+  margin-bottom: 20px;
+  .useful-free__items {
+    margin-bottom: 0;
+  }
+}
+
+.free-materials__read-more {
+  text-align: center;
+
+  &__btn {
+    @extend %btn-link;
+    @extend %btn-lg;
+    border: 3px solid #0073FA;
+    min-width: 33%;
+  }
+}
+
+
+.form__wrapper {
+  position: relative;
+
+  &.mb {
+    margin-bottom: 30px;
+    @include sm {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__additional__circle {
+  position: absolute;
+  width: 350px;
+  height: 330px;
+  right: 0;
+  background: url('../img/general/additional-circle-form.svg') no-repeat center center;
+  background-size: contain;
+  bottom: -60px;
+  // top: 50%;
+  transform: translate(-10%, 0px);
+  @include md {
+    width: 250px;
+    height: 250px;
+    bottom: -30px;
+    transform: translate(10%, 0px);
+  }
+  @include sm {
+    width: 200px;
+    height: 200px;
+    bottom: 20px;
+    transform: translate(15%, 0px);
+  }
+  @include xs {
+    display: none;
+  }
+
+}
+.form__additional__circle-top {
+  position: absolute;
+  width: 354px;
+  height: 330px;
+  left: 0;
+  background: url('../img/general/additional-circle-form-2.svg') no-repeat center center;
+  background-size: contain;
+  top: 0px;
+  transform: translate(-30%, -60%);
+  z-index: -1;
+  @include sm {
+    width: 250px;
+    height: 230px;
+  }
+  @include xs {
+    transform: translate(-50%, -70%);
+  }
+}
+.form__additional__circle-bottom {
+  position: absolute;
+  width: 385px;
+  height: 389px;
+  right: 0;
+  background: url('../img/general/additional-circle-form-3.svg') no-repeat center center;
+  background-size: contain;
+  bottom: 0px;
+  // top: 50%;
+  transform: translate(10%, 0px);
+  z-index: -2;
+
+  @include sm {
+    width: 285px;
+    height: 389px;
+    transform: translate(25%, 20%);
+  }
+  @include xs {
+    bottom: -50px;
+    transform: translate(40%, 20%);
+
+  }
+
+}

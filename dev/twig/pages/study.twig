@@ -1,0 +1,695 @@
+{% extends "../layouts/default.twig" %}
+
+{% set features = [
+  {
+    title: 'Увеличение дохода',
+    dot_img: '/static/img/general/study-feat-1.svg',
+  },
+  {
+    title: 'Достижение максимума в переговорах',
+    dot_img: '/static/img/general/study-feat-2.svg',
+  },
+  {
+    title: 'Распознавание лжи и манипуляций',
+    dot_img: '/static/img/general/study-feat-3.svg',
+  },
+  {
+    title: 'Эффективное управление коллективом',
+    dot_img: '/static/img/general/study-feat-4.svg',
+  },
+] %}
+
+{% set reviews = [
+  {'text': ['Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности предопределяет высокую востребованность системы массового участия.',
+  'Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: граница обучения кадров прекрасно подходит для реализации системы массового участия. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: выбранный нами инновационный путь выявляет срочную потребность соответствующих условий активизации.'],
+  'name': 'Имя',
+  'surname': 'Фамилия',
+  'img': '/static/img/general/rev-1.png' 
+  },
+  {'text': ['Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности предопределяет высокую востребованность системы массового участия.',
+  'Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: граница обучения кадров прекрасно подходит для реализации системы массового участия. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: выбранный нами инновационный путь выявляет срочную потребность соответствующих условий активизации.'],
+  'name': 'Имя',
+  'surname': 'Фамилия',
+  'img': '/static/img/general/rev-1.png' 
+  },
+] %}
+
+{% set features_pluses = [
+  {
+    'img': '/static/img/general/st-for-you-1.svg',
+    'text': 'Хотите развиваться и добиваться успеха во всех сферах жизни',
+  },
+  {
+    'img': '/static/img/general/st-for-you-2.svg',
+    'text': 'Хотите построить гармоничные отношения'
+  },
+  {
+    'img': '/static/img/general/st-for-you-3.svg',
+    'text': 'Хотите выстроить доверительные отношения со своими детьми'
+  },
+  {
+    'img': '/static/img/general/st-for-you-4.svg',
+    'text': 'Хотите развить лидерские качества и увеличить свой доход в несколько раз'
+  },
+] %}
+
+{% set process = [
+    {
+      'img': '/static/img/general/abt-proc-1.svg',
+      'title': 'Обучение НЛП-навыкам от основателя',
+      'text': 'Достоверная информация от первоисточника'
+    },
+    {
+      'img': '/static/img/general/abt-proc-2.svg',
+      'title': 'Демонстрация навыков в прямом эфире',
+      'text': 'Раз в неделю встречаетесь с Фрэнком онлайн'
+    },
+    {
+      'img': '/static/img/general/abt-proc-3.svg',
+      'title': 'Персональный куратор',
+      'text': 'Будет рядом и не даст отлынивать от занятий'
+    },
+    {
+      'img': '/static/img/general/abt-proc-4.svg',
+      'title': 'Практические задания на каждую неделю',
+      'text': 'Простые и увлекательные задания, чтобы применять НЛП в жизни'
+    },
+    {
+      'img': '/static/img/general/abt-proc-5.svg',
+      'title': 'Ответы на вопросы в прямом эфире',
+      'text': 'Фрэнк Пьюселик разбирает конкретные ситуации участников из их жизни'
+    },
+    {
+      'img': '/static/img/general/abt-proc-6.svg',
+      'title': 'Живые встречи и новые друзья',
+      'text': 'Офлайн встречи участников из разных городов и стран'
+    },
+    {
+      'img': '/static/img/general/abt-proc-7.svg',
+      'title': 'Три набора видеоуроков с базовыми НЛП-навыками',
+      'text': 'Можно смотреть в удобное время. Раз в месяц открывается новый набор.'
+    },
+    {
+      'img': '/static/img/general/abt-proc-8.svg',
+      'title': 'Поддержка',
+      'text': 'Изучать НЛП в клубе вместе с другими участниками в разы проще, чем самостоятельно'
+    },
+    {
+      'img': '/static/img/general/abt-proc-9.svg',
+      'title': 'Закрытый чат',
+      'text': 'Уведомления о предстоящих событиях, общение и знакомство с другими участниками'
+    },
+  ]
+%}
+
+{% set table = [
+  {
+    title: 'Видео-уроки с базовыми НЛП-навыками (программа на 3 месяца)',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Дважды в месяц онлайн-встреча в прямом эфире с Фрэнком Пьюселиком в формате «Разбор навыка»',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Дважды в месяц онлайн-встреча в прямом эфире с Фрэнком Пьюселиком в формате «Демонстрация» с ответами на вопросы',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Закрытый чат участников в Telegram (общий)',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Поддержка групповых онлайн-встреч для тренировки навыков и знакомства между участниками',
+      tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Еженедельные групповые онлайн-встречи с кураторами в формате «Делаем вместе»',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Записи пропущенных онлайн-занятий доступные в течение 7 дней',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Именной сертификат о прохождении обучения у Фрэнка Пьюселика (при условии прохождении 3-х месяцев)',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data:'true', subdata: 'Если выполнили задания' },
+      { name: 'silver', data:'true', subdata: 'Можно не выполнять задания' },
+    ],
+  },
+  {
+    title: 'Приоритетная поддержка кураторов',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: 'Отдельный закрытый чат для знакомства и общения участников версии пакета PREMIUM',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'true' },
+    ],
+  },
+  {
+    title: '<b>Стоимость</b>',
+    tariffs: [
+      { name: 'base',
+        data:
+        '
+          <div id="base-price">
+            <div class="study-tariffs__old-price">4 500 руб</div>
+            <div class="study-tariffs__new-price">3 500 руб</div>
+          </div>
+        '
+      },
+      { name: 'bronze',
+        data:
+        '
+          <div id="bronze-price">
+            <div class="study-tariffs__old-price">5 900 руб</div>
+            <div class="study-tariffs__new-price">4 900 руб</div>
+          </div>
+        ' 
+      },
+      { name: 'silver',
+        data:
+        '
+          <div id="silver-price">
+            <div class="study-tariffs__old-price">11 900 руб</div>
+            <div class="study-tariffs__new-price">9 900 руб</div>
+          </div>
+        '
+      },
+    ],
+  },
+] %}
+
+{# {
+    title: 'Выберите',
+    tariffs: [
+      { name: 'base',
+        data: '
+          <form id="base-form" class="study-tariffs__table-radio">
+            <div>
+              <input type="radio" id="base-1-month" name="base" value="1-month" checked>
+              <label class="study-tariffs__table-radio-label" for="base-1-month">1 мес.</label>
+            </div>
+          </form>
+        '
+      },
+      { name: 'bronze',
+        data: '
+          <form id="bronze-form" class="study-tariffs__table-radio">
+            <div>
+              <input type="radio" id="bronze-1-month" name="bronze" value="1-month" checked>
+              <label class="study-tariffs__table-radio-label" for="bronze-1-month">1 мес.</label>
+            </div>
+          </form>
+        '  
+      },
+      { name: 'silver', 
+        data: '
+          <form id="silver-form" class="study-tariffs__table-radio">
+            <div>
+              <input type="radio" id="silver-1-month" name="silver" value="1-month" checked>
+              <label class="study-tariffs__table-radio-label" for="silver-1-month">1 мес.</label>
+            </div>
+          </form>
+        '
+      },
+    ],
+  }, #}
+
+
+
+{% block content %}
+  <section class="study offset-top">
+    <h1>
+      <div class="study__items-item__text__name">12-недельный курс Фрэнка Пьюселика
+  <div class="color-blue">«Название»</div></div>
+    </h1>
+    <div class="study__items">
+      <div class="study__items-item">
+        <div class="study__items-item__text">
+          <div class="study__items-item__text__text">
+            <p>
+              Пройдите обучение у всемирно известного психолога
+и добивайтесь успеха во всех
+сферах жизни
+            </p>
+          </div>
+          <a class="study__items-item__text__btn" href="#start-learning-anchor">Купить мой курс</a>
+        </div>
+        <div class="study__items-item__col-img">
+          <div class="study__items-item__img-wrap">
+            <img src="/static/img/general/auth-n.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="study-about">
+    <div class="title">
+      Фрэнк Пьюселик представляет <div class="color-green">свой курс</div>
+    </div>
+    <div class="study-about__row">
+      <div class="study-about__text">
+        <div class="study-about__text__description">
+          <p>Фрэнк Пьюселик - один из трех основателей всемирно известной психологической системы НЛП. Смотрите видеоуроки и участвуйте в еженедельных онлайн-встречах.</p>
+          <p>Подходит для молодых родителей, предпринимателей, фрилансеров и всех, кто интересуется психологией.</p>
+
+          <a href="/register/index.html" class="study-about__text__btn">Начать обучение</a>
+        </div>
+      </div>
+      <div class="study-about__video-col">
+        <div class="study-about__video-wrap">
+          {# <img src="/static/img/general/laptop-video.png" alt=""> #}
+          <div class="study-about__video-frame-wrap">
+            <iframe
+              class="study-about__video-frame"
+              src="https://player.vimeo.com/video/509184025"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    {% include '../partials/features.twig' with {'features' : features, 'title_blue': 'Что дает' ,'title': 'курс Фрэнка Пьюселика?', 'descr':'Вы получаете систему конкретных навыков для улучшения жизни'} %}
+
+      <section class="study__reviews">
+    <div class="study__reviews-header">
+      <h2>
+       Отзывы
+      </h2>
+    </div>
+    <div class="study__reviews-row__wrapper">
+      <div class="study__reviews-arrows">
+        <div class="study__reviews-arrows-prev">
+            <img src="/static/img/general/gray-arrow-prev.svg" alt="Предыдущий слайд">
+          </div>
+          <div class="study__reviews-arrows-next">
+            <img src="/static/img/general/gray-arrow-next.svg" alt="Следующий слайд">
+          </div>
+      </div>
+      <div class="study__reviews-row">
+        {% for item in reviews %}
+        <div class="study__reviews-item">
+          <div class="study__reviews-item__inner">
+
+            <div class="study__reviews-item__img">
+              <img src="{{item.img}}" alt="Фото пользователя">
+              <div class="study__reviews-item__name">
+                <div>{{item.name}}</div>
+                <div>{{item.surname}}</div>
+              </div>
+            </div>
+            <div class="study__reviews-item__text">
+            {% for p in item.text %}
+              <p>{{p}}</p>
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% include '../partials/advantages.twig' with {'features_pluses' : features_pluses, 'title_green': 'если вы:' ,'title': 'Курс для вас,'} %}
+
+  <section class="study__process">
+    <div class="study__process-header">
+      <h2>Как проходит обучение в <span class="color-blue">One Planet Club</span></h2>
+    </div>
+    <div class="study__process-features__row">
+       {% for item in process %}
+      <div class="study__process-features__item">
+        <div class="study__process-features__icon">
+          <img src="{{item.img}}" alt="{{item.title}}">
+        </div>
+        <h4 class="study__process-features__title">{{item.title}}</h4>
+        <p class="study__process-features__text">{{item.text}}</p>
+      </div>
+       {% endfor %}
+    </div>
+  </section>
+
+  <section class="study-reg">
+
+    <div class="study-reg__card__text">
+      <div class="study-reg__card__text__title">
+        Выберите версию участия и начните обучение <span class="color-blue">прямо сейчас</span>
+      </div>
+
+      <a class="study-start__card__text__btn" href="#start-learning-anchor">Начать обучение</a>
+    </div>
+  </section>
+
+  <section class="study__programm pos-relative">
+      <div class="additional__circle-right"></div>
+    <div class="study__programm-title">
+    <h2><span class="color-green">Программа</span> авторского курса Фрэнка Пьюселика</h2>
+    </div>
+    <div class="study__programm-rows">
+      
+      <div class="study__programm-row left js-accordion">
+        {% for i in 1..6%}
+        <div class="study__programm-item">
+          <div class="study__programm-item__week">
+            {{i}} неделя
+          </div>
+          <div class="study__programm-item__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, debitis. Dignissimos exercitationem nisi suscipit dicta doloribus ipsam maxime voluptas neque?</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class=" pos-relative">
+        <div class="study__programm-row right js-accordion">
+          {% for i in 7..12%}
+          <div class="study__programm-item">
+            <div class="study__programm-item__week">
+              {{i}} неделя
+            </div>
+            <div class="study__programm-item__content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, debitis. Dignissimos exercitationem nisi suscipit dicta doloribus ipsam maxime voluptas neque?</div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="additional__circle-left"></div>
+
+      </div>
+    </div>
+    <div class="study__programm-btn__wrapper">
+      <a href="/register/index.html" class="study__programm-btn">Начать обучение</a>
+    </div>
+  
+  </section>
+
+  <section class="study__change">
+    <div class="study__change-title">
+    <h2>Преобразите <span class="color-blue">свою жизнь</span> за 12 недель</h2>
+    </div>
+    <div class="study__change-subtitle">
+    Пошаговая инструкция по приобретению конкретных навыков
+для улучшения качества жизни во всех сферах от всемирно известного психолога.
+    </div>
+    <div class="study-about__row">
+      <div class="study-about__text">
+        <div class="study-about__text__description">
+          <p>В своём стремлении улучшить пользовательский опыт мы упускаем, что ключевые особенности структуры проекта заблокированы в рамках своих собственных рациональных ограничений! Прежде всего, курс на социально-ориентированный национальный проект играет определяющее значение для существующих финансовых и административных условий. Каждый из нас понимает очевидную вещь: сложившаяся структура организации способствует повышению качества системы массового участия. Вот вам яркий пример современных тенденций - укрепление и развитие внутренней структуры напрямую зависит от укрепления моральных ценностей.</p>
+        </div>
+      </div>
+      <div class="study-about__video-col">
+        <div class="study-about__video-wrap">
+          {# <img src="/static/img/general/laptop-video.png" alt=""> #}
+          <div class="study-about__video-frame-wrap">
+            <iframe
+              class="study-about__video-frame"
+              src="https://player.vimeo.com/video/509184025"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="study__change-btn__wrapper">
+      <a href="/register/index.html" class="study__change-btn">Начать обучение</a> 
+    </div>
+  </section>
+
+  
+
+  {% include '../partials/about-author.twig' with {class: 'about-author--main-page bg-beige', disableMoreButton: true} %}
+
+
+
+  <section id="start-learning-anchor" class="study-tariffs-section">
+    <div class="study-tariffs__main-text">
+      <h2 class="color-blue">Варианты участия</h2>
+      <div class="study-tariffs__description">Обучайтесь НЛП онлайн у одного из трех основателей, чтобы преобразить свою жизнь в каждом аспекте, который сочтете важным</div>
+    </div>
+    <div class="study-tariffs-wrap">
+      <table class="study-tariffs">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"><div class="study-tariffs__name">Я сам</div></th>
+            <th scope="col"><div class="study-tariffs__name">Хочу результат</div></th>
+            <th scope="col"><div class="study-tariffs__name">Супер результат</div></th>
+          </tr>
+          <tbody>
+          {% for row in table %}
+            <tr>
+              <td>{{ row.title }}</td>
+              {% for tariff in row.tariffs %}
+                <td>
+                  {% if tariff.data == 'true' %}
+                    <img src="/static/img/general/icon-done.svg" alt="">
+                  {% elseif tariff.data == 'false' %}
+                    <img src="/static/img/general/icon-undone.svg" alt="">
+                  {% else %}
+                    {{ tariff.data }}
+                  {% endif %}
+                  {% if tariff.subdata %}
+                    <div class="tariff-subdata"><small>{{tariff.subdata}}</small></div>
+                  {% endif %}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td><button id="base-submit-buy" class="table__btn">Купить</button></td>
+            <td><button id="bronze-submit-buy" class="table__btn">Купить</button></td>
+            <td><button id="silver-submit-buy" class="table__btn">Купить</button></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section class="study__ready">
+    <div class="study__ready-row">
+      <div class="study__ready-col left">
+        <div class="study__ready-title color-green">Вы готовы изменить свою 
+        жизнь к лучшему? </div>
+        <div class="study__ready-text">
+          <p>Мы на 100% уверены в пользе курса. Поэтому предоставляем доступ к демо-неделе совершенно бесплатно, чтобы вы лично смогли убедиться в качестве его программы, понять насколько готовы работать над собой и воплощать свои желания. Уже тысячи людей воспользовались программой Фрэнка Пьюселика и стали счастливыми. 
+          </p>
+        </div>
+        <a href="/register/index.html" class="study__ready-btn">Начать учиться бесплатно</a>
+      </div>
+      <div class="study__ready-col right">
+        <img src="/static/img/general/ready-circle-img.png" alt="">
+      </div>
+    </div>
+
+    
+  </section>
+
+  <section class="study__presentor">
+    <div class="study__presentor-header">
+      <h2>
+        Официальный представитель
+      </h2>
+    </div>
+    <div class="study__presentor-text-row">
+      <div class="study__presentor-text">
+        <p>Как уже неоднократно упомянуто, активно развивающиеся страны третьего мира, инициированные исключительно синтетически, функционально разнесены на независимые элементы. Прежде всего, семантический разбор внешних противодействий позволяет выполнить важные задания по разработке глубокомысленных рассуждений. В своём стремлении повысить качество жизни, они забывают, что начало повседневной работы по формированию позиции напрямую зависит от системы массового участия!</p>
+
+        <p>Ясность нашей позиции очевидна: глубокий уровень погружения способствует повышению качества анализа существующих паттернов поведения. И нет сомнений, что предприниматели в сети интернет, превозмогая сложившуюся непростую экономическую ситуацию, своевременно верифицированы. С другой стороны, внедрение современных методик требует от нас анализа поэтапного и последовательного развития общества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: понимание сути ресурсосберегающих технологий обеспечивает актуальность экспериментов, поражающих по своей масштабности и грандиозности. Являясь всего лишь частью общей картины, акционеры крупнейших компаний представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть представлены в исключительно положительном свете.</p> 
+      </div>
+      <div class="study__presentor-pic">
+        <img src="/static/img/general/presentor.png" alt="Изображение мужчины">
+      </div>
+    </div>
+
+  </section>
+
+  <section class="study-form">
+    <div class="study-form__card">
+      <div class="title study-form__card__title"><div class="color-blue">Остались вопросы?</div> Задайте их здесь или <span class="color-green">напишите в чат</span></div>
+      <div class="study-form__card__row">
+        <div class="study-form__card__form-wrap">
+          <form
+            id="question-form"
+            name="question-form"
+            novalidate
+          >
+            <div class="study-form__card__form__row">
+              <div class="study-form__card__form__row__col left">
+                <div class="form-group">
+                  <label class="label">
+                    <input type="text" class="input js-input" id="name" name="name" placeholder="Имя">
+                  </label>
+                  <div class="form-error-text" id="error-name"></div>
+                </div>
+                <div class="form-group">
+                  <label class="label">
+                    <input type="email" class="input js-input" id="email" name="email" placeholder="Email">
+                  </label>
+                  <div class="form-error-text" id="error-email"></div>
+                </div>
+              </div>
+              <div class="study-form__card__form__row__col right">
+                <div class="form-group">
+                  <label class="label">
+                    <textarea
+                      class="textarea js-input"
+                      name="question"
+                      id="question"
+                      placeholder="Напишите вопрос. Мы ответим в течение 24 часов"
+                    ></textarea>
+                  </label>
+                  <div class="form-error-text" id="error-question"></div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="study-form__btn">Отправить</button>
+          </form>
+        </div>
+        <div class="study-form__card__img-wrap">
+          <img src="/static/img/general/chatbox-green.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('load', () => {
+      const renderPriceTemplate = (data) => {
+        const mainDiv = Object.assign(document.createElement('div'), {id: data.priceId});
+        const oldPriceDiv = Object.assign(document.createElement('div'), {
+          className: "study-tariffs__old-price",
+          innerText: data.oldPrice
+        });
+        const newPriceDiv =  Object.assign(document.createElement('div'), {
+          className: "study-tariffs__new-price",
+          innerText: data.newPrice
+        });
+        mainDiv.appendChild(oldPriceDiv);
+        mainDiv.appendChild(newPriceDiv);
+
+        return mainDiv;
+      };
+
+      const prices = {
+        base: {
+          oldPrice: 4500,
+          newPrice: 3500
+        },
+        bronze: {
+          oldPrice: 5900,
+          newPrice: 4900,
+        },
+        silver: {
+          oldPrice: 11900,
+          newPrice: 9900,
+        }
+      };
+
+      const formatPrice = (price) => {
+        return Math.ceil(price)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " руб";
+      };
+
+      const tariffs = Object.keys(prices);
+      const monthsParamsEnum = {
+        "1-month": 1,
+        "3-months": 3,
+        "6-months": 6
+      };
+
+      const generateConfig = (tariffs) => {
+        return tariffs.map((tarriffName) => ({
+            name: tarriffName,
+            formId: `${tarriffName}-form`,
+            priceId: `${tarriffName}-price`,
+            submitButtonId: `${tarriffName}-submit-buy`,
+            price: {
+              "1-month": {
+                oldPrice: formatPrice(prices[tarriffName].oldPrice),
+                newPrice: formatPrice(prices[tarriffName].newPrice),
+              },
+              "3-months": {
+                oldPrice: formatPrice(prices[tarriffName].oldPrice * 3 * 0.8),
+                newPrice: formatPrice(prices[tarriffName].newPrice * 3 * 0.8),
+              },
+              "6-months": {
+                oldPrice: formatPrice(prices[tarriffName].oldPrice * 6 * 0.7),
+                newPrice: formatPrice(prices[tarriffName].newPrice * 6 * 0.7),
+              },
+            },
+
+          })
+        );
+      };
+
+      const config = generateConfig(tariffs);
+
+      config.forEach((data) => {
+        const form = document.getElementById(data.formId);
+        form.addEventListener('change', (event) => {
+          const priceBlock = document.getElementById(data.priceId);
+          priceBlock.parentNode.replaceChild(
+            renderPriceTemplate({
+              priceId: data.priceId,
+              ...data.price[event.target.value]
+            }),
+            priceBlock
+          );
+        });
+        const submitButton = document.getElementById(data.submitButtonId);
+        submitButton.addEventListener('click', () => {
+          const formData = new FormData(form);
+          const months = formData.get(data.name);
+          const url = "buy-form.html";
+          window.location.href = (`${url}?tariff=${data.name}&months=${monthsParamsEnum[months]}`);
+        });
+      });
+    });
+  </script>
+{% endblock %}

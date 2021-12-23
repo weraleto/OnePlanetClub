@@ -1,0 +1,52 @@
+
+
+
+<section class="earnings-features">
+  <div class="title earnings-features__title {{title_reverse}}"> <span class="color-blue">{{title_blue}}</span> {{title}}</div>
+  {% if descr %}
+  <div class="earnings-features__description">{{descr}}</div>
+  {% endif %}
+  {# <div class="earnings-features__subtitle">
+    Почему это лучшее предложение для тех, кто хочет создать долгосрочный растущий источник дохода с возможностью вести дела из любой точки мира с приятными для себя людьми
+  </div> #}
+  <div class="earnings-features__row">
+    {# <div class="earnings-features__row-col"> #}
+      <div class="earnings-features__dots">
+        {% for dot in features %}
+          <div class="earnings-features__dots-item">
+            <div class="earnings-features__row-front">
+              <div class="earnings-features__dots-item__count">
+                {{ loop.index }}
+              </div>
+               <img src="{{ dot.dot_img }}" alt=""> 
+            </div>
+            <div class="earnings-features__row-back">
+              {{dot.title}}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {# </div> #}
+    {# <div class="earnings-features__row-col left">
+      <div class="earnings-features__items-wrap">
+        <div class="earnings-features__items">
+          {% for item in features %}
+            <div class="earnings-features__items-item">
+              <div class="earnings-features__items-item__title">{{ item.title }}</div>
+              <div class="earnings-features__items-item__subtitle">{{ item.subtitle }}</div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="slider__header__arrows earnings-features__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev earnings-features__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next earnings-features__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div> #}
+  </div>
+</section>
+

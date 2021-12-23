@@ -1,0 +1,66 @@
+{% set socials = [
+  {'img': '/static/img/general/inst.svg', 'href': 'https://instagram.com/One_Planet_Club'},
+  {'img': '/static/img/general/youtube.svg', 'href': 'https://www.youtube.com/channel/UCek2Vt015BuTRNXa9wf3ELw'},
+] %}
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-top__left">
+      <div class="footer-top__logo">
+        {% include "../logo.twig" %}
+      </div>
+      <div class="footer-top__text">Learn soft skills and other skills from the best specialists</div>
+      <div class="footer-top__social">
+        {% for item in socials %}
+          <a class="footer-top__social-item" target="_blank" href="{{ item.href }}">
+            <img src="{{ item.img }}" alt="">
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="footer-top__center">
+      <div class="footer-top__header">Home</div>
+      <ul class="footer-top__nav">
+        {% for item in nav %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="footer-top__right">
+      <div class="footer-top__header">Contacts</div>
+      <div class="footer-top__contacts">
+        <div class="footer-top__contacts__item">
+          <img src="/static/img/general/email.svg" alt="">
+          <a class="footer-top__contacts__item-text" href="mailto:{{ email }}">{{ email }}</a>
+        </div>
+        <div class="footer-top__contacts__item">
+          <img src="/static/img/general/phone.svg" alt="">
+          <div>
+            {% for tel in phones %}
+              <a class="footer-top__contacts__item-text" href="tel:{{ tel }}">{{ tel }}</a>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="footer-top__contacts__item">
+          <img src="/static/img/general/address.svg" alt="">
+          <span class="footer-top__contacts__item-text">{{ address }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom__made-by">
+      <span>Made by OPC team with</span>
+      <img src="/static/img/general/footer-heart.png" alt="">
+    </div>
+    <div class="footer-bottom__privacy">
+      <a class="footer-bottom__privacy-item" href="" target="_blank" rel="noreferrer noopener">
+        Terms of use
+      </a>
+      |
+      <a class="footer-bottom__privacy-item" href="" target="_blank" rel="noreferrer noopener">
+        Privacy Policy
+      </a>
+    </div>
+  </div>
+</footer>

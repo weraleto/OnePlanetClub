@@ -1,0 +1,201 @@
+{% extends "../layouts/default.twig" %}
+
+{% set isNotHeaderItems = true %}
+
+{% block content %}
+  <section class="planet-promo">
+    <div class="planet-promo__title" id="hand-trigger">What One Planet Club is?</div>
+    <div class="planet-promo__items">
+      <div class="planet-promo__items-item">
+        <div class="planet-promo__items-item__img-wrap">
+          <img src="/static/img/general/icon-features-1.png" alt="">
+        </div>
+        <div class="planet-promo__items-item__title">Online educational platform</div>
+      </div>
+      <div class="planet-promo__items-item">
+        <div class="planet-promo__items-item__img-wrap">
+          <img src="/static/img/general/icon-experts.png" alt="">
+        </div>
+        <div class="planet-promo__items-item__title">Set of great skills from great masters</div>
+      </div>
+      <div class="planet-promo__items-item">
+        <div class="planet-promo__items-item__img-wrap">
+          <img src="/static/img/general/icon-features-4.png" alt="">
+        </div>
+        <div class="planet-promo__items-item__title">Unique partnership program for those who wants additional income</div>
+      </div>
+      <div class="planet-promo__items-item">
+        <div class="planet-promo__items-item__img-wrap">
+          <img src="/static/img/general/icon-earth.png" alt="">
+        </div>
+        <div class="planet-promo__items-item__title">International community which you can become a member</div>
+      </div>
+    </div>
+    <a class="planet-promo__btn" href="#">Start now</a>
+    <div
+      class="planet-promo__hands"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-duration="1500"
+      data-aos-anchor="#hand-trigger"
+    >
+      <img class="planet-promo__hands__img left" src="/static/img/general/hand-left.png" alt="">
+      <img class="planet-promo__hands__img right" src="/static/img/general/hand-right.png" alt="">
+    </div>
+    <div class="planet-promo__additional__plus-blue js-rotate"></div>
+    <div class="planet-promo__additional__triangle-pink"></div>
+    <div class="planet-promo__additional__circle"></div>
+    <div class="planet-promo__additional__plus-green js-rotate"></div>
+  </section>
+
+  <section class="planet-member">
+    <div class="planet-member-card">
+      <div class="title planet-member__title">What <span class="color-blue">gives</span> you being a One Planet Club member?</div>
+      <div class="planet-member__items">
+        <div class="planet-member__items-item">
+          <div class="planet-member__items-item__img">
+            <img src="/static/img/general/diamond.png" alt="">
+          </div>
+          <div class="planet-member__items-item__title">Income opportunities</div>
+        </div>
+        <div class="planet-member__items-item">
+          <div class="planet-member__items-item__img">
+            <img src="/static/img/general/earth-gold.png" alt="">
+          </div>
+          <div class="planet-member__items-item__title">Friends and soulmates all around the world</div>
+        </div>
+        <div class="planet-member__items-item">
+          <div class="planet-member__items-item__img">
+            <img src="/static/img/general/puzzle.png" alt="">
+          </div>
+          <div class="planet-member__items-item__title">Skills development which you need to success in professional & personal life</div>
+        </div>
+      </div>
+      <div class="planet-member__additional-circle-blue"></div>
+      <div class="planet-member__additional-plus-green js-rotate"></div>
+      <div class="planet-member__additional-plus-blue js-rotate"></div>
+      <div class="planet-member__additional-circle-green"></div>
+    </div>
+  </section>
+
+  {% set features = [
+    'Personal responsibility',
+    'Skills development',
+    'Win win relations orientation',
+    'Minus to Plus ability',
+    'Lifelong Learning approach',
+    'Leadership',
+    'Common home',
+  ] %}
+
+  <section class="planet-features">
+    <div class="planet-features__title-wrap">
+      <div class="planet-features__text">
+        <div class="title planet-features__title">Why does the world become a better & safer place to live due to your participation in One Planet Club?</div>
+        <div class="planet-features__subtitle">Because our community based on United Citizens concept, which consist of 7 principles we believe and develop through our activities:</div>
+      </div>
+      <div class="planet-features__img">
+        <img src="/static/img/general/chatbox.png" alt="">
+      </div>
+    </div>
+    <div class="planet-features__items">
+      {% for item in features %}
+        <div class="planet-features__items-item">
+          <span class="planet-features__items-item__count">{{ loop.index }}</span>
+          <span class="planet-features__items-item__text">{{ item }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="planet-features__additional-circle-yellow"></div>
+    <div class="planet-features__additional-circle-blue"></div>
+  </section>
+
+  <section class="planet-start bg-grey">
+    <div class="planet-start__row">
+      <div class="planet-start__row-col left">
+        <div class="planet-start__title">We believe that being a citizen of that kind - the person who lives like this, not only makes the world a better and safer place to live for all of us, but also gives you better results in such life areas:
+        </div>
+        <div class="planet-start__items">
+          <div class="planet-start__items-item">
+            <div class="planet-start__items-item__img-wrap">
+              <img src="/static/img/general/icon-case.png" alt="">
+            </div>
+            <div class="planet-start__items-item__title">Career & Business</div>
+          </div>
+          <div class="planet-start__items-item">
+            <div class="planet-start__items-item__img-wrap">
+              <img src="/static/img/general/icon-features-12.png" alt="">
+            </div>
+            <div class="planet-start__items-item__title">Family & Parenting</div>
+          </div>
+          <div class="planet-start__items-item">
+            <div class="planet-start__items-item__img-wrap">
+              <img src="/static/img/general/icon-personal.png" alt="">
+            </div>
+            <div class="planet-start__items-item__title">Personal development</div>
+          </div>
+        </div>
+        <a class="planet-start__btn" href="#">Start now</a>
+      </div>
+      <div class="planet-start__row-col right">
+        <img src="/static/img/general/tablet.png" alt="">
+      </div>
+    </div>
+    <div class="planet-start__additional-plus-green js-rotate"></div>
+    <div class="planet-start__additional-plus-blue js-rotate"></div>
+    <div class="planet-start__additional-circle-yellow"></div>
+  </section>
+
+  <section class="planet-quote">
+    <div class="planet-quote__card">
+      <div class="planet-quote__card__col left">
+        <blockquote class="planet-quote__card__quote">
+          NLP is our first and core skills education set of online courses and the affiliate program is something you will like if you are looking for additional income now.
+        </blockquote>
+      </div>
+      <div class="planet-quote__card__col right">
+        <div class="planet-quote__img-wrap">
+          <img class="planet-quote__img" src="/static/img/general/hand-thumbls-up.png" alt="">
+        </div>
+      </div>
+      <div class="planet-quote__additional-plus-blue js-rotate"></div>
+      <div class="planet-quote__additional-circle-blue"></div>
+      <div class="planet-quote__additional-circle-pink"></div>
+    </div>
+  </section>
+
+  {% set owners = [
+    {
+      name: 'Frank Pucelik',
+      position: 'NLP co-founder',
+      text: 'start learning NLP free right now',
+      img: '/static/img/general/frank-speaker.png',
+    },
+    {
+      name: 'Kirill Frolov',
+      position: 'One Planet Club CEO',
+      text: 'explore our affiliate program right now',
+      img: '/static/img/general/kirill-speaker.png',
+    },
+  ] %}
+
+  <section class="planet-owners">
+    <div class="planet-owners__items">
+      {% for item in owners %}
+        <div class="planet-owners__items-item">
+          <div class="planet-owners__items-item__text">
+            <div class="planet-owners__items-item__text__position">{{ item.position }}</div>
+            <div class="planet-owners__items-item__text__name">{{ item.name }}</div>
+            <div class="planet-owners__items-item__text__text">{{ item.text }}</div>
+            <a class="planet-owners__items-item__text__btn" href="#">Start now</a>
+          </div>
+          <div class="planet-owners__items-item__col-img">
+            <div class="planet-owners__items-item__img-wrap">
+              <img src="{{ item.img }}" alt="">
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,263 @@
+{% extends "../layouts/default.twig" %}
+
+{% set about_features = [
+    {'title':'Лучшие преподаватели со всего мира', 'icon': '/static/img/general/abt-feat-1.svg' },
+    {'title':'Возможность начать обучение бесплатно', 'icon': '/static/img/general/abt-feat-5.svg' },
+    {'title':'Уникальная партнерская программа', 'icon': '/static/img/general/abt-feat-2.svg' },
+    {'title':'Служба кураторов', 'icon': '/static/img/general/abt-feat-6.svg' },
+    {'title':'Проводник к успеху в любой сфере жизни', 'icon': '/static/img/general/abt-feat-3.svg' },
+    {'title':'Поддержка на всех этапах трансформации', 'icon': '/static/img/general/abt-feat-7.svg' },
+    {'title':'Отработка полезных навыков', 'icon': '/static/img/general/abt-feat-4.svg' },
+  ]
+%}
+
+{% set become_happy = [
+    {
+      'img': '/static/img/general/abt-happy-1.svg',
+      'title': 'Бизнес и карьера',
+      'text': 'Ученые Гарварда доказали, что 85% успеха в карьере зависит от развитых soft skills и лишь 15% успеха от hard skills. Вы научитесь успешно проводить переговоры, четко ставить задачи, легко проводить совещания и выступать на публике.'
+    },
+    {
+      'img': '/static/img/general/abt-happy-2.svg',
+      'title': 'Отношения',
+      'text': 'Вы научитесь понимать свои желания и потребности и партнера. Научитесь слышать друг друга. Простраивать личные границы. Не реагировать на критику близких и контролировать свои эмоции.'
+    },
+    {
+      'img': '/static/img/general/abt-happy-3.svg',
+      'title': 'Дети',
+      'text': 'Вы станете близким другом своим детям. Сможете уберечь детей от повсеместных манипуляций внешнего мира. Научитесь открыто разговаривать с детьми, не допуская ссор и конфликтов. И перестанете сомневаться хороший ли вы родитель.'
+    },
+    {
+      'img': '/static/img/general/abt-happy-4.svg',
+      'title': 'Саморазвитие',
+      'text': 'Новые навыки помогут быстрее усваивать новый материал. Найти любимое дело. Эффективно распоряжаться своим временем. И получать удовольствие от жизни.'
+    },
+    {
+      'img': '/static/img/general/abt-happy-5.svg',
+      'title': 'Доход',
+      'text': 'Вы сможете стать партнером One planet club и создать пассивный источник дохода. Мы обучаем, вы зарабатываете! Никаких продаж! С ростом вашей аудитории источник дохода может стать и основным.'
+    },
+    {
+      'img': '/static/img/general/abt-happy-6.svg',
+      'title': 'Новые друзья',
+      'text': 'Вы научитесь производить хорошее впечатление и легко знакомиться с новыми людьми. В нашем сообществе вы приобретете и друзей, и единомышленником, а может и свою любовь.'
+    },
+  ]
+%}
+
+{% set stories = [
+  {
+    'link': 'https://player.vimeo.com/video/468581776', 
+    'text': 'Прежде всего, синтетическое тестирование прекрасно подходит для реализации поэтапного и последовательного развития общества. Являясь всего лишь частью общей картины, акционеры крупнейших компаний подвергнуты целой серии независимых исследований. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки переосмысления внешнеэкономических политик.'
+  },
+  {
+    'link': 'https://player.vimeo.com/video/468581776', 
+    'text': 'Прежде всего, синтетическое тестирование прекрасно подходит для реализации поэтапного и последовательного развития общества. Являясь всего лишь частью общей картины, акционеры крупнейших компаний подвергнуты целой серии независимых исследований. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки переосмысления внешнеэкономических политик.'
+  },
+  {
+    'link': 'https://player.vimeo.com/video/468581776', 
+    'text': 'Прежде всего, синтетическое тестирование прекрасно подходит для реализации поэтапного и последовательного развития общества. Являясь всего лишь частью общей картины, акционеры крупнейших компаний подвергнуты целой серии независимых исследований. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки переосмысления внешнеэкономических политик.'
+  },
+]
+
+%}
+
+{% set join_us = [
+  {'img': '/static/img/general/about-join-1.png', 'title':'Как эксперт'},
+  {'img': '/static/img/general/about-join-2.png', 'title':'Как эксперт'},
+  {'img': '/static/img/general/about-join-3.png', 'title':'Как эксперт'},
+  {'img': '/static/img/general/about-join-4.png', 'title':'Как эксперт'},
+] %}
+
+
+{% set info_free = [
+  {'title': 'Бесплатные статьи и видео', 'href': '#'},
+  {'title': 'Instagram', 'href': '#'},
+  {'title': 'YouTube', 'href': '#'},
+  {'title': 'Telegram', 'href': '#'},
+  {'title': 'VK', 'href': '#'},
+  {'title': 'Facebook', 'href': '#'},
+]
+%}
+
+{% set start = [
+  {
+    'img': '/static/img/general/about-start-1.jpeg',
+    'title': 'Начните учиться бесплатно',
+    'text': 'Обучайтесь у основателя НЛП первые <b>7 дней бесплатно</b>, далее от <b>3500</b> рублей в месяц',
+    'href': '#',
+  },
+  {
+    'img': '/static/img/general/about-start-2.jpeg',
+    'title': 'Интересуетесь созданием дополнительного дохода?',
+    'text': 'Активируйте демо-пакет участника нашей партнерской программы за 0,99$ и узнайте, как Вы можете зарабатывать вместе с нами на онлайн-образовании',
+    'href': '#',
+  },
+] %}
+
+
+
+{% block content %}
+  <section class="about-us__promo offset-top pos-relative">
+    <div class="about-us__promo-additional-circle"></div>
+    <div class="about-us__promo-row">
+      <div class="about-us__promo-col left">
+        <div class="about-us__promo-title">
+          <h1>
+            <span class="color-blue">One Planet Club</span>
+            <div class="about-us__promo-text-offset title">
+              твой проводник к успеху
+            </div>
+          </h1>
+        </div>
+        <div class="about-us__promo-text">
+          Улучшите жизнь во всех сферах с помощью НЛП. Создайте дополнительный доход благодаря партнерской программе. Заведите новых друзей из разных стран, участвуя в сообществе наших студентов.
+        </div>
+      </div>
+      <div class="about-us__promo-col right">
+        <div class="about-us__promo-img__wrap">
+          <img src="/static/img/general/icon-firm.png" alt="Фирменный логотип">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="about-us__platform">
+    <div class="about-us__platform-header">
+      <h2>
+        Платформа новых компетенций
+          <div class="color-green">One planet club</div>
+      </h2>
+      <p>Не вся учеба одинаково полезна. И прежде всего потому, что зачастую мы не знаем в какой сфере хотим развиваться. Нет школ, где учат как быть успешными бизнесменами, счастливыми людьми или родителями.</p>
+    </div>
+    <div class="about-us__platform-features__row">
+      {% for item in about_features %}
+      <div class="about-us__platform-features__item">
+        <span>{{item.title}}</span>
+        <div class="about-us__platform-features__icon">
+          <img src="{{item.icon}}" alt="{{item.title}}">
+        </div>
+      </div>
+       {% endfor %}
+    </div>
+  </section>
+
+  <section class="about-us__why">
+    <div class="about-us__why-header">
+      <h2>
+        Почему мы создали <span class="color-blue">One planet club</span>
+      </h2>
+    </div>
+    <div class="about-us__why-text-row">
+      <div class="about-us__why-text">
+        <p>С другой стороны, семантический разбор внешних противодействий прекрасно подходит для реализации прогресса профессионального сообщества. Безусловно, перспективное планирование выявляет срочную потребность инновационных методов управления процессами. Кстати,  активно развивающиеся страны третьего мира ограничены исключительно образом мышления. С другой стороны, высокое качество позиционных исследований является качественно новой ступенью экспериментов, поражающих по своей масштабности и грандиозности. Идейные соображения высшего порядка, а также глубокий уровень погружения требует определения и уточнения глубокомысленных рассуждений. Вот вам яркий пример современных тенденций - сплочённость команды профессионалов играет определяющее значение для укрепления моральных ценностей.
+        </p>
+        <p>С учётом сложившейся международной обстановки, укрепление и развитие внутренней структуры позволяет выполнить важные задания по разработке как самодостаточных, так и внешне зависимых концептуальных решений. В рамках спецификации современных стандартов, действия представителей оппозиции неоднозначны и будут указаны как претенденты на роль ключевых факторов.
+        </p>
+        <p>
+          Вот вам яркий пример современных тенденций - синтетическое тестирование влечет за собой процесс внедрения и модернизации стандартных подходов. Но убеждённость некоторых оппонентов является качественно новой ступенью своевременного выполнения сверхзадачи. Но многие известные личности представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть своевременно верифицированы.</p>
+      </div>
+      <div class="about-us__why-pic">
+        <img src="/static/img/general/about-why.png" alt="Изображение мужчины">
+      </div>
+    </div>
+
+  </section>
+
+  <section class="about-us__happy">
+    <div class="about-us__happy-header">
+      <h2>
+        Помогаем стать <span class="color-blue">счастливыми</span>
+      </h2>
+      <p>После обучения в One planet club и самостоятельной проработки новых навыков вас ждет проактивный рост во всех сферах жизни</p>
+    </div>
+
+    <div class="about-us__happy-features__row">
+      {% for item in become_happy %}
+      <div class="about-us__happy-features__item">
+        <div class="about-us__happy-features__icon">
+          <img src="{{item.img}}" alt="{{item.title}}">
+        </div>
+        <h4 class="about-us__happy-features__title">{{item.title}}</h4>
+        <p class="about-us__happy-features__text">{{item.text}}</p>
+      </div>
+       {% endfor %}
+    </div>
+  </section>
+
+  {% include '../partials/slider-stories.twig' with {title: 'Истории успеха', data: stories } %}
+
+  <section class="about-us-expectations">
+    <div class="about-us-expectations__row">
+      <div class="about-us-expectations__col left">
+        <div class="about-us-expectations__title">
+          Строим <span class="color-blue">глобальную</span> образовательную площадку. 
+        </div>
+        <a class="about-us-expectations__btn title js-open-roadmap" href="/static/img/general/roadmap.jpg">Дорожная карта</a>
+      </div>
+      <div class="about-us-expectations__col right">
+        <div class="about-us-expectations__img-wrap">
+          <img class="about-us-expectations__img" src="/static/img/general/roadmap.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-us-join">
+    <div class="about-us-join__title">
+      <h3 class="color-green title">Присоединяйтесь</h3>
+    </div>
+    <div class="about-us-join__row">
+      {% for item in join_us %}
+        <div class="about-us-join__item" style="background-image: url({{item.img}})"> 
+          <div class="about-us-join__item-title">
+            {{item.title}}
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="about-us-start">
+    <div class="title">Начать <span class="color-green">легко</span></div>
+    <div class="about-us-start__description">Бесплатно или почти бесплатно</div>
+
+    <div class="about-us-start__items">
+      {% for item in start %}
+        <div class="about-us-start__items-item" style="background-image: url({{item.img}})">
+          <div class="about-us-start__items-item__col left">
+            <div class="about-us-start__items-item__title">
+              {{ item.title }}
+            </div>
+            <div class="about-us-start__items-item__description">{{ item.text }}</div>
+          </div>
+          <div class="about-us-start__items-item__col right">
+            <a class="about-us-start__items-item__btn {{ item.color }}" href="{{ item.href }}">Подробнее</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="about-us-info">
+    <div class="about-us__info-inner">
+    <div class="about-us__info-additional-circle"></div>
+      <div class="about-us__info-header">
+        <h2>
+          Делимся полезной <span class="color-blue">информацией</span>
+        </h2>
+      </div>
+
+      <div class="about-us__info-row">
+      {% for item in info_free %}
+        <a href="{{item.href}}" class="about-us__info-item">
+          {{item.title}}
+        </a>
+         {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

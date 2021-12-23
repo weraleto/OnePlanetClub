@@ -1,0 +1,134 @@
+{% extends "../layouts/default.twig" %}
+
+{% set disableHeader = true %}
+{% set disableFooter = true %}
+
+{% block content %}
+  <link rel="stylesheet" href="https://yookassa.ru/integration/simplepay/css/yookassa_construct_form.css">
+  <form class="yoomoney-payment-form buy-form" action="https://yookassa.ru/integration/simplepay/payment" method="post" accept-charset="utf-8" >
+
+    <div class="ym-products">
+      <div class="ym-block-title ym-products-title">Программы:</div>
+
+      <div class="ym-product">
+        <div class="ym-product-line">
+          <span class="ym-product-description"><span class="ym-product-count">1×</span><span id="text-span"></span></span>
+          <span id="price-span" class="ym-product-price"></span>
+        </div>
+              
+        <input id="hidden-text-input" disabled="" type="hidden" name="text">
+        <input id="hidden-price-input" disabled="" type="hidden" name="price">
+        <input disabled="" type="hidden" name="quantity" value="1">
+        <input disabled="" type="hidden" name="paymentSubjectType" value="commodity">
+        <input disabled="" type="hidden" name="paymentMethodType" value="full_payment">
+        <input disabled="" type="hidden" name="tax" value="1">
+      </div>
+    </div>
+      <input value="" type="hidden" name="ym_merchant_receipt">
+
+      <div class="ym-customer-info">
+        <div class="ym-block-title">Заполните данные:</div>
+        <input name="custName" class="ym-input" placeholder="ФИО" type="text" value="">
+        <input name="cps_email" class="ym-input" placeholder="Email" type="text" value="">
+        <input name="cps_phone" class="ym-input" placeholder="Телефон" type="text" value="">
+      </div>
+
+      <div class="ym-hidden-inputs"></div>
+
+      <input id="text-input" name="customerNumber" type="hidden">
+      
+      <div class="ym-payment-btn-block ym-before-line ym-align-space-between">
+        <div class="ym-input-icon-rub ym-display-none">
+          <input id="price-input" name="sum" placeholder="0.00" class="ym-input ym-sum-input ym-required-input" type="number" step="any">
+        </div>
+        <button data-text="Оплатить" class="ym-btn-pay ym-result-price">
+          <span class="ym-text-crop">Оплатить</span>
+          <span id="price-span-output" class="ym-price-output"></span>
+        </button>
+      </div>
+    <input name="shopId" type="hidden" value="753229">
+  </form>
+  <script charset="utf-8" type="text/javascript">
+    window.addEventListener('load', () => {
+      const params = (new URL(document.location)).searchParams;
+      const tariff = params.get("tariff");
+      const months = params.get("months");
+      const config = {
+        base: {
+          1: {
+            price: 3500,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: STANDART на 1 месяц."
+          },
+          3: {
+            price: 8700,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: STANDART на 3 месяца (со скидкой 20%)."
+          },
+          6: {
+            price: 14700,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: STANDART на 6 месяцев (со скидкой 30%)."
+          }
+        },
+        bronze: {
+          1: {
+            price: 9900,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: PREMIUM на 1 месяц."
+          },
+          3: {
+            price: 23700,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: PREMIUM на 3 месяца (со скидкой 20%)."
+          },
+          6: {
+            price: 41400,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: PREMIUM на 6 месяцев (со скидкой 30%)."
+          }
+        },
+        silver: {
+          1: {
+            price: 9900,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: PREMIUM на 1 месяц."
+          },
+          3: {
+            price: 23700,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: PREMIUM на 3 месяца (со скидкой 20%)."
+          },
+          6: {
+            price: 41400,
+            text: "Доступ к закрытому клубу Фрэнка Пьюселика «Мета-встречи». Версия: PREMIUM на 6 месяцев (со скидкой 30%)."
+          }
+        }
+      };
+      if (!config[tariff] || !config[tariff][months]) {
+        window.location.assign("/");
+        return;
+      }
+
+      const formatPrice = (price) => {
+        return `${Math.ceil(price)
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, " ")},00 ₽`;
+      };
+
+      const renderFields = ({price, text}) => {
+        const priceSpan = document.getElementById("price-span");
+        const priceInput = document.getElementById("price-input");
+        const hiddenPriceInput = document.getElementById("hidden-price-input");
+        const priceSpanOutput = document.getElementById("price-span-output");
+        const textSpan = document.getElementById("text-span");
+        const hiddenTextInput = document.getElementById("hidden-text-input");
+        const textInput = document.getElementById("text-input");
+
+        priceSpan.innerText = formatPrice(price);
+        priceSpan.setAttribute("data-price", price);
+        hiddenPriceInput.value = price;
+        priceInput.value = price;
+        priceSpanOutput.innerText = formatPrice(price);
+        textSpan.innerText = text;
+        hiddenTextInput.value = text;
+        textInput.value = text;
+      }
+
+      renderFields(config[tariff][months]);
+    });
+  </script>
+  <script src="https://yookassa.ru/integration/simplepay/js/yookassa_construct_form.js"></script>
+{% endblock %}

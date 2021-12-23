@@ -1,0 +1,38 @@
+<section class="about-us__stories">
+    <div class="about-us__stories-header">
+      <h2 class="color-blue">
+       {{title}}
+      </h2>
+    </div>
+    <div class="about-us__stories-row__wrapper">
+      <div class="about-us__stories-arrows">
+        <div class="about-us__stories-arrows-prev">
+            <img src="/static/img/general/blue-arrow-prev.svg" alt="Предыдущий слайд">
+          </div>
+          <div class="about-us__stories-arrows-next">
+            <img src="/static/img/general/blue-arrow-next.svg" alt="Следующий слайд">
+          </div>
+      </div>
+      <div class="about-us__stories-row">
+        {% for item in data %}
+        <div class="about-us__stories-item">
+          <div class="about-us__stories-item__inner">
+          
+            <p class="about-us__stories-item__text">
+            {{item.text}}
+            </p>
+            <div class="about-us__stories-item__iframe-wrap">
+              <iframe
+                class="about-us__stories__frame"
+                src="{{item.link}}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,131 @@
+header {
+  @extend %flex-center;
+  position: fixed;
+  z-index: 10;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // border-bottom: 1px solid #E5E9F2;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  @include lg {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.header-right {
+  @extend %flex-center;
+}
+
+.header-right__nav {
+  @extend %default-style;
+  @extend %flex-center;
+  font-size: 15px;
+  @include lg {
+    display: none !important;
+  }
+
+  li {
+    margin-right: 33px;
+    @include xxl {
+      margin-right: 28px;
+    }
+  }
+
+  a {
+    @extend %default-style;
+    font-weight: 300;
+    font-size: 15px;
+
+    @include transition();
+    &.active, &:hover {
+      color: #000;
+    }
+  }
+}
+
+.header-right__btn {
+  @extend %btn-link;
+  @extend %btn-primary;
+  font-size: 15px !important;
+  text-decoration: none;
+  padding: 15px 45px;
+
+  &.mobile-only {
+    display: none;
+  }
+
+  &:disabled {
+    cursor: auto;
+    opacity: 0.5;
+  }
+  @include sm {
+
+    padding: 8px 16px;
+
+    &.mobile-only {
+      display: block;
+    }
+    &.desktop-only {
+      display: none;
+    }
+  }
+}
+
+.header-right__btn-burger {
+  @extend %btn-button;
+  display: none !important;
+  position: absolute;
+  top: -100px;
+  z-index: -1;
+  border-radius: 0 !important;
+  width: 14px;
+  height: 14px;
+  margin-left: 25px !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: none !important;
+  @include lg {
+    display: inline-block !important;
+  }
+  &.burger {
+    background-image: url('../img/general/burger.svg');
+  }
+  &.close {
+    background-image: url('../img/general/close.svg');
+  }
+  &.active {
+    position: static;
+    z-index: 0;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.header-mobile-wrap {
+  flex-basis: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s linear;
+  &.active {
+    max-height: 500px;
+  }
+}
+
+.header-mobile {
+  @extend %default-style;
+  margin-top: 40px !important;
+  margin-bottom: 70px !important;
+  li {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+  a {
+    font-weight: bold;
+    color: $main-font-color;
+    text-decoration: none;
+  }
+}

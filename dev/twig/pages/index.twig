@@ -1,0 +1,340 @@
+{% extends "../layouts/default.twig" %}
+
+{% set features_pluses = [
+  {
+    'img': '/static/img/general/icon-ok.png',
+    'title': 'Удобно',
+    'text': 'Заниматься в удобное время из любого места',
+  },
+  {
+    'img': '/static/img/general/icon-experts.png',
+    'title': 'Эксперты',
+    'text': 'Обучаться у экспертов, к которым не попасть оффлайн'
+  },
+  {
+    'img': '/static/img/general/icon-support.png',
+    'title': 'Команда поддержки',
+    'text': 'Служба кураторов, которая будет рядом'
+  },
+  {
+    'img': '/static/img/general/icon-earth.png',
+    'title': 'Сообщество',
+    'text': 'Международное сообщество и новые друзья по всему миру'
+  },
+] %}
+
+{% set features = [
+  {
+    title: 'Качественный продукт на востребованную тему',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-1.svg',
+  },
+  {
+    title: 'Автоворонки продают вместо Вас',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-2.svg',
+  },
+  {
+    title: 'Высокие % выплат',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-3.svg',
+  },
+  {
+    title: 'Возможность создать “белый” источник пассивного дохода онлайн',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-4.svg',
+  },
+  {
+    title: 'Сохраните репутацию',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-5.svg',
+  },
+  {
+    title: 'Свободная ниша на растущем рынке',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-6.svg',
+  },
+  {
+    title: 'Не надо становиться врачом или консультантом, оставайтесь собой',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-7.svg',
+  },
+  {
+    title: 'Онлайн-курсы востребованы во карантина и необходимость будет только расти',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-8.svg',
+  },
+  {
+    title: 'Вести дела из любой точки с людьми из любой точки мира',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-9.svg',
+  },
+  {
+    title: 'Легкий старт с минимальными вложениями и готовой системой',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-10.svg',
+  },
+  {
+    title: 'Быстрая окупаемость и возможность совмещать',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-11.svg',
+  },
+  {
+    title: 'Широкая аудитория - для родителей, для женщин, для мужчин',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-12.svg',
+  },
+] %}
+
+{% block content %}
+  <section class="wihout-offset index-header offset-top">
+      <div class="index-header__additional__rectangle"> </div>
+    <div class="index-header__wrapper">
+        <div class="index-header__additional__circle"></div>
+        <div class="index-header-text">
+          <div class="index-header-text__item">
+            <h1>
+              <div class="color-blue">One planet club - </div>
+              <span>платформа новых компетенций</span>
+            </h1>
+          </div>
+          <div class="index-header-text__item color-blue">
+            <p>Вы научитесь понимать себя и окружающих, управлять своими эмоциями, договариваться с родными и коллегами, спокойно принимать решения даже в сложных ситуациях, проводить конструктивные переговоры, выступать на публике, мотивировать подчинённых и получать удовольствие от положительных изменений в жизни — каждый день.</p>
+          </div>
+        </div>
+        <div class="index-header-pics">
+          <div class="index-header-pics__item head-pic-1">
+            <img src="/static/img/general/index-h-1.png" alt="header pic">
+          </div>
+          <div class="index-header-pics__item head-pic-2">
+            <img src="/static/img/general/index-h-2.png" alt="header pic">
+          </div>
+          <div class="index-header-pics__item head-pic-3">
+            <img src="/static/img/general/index-h-3.png" alt="header pic">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="promo wihout-offset">
+    <div class="promo__additional__circle-great"></div>
+    <div class="promo__wrapper">
+      {# <img class="promo__sticker" src="/static/img/general/sticker.svg" alt=""> #}
+      <h2 class="promo__title color-blue">Обучайтесь НЛП у его основателя <br/><span class="color-green">Фрэнка Пьюселика</span></h2>
+      <div id="typed-strings2">
+        <p>НЛП применяют родители,^100000</p>
+        <p>НЛП применяют девушки,^100000</p>
+        <p>НЛП применяют мужчины,^100000</p>
+        <p>НЛП применяют в том числе,^100000</p>
+        <p>НЛП применяют предприниматели,^100000</p>
+        <p>НЛП применяют учителя и тренеры,^100000</p>
+        <p>НЛП применяют фрилансеры,^100000</p>
+        <p>НЛП применяют политики,^100000</p>
+        <p>НЛП применяют программисты и юристы,^100000</p>
+        <p>НЛП применяют все, кто продает сам,^100000</p>
+        <p>НЛП применяют в том числе,^100000</p>
+        <p>НЛП применяют семейные пары,^100000</p>
+        <p>НЛП применяют мужчины,^100000</p>
+        <p>НЛП применяют в том числе,^100000</p>
+        <p>НЛП применяют девушки,^100000</p>
+        <p>НЛП применяют уже взрослые люди,</p>
+      </div>
+      <div id="typed-strings3">
+        <p>чтобы дети слушались и хорошо учились^3000</p>
+        <p>чтобы правильно выбрать мужчину^3000</p>
+        <p>чтобы развить уверенность в себе^3000</p>
+        <p>чтобы защищаться от манипуляций^3000</p>
+        <p>чтобы собрать сильную команду^3000</p>
+        <p>чтобы ученики достигали лучших результатов^3000</p>
+        <p>чтобы продавать свои услуги дороже^3000</p>
+        <p>чтобы влиять на мнение избирателей^3000</p>
+        <p>чтобы стать руководителями^3000</p>
+        <p>чтобы успешно закрывать сделки^3000</p>
+        <p>чтобы защищаться от манипуляций^3000</p>
+        <p>чтобы наладить отношения и сохранить семью^3000</p>
+        <p>чтобы быстрее создать успешный бизнес^3000</p>
+        <p>чтобы отпустить прошлые отношения^3000</p>
+        <p>чтобы принять и полюбить себя^3000</p>
+        <p>чтобы наладить отношения с родителями</p>
+      </div>
+      <h3 class="promo__subtitle" >
+        <span id="typed2"></span><br>
+        <span id="typed3"></span>
+      </h3>
+      
+    </div>
+    <div class="promo__video-wrap" id="hand-trigger">
+      <div class="promo__video-frame-wrap">
+        <iframe
+          class="promo__video-frame"
+          src="https://player.vimeo.com/video/468581776"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="promo__links">
+      <a class="promo__links-link" href="/register/index.html">Начать обучение бесплатно</a>
+      <a class="promo__links-link" href="useful-free.html">Бесплатные материалы</a>
+    </div>
+  </section>
+  {% include "../partials/about-author.twig" with {class: 'about-author--main-page bg-beige'} %}
+
+  <div class="form__wrapper bg-beige">
+    {# <div class="form__additional__circle"></div> #}
+    {% include "../partials/form.twig"  with {color: 'green', title_text: 'Обучайтесь первые 7 дней у Фрэнка Пьюселика', title_align: 'left'} %}
+  </div>
+
+    {# <section class="new-cources">
+    <div class="slider">
+      <div class="slider__header">
+        <div class="title color-blue">Доступны в <span class="color-green">2021</span></div>
+        <div class="slider__header__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev new-cources__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next new-cources__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="slider__blocks-wrap">
+        <div class="slider__blocks new-cources__slider-blocks">
+          {% for item in new_cources %}
+            {% include "../partials/slider-item.twig" %}
+          {% endfor %}
+        </div>
+        <div class="slider__read-more">
+          <a href="/" class="slider__read-more__btn">
+            Все программы обучения
+          </a>
+        </div>
+      </div>
+    </div>
+  </section> #}
+
+  <section class="usefulness">
+    <div class="usefulness__inner">
+      <div class="usefulness__additional-circle"></div>
+      <div class="title usefulness__title color-blue">Зачем изучать soft skills?</div>
+      <div class="usefulness__row">
+        <div class="usefulness__col left">
+          <ul class="usefulness__ul">
+            <li
+              class="usefulness__ul-li"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="1500"
+            >
+              Укрепить семью и отношения с детьми или родителями
+            </li>
+            <li
+              class="usefulness__ul-li"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="1500"
+            >
+              Быстрее создать успешный бизнес или карьеру, увеличить доход
+            </li>
+            <li
+              class="usefulness__ul-li"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="1500"
+            >
+              Понять себя, обрести внутренний комфорт и спокойствие
+            </li>
+            <li
+              class="usefulness__ul-li"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="1500"
+            >
+              Разбираться в людях, избежать множества ошибок и не потерять время
+            </li>
+            <li
+              class="usefulness__ul-li"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="1500"
+            >
+              Научиться чему-либо быстрее, чем прежде
+            </li>
+          </ul>
+          <a class="usefulness__btn" href="/register/index.html">Начать изучать</a>
+        </div>
+        <div class="usefulness__col right">
+          <div class="usefulness__img-wrap">
+            {# <img src="/static/img/general/desktop-video.png" alt=""> #}
+            <div class="usefulness__frame-wrap">
+              <iframe
+                class="usefulness__frame"
+                src="https://player.vimeo.com/video/468581776"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '../partials/features.twig' with {'features' : features, 'title_blue': 'Преимущества' ,'title': 'One Planet Club'} %}
+
+  {% include '../partials/advantages.twig' with {'features_pluses' : features_pluses, 'title_green': 'результатов' ,'title': 'Почему с нами достигают'} %}
+
+
+
+  <section class="free-materials">
+    <div class="slider">
+      <div class="slider__header">
+        <div class="title"><span class="color-blue">Бесплатные</span> материалы</div>
+        {# <div class="slider__header__arrows">
+          <div class="slider__header__arrows-item slider__header__arrows-item--prev free-materials__arrows-prev">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+          <div class="slider__header__arrows-item slider__header__arrows-item--next free-materials__arrows-next">
+            <img src="/static/img/general/arrow.svg" alt="">
+          </div>
+        </div> #}
+      </div>
+      <div class="slider__blocks-wrap">
+        <div class="slider__blocks free-materials__slider-blocks">
+           <div class="useful-free__items">
+             {% for item in free_materials %}
+              {# {% if loop.index <= 6 %} #}
+                <div class="useful-free__items-item">
+                  <div class="useful-free__items-item__img-wrap" style="background-image: url({{ item.img }});"></div>
+                  <div class="useful-free__items-item__text">
+                    <div class="useful-free__items-item__text__category">{{ item.theme }}</div>
+                    <a class="useful-free__items-item__text__title" href="{{ item.href }}">{{ item.title }}</a>
+                  </div>
+                </div>
+              {# {% endif %} #}
+            {% endfor %}
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="free-materials__read-more">
+          <a href="/" class="free-materials__read-more__btn">
+            Больше материалов
+          </a>
+        </div>
+    </div>
+  </section>
+
+ <div class="form__wrapper mb">
+    <div class="form__additional__circle-top"></div>
+    <div class="pos-relative">
+      <div class="form__additional__circle-bottom"></div>
+      {% include "../partials/form.twig"  with {color: 'blue', title_text: 'Начать учиться', title_align: 'center'} %}
+    </div>
+  </div>
+
+{% endblock %}

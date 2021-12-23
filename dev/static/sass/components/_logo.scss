@@ -1,0 +1,20 @@
+.logo {
+  @extend %default-style;
+  display: flex;
+  align-items: center;
+}
+
+.logo__img {
+  width: 295px;
+  @include sm {
+    width: 150px;
+  }
+}
+
+// .logo__text {
+//   margin-left: 10px;
+//   font-weight: bold;
+//   @include sm {
+//     font-size: 12px;
+//   }
+// }

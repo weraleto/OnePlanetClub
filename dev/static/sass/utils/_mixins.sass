@@ -1,0 +1,110 @@
+@mixin rem ($pxsize)
+	font-size: ($pxsize/$font-size-base)+rem
+
+@function rem($pxsize)
+	@return #{$pxsize/$font-size-base}rem
+
+//fonts
+//+font-face("roboto-example", "../fonts/RobotoRegular/RobotoRegular")
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
+	@font-face
+		font-family: $font-family
+		font-weight: $weight
+		font-style: $style
+
+		@if $asset-pipeline == true
+			src: font-url('#{$file-path}.eot')
+			src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
+		@else
+			src: url('#{$file-path}.eot')
+			src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+
+//@include centered()
+@mixin centered($axis: 'both')
+	position: absolute
+	@if ($axis == 'both')
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	@if $axis == 'x'
+		left: 50%
+		transform: translateX(-50%)
+	@if $axis == 'y'
+		top: 50%
+		transform: translateY(-50%)
+
+//@extend %clearfix
+%clearfix
+	&:after
+		content: ""
+		display: block
+		clear: both
+
+//@include tablets
+//	width: 100%
+@mixin xxl()
+  @media all and (max-width: 1645px)
+    @content
+
+@mixin xl()
+  @media all and (max-width: 1386px)
+    @content
+
+@mixin lg()
+  @media all and (max-width: 1199px)
+    @content
+
+@mixin md()
+  @media all and (max-width: 991px)
+    @content
+
+@mixin sm()
+  @media all and (max-width: 767px)
+    @content
+
+@mixin xs()
+  @media all and (max-width: 575px)
+    @content
+
+@mixin xxs()
+  @media all and (max-width: 380px)
+    @content
+
+//@include font;
+@mixin font($font)
+	font-family: $font
+
+@mixin transition($prop: all)
+  transition: $prop 0.2s ease-out
+
+@mixin shadow($x, $y, $h, $o)
+  box-shadow: #{$x}px #{$y}px #{$h}px rgba(0,0,0,$o)
+
+@mixin img-fit()
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+@mixin bgi($name)
+	background-image: url($name)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: contain
+
+@mixin before()
+	position: absolute
+	content: ''
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+@mixin additional-circle($size, $color)
+  position: absolute
+  width: #{$size}px
+  height: #{$size}px
+  border-radius: 50%
+  background-color: $color

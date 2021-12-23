@@ -1,0 +1,29 @@
+.read-more {
+  @extend %flex-center;
+  @extend %default-style;
+  margin-top: auto;
+  cursor: pointer;
+  &:hover {
+    .read-more__icon {
+      transform: translateX(17px);
+    }
+  }
+}
+
+.read-more__text {
+  margin-right: 17px;
+  font-weight: bold;
+  @include transition();
+  @include sm {
+    margin-right: 12px;
+  }
+}
+
+.read-more__icon {
+  stroke: #000;
+  @include transition();
+  @include sm {
+    transform: scale(0.66);
+    transform-origin: left center;
+  }
+}

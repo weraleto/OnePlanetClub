@@ -1,0 +1,74 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+  <section class="useful-free">
+    <div class="title">
+      <img src="/static/img/general/light.png" alt="" width="35">
+      Полезно + <span class="color-green">Бесплатно</span>
+    </div>
+    <div class="useful-free__description">
+      Блог с полезными видео материалами
+    </div>
+    <div class="useful-free__btns">
+      <button class="useful-free__btn js-btn active" data-target="#row-1">Все</button>
+      <button class="useful-free__btn js-btn" data-target="#row-2">Воспитание детей</button>
+      <button class="useful-free__btn js-btn" data-target="#row-3">Про НЛП</button>
+      <button class="useful-free__btn js-btn" data-target="#row-4">Про партнерку</button>
+      <button class="useful-free__btn js-btn" data-target="#row-5">Истории партнеров</button>
+    </div>
+    <div class="useful-free__row-wrap">
+      {# ROW 1 #}
+      <div class="useful-free__row js-content" id="row-1">
+        <div class="useful-free__items">
+          {% for item in blog %}
+            {% if loop.index <= 6 %}
+              <div class="useful-free__items-item">
+                <div class="useful-free__items-item__img-wrap" style="background-image: url({{ item.img }});"></div>
+                <div class="useful-free__items-item__text">
+                  <div class="useful-free__items-item__text__category">{{ item.category }}</div>
+                  <a class="useful-free__items-item__text__title" href="{{ item.href }}">{{ item.title }}</a>
+                  <div class="useful-free__items-item__text__time">{{ item.time }}</div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% if blog.length > 6 %}
+          <div class="useful-free__more-btn-wrap">
+            <button class="useful-free__more-btn">Показать еще</button>
+          </div>
+        {% endif %}
+      </div>
+      {# ROW 2 #}
+      <div class="useful-free__row js-content" id="row-2" style="display: none;">
+        <div class="useful-free__items">
+          <div>Нет записей</div>
+        </div>
+      </div>
+      {# ROW 3 #}
+      <div class="useful-free__row js-content" id="row-3" style="display: none;">
+        <div class="useful-free__items">
+          <div>Нет записей</div>
+        </div>
+      </div>
+      {# ROW 4 #}
+      <div class="useful-free__row js-content" id="row-4" style="display: none;">
+        <div class="useful-free__items">
+          <div>Нет записей</div>
+        </div>
+      </div>
+      {# ROW 5 #}
+      <div class="useful-free__row js-content" id="row-5" style="display: none;">
+        <div class="useful-free__items">
+          <div>Нет записей</div>
+        </div>
+      </div>
+    </div>
+    <div class="useful-free__additional-triangle-pink"></div>
+    <div class="useful-free__additional-plus-green_1 js-rotate"></div>
+    <div class="useful-free__additional-plus-blue_1 js-rotate"></div>
+    <div class="useful-free__additional-plus-blue_2 js-rotate"></div>
+    <div class="useful-free__additional-circle-pink"></div>
+    <div class="useful-free__additional-plus-green_2 js-rotate"></div>
+  </section>
+{% endblock %}

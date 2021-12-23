@@ -1,0 +1,119 @@
+{% extends "../layouts/default.twig" %}
+
+{% set cources_page = [
+  {
+    title: 'Мета-встречи с Фрэнком Пьюселиком',
+    subtitle: 'Ежедневные встречи по подписке',
+    img: '/static/img/general/cources_page/8.svg',
+    inactive: false,
+    category: 'cources',
+    card_color: 'cyansblue',
+  },
+  {
+    title: 'Прекрасный родитель',
+    subtitle: 'Онлайн-курс Фрэнка Пьюселика',
+    img: '/static/img/general/cources_page/2.svg',
+    inactive: true,
+    category: 'online',
+    card_color: 'yellow',
+  },
+  {
+    title: 'Успешный предприниматель',
+    subtitle: 'Онлайн-курс',
+    img: '/static/img/general/cources_page/3.svg',
+    bg: '#EEFFFB',
+    line: '#31AC89',
+    inactive: true,
+    category: 'online',
+    card_color: 'green',
+  },
+  {
+    title: 'Управление эмоциями',
+    subtitle: 'Онлайн-курс',
+    img: '/static/img/general/cources_page/6.svg',
+    inactive: true,
+    category: 'online',
+    card_color: 'red',
+  },
+  {
+    title: 'Развитие личности',
+    subtitle: 'Онлайн-курс',
+    img: '/static/img/general/cources_page/7.svg',
+    inactive: true,
+    category: 'online',
+    card_color: 'green',
+  },
+  {
+    title: 'Лидерство и достижение целей',
+    subtitle: 'Онлайн-курс',
+    img: '/static/img/general/cources_page/1.svg',
+    inactive: true,
+    category: 'online',
+    card_color: 'cyansblue',
+  },
+  {
+    title: 'Публичные выступления',
+    subtitle: 'Онлайн-курс',
+    img: '/static/img/general/cources_page/4.svg',
+    inactive: true,
+    category: 'online',
+    card_color: 'orange',
+  },
+  {
+    title: 'Гармоничные и успешные отношения',
+    subtitle: 'Онлайн-курс',
+    img: '/static/img/general/cources_page/5.svg',
+    inactive: true,
+    category: 'online',
+    card_color: 'red',
+  },
+] %}
+
+{% block content %}
+
+  <section class="cources-page">
+    <div class="title">
+      Доступны в <span class="color-orange">2021</span>
+    </div>
+    <div class="useful-free__btns">
+      <button class="useful-free__btn js-filter-btn active" data-target="all">Все</button>
+      <button class="useful-free__btn js-filter-btn" data-target="cources">Курсы Фрэнка Пьюселика (Мета Игры Фрэнка)</button>
+      <button class="useful-free__btn js-filter-btn" data-target="online">Интернет-профессии и доход онлайн</button>
+    </div>
+    <div class="cources__row-wrap">
+      <div class="cources__row">
+        <div class="cources__items">
+          {% for item in cources_page %}
+            {% if loop.index <= 8 %}
+              <div class="cources__items-item-wrap js-filter-content" data-category="{{ item.category }}">
+                <a
+                  class="cources__items-item {{ item.card_color }} {{ item.inactive ? 'inactive' : '' }}"
+                  href="#"
+                >
+                  <div class="cources__items-item__inactive-card">Доступен в 2021</div>
+                  <div class="cources__items-item__text">
+                    <div class="cources__items-item__text__title">{{ item.title }}</div>
+                    <div class="cources__items-item__text__subtitle">
+                      <div class="cources__items-item__text__subtitle-line"></div>
+                      <div>{{ item.subtitle }}</div>
+                    </div>
+                  </div>
+                  <div class="cources__items-item__img">
+                    <img src="{{ item.img }}" alt="">
+                  </div>
+                </a>
+                <div class="cources__items-item__title">{{ item.title }}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% if blog.length > 8 %}
+          <div class="useful-free__more-btn-wrap">
+            <button class="useful-free__more-btn">Показать еще</button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

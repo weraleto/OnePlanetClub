@@ -1,0 +1,27 @@
+  <section class="features">
+    <div class="features-inner">
+      <div class="features__card">
+        <div class="title">{{title}} <span class="color-green">{{title_green}}</span></div>
+        <div class="features__card__row">
+          {# <div class="features__card__row__col"> #}
+
+            {% for item in features_pluses %}
+              <div class="features__card-item">
+                <div class="features__card-item__img-wrap">
+                  <img src="{{ item.img }}" alt="">
+                </div>
+                <div class="features__card-item__text">
+                 {% if item.title  %}
+                  <div class="features__card-item__text__title color-green">{{ item.title }}</div>
+                  {% endif %}
+                  <div class="features__card-item__text__text">{{ item.text }}</div>
+                </div>
+              </div>
+            {% endfor %}
+
+          {# </div> #}
+
+        </div>
+      </div>
+    </div>
+  </section>

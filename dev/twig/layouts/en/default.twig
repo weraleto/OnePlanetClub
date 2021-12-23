@@ -1,0 +1,245 @@
+{% set auth = false %}
+
+{% set nav = [
+  {'label': 'Study', 'href': 'study.html'},
+  {'label': 'Useful + Free', 'href': 'useful-free.html'},
+  {'label': 'Partner Program', 'href': 'earnings.html'},
+  {'label': 'About Us', 'href': 'about-us.html'},
+] %}
+
+{% set email = 'support@oneplanet.club' %}
+
+{% set address = '27872 Colonial, Mission Viejo, CA 92692' %}
+
+{% set phones = ['+7 495 414 10 98', '+1 406 284 70 08'] %}
+
+{% set cources = [
+  {
+    'img': '/static/img/general/puzzle.png',
+    'theme': 'Psychology',
+    'title': 'Wonderful parent',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'green',
+  },
+  {
+    'img': '/static/img/general/briefcase.png',
+    'theme': 'Psychology',
+    'title': 'Successful entrepreneur',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'yellow',
+  },
+  {
+    'img': '/static/img/general/equalizer.png',
+    'theme': 'Psychology',
+    'title': 'Управление эмоциями',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'red',
+  },
+  {
+    'img': '/static/img/general/graph.png',
+    'theme': 'Psychology',
+    'title': 'Развитие личности',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'blue',
+  },
+] %}
+
+{% set new_cources = [
+  {
+    'img': '/static/img/general/loudspeaker.png',
+    'theme': 'Psychology',
+    'title': 'Public performance',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'yellow',
+  },
+  {
+    'img': '/static/img/general/heart.png',
+    'theme': 'Psychology',
+    'title': 'Harmonious and successful relationship',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'orange',
+  },
+  {
+    'img': '/static/img/general/flag.png',
+    'theme': 'Psychology',
+    'title': 'Leadership and goal achievement',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem erat.',
+    'href': '#',
+    'card_color': 'green',
+  },
+] %}
+
+{% set free_materials = [
+  {
+    'img': '/static/img/general/camera.png',
+    'theme': 'Parenting',
+    'title': 'Strict upbringing of children. Consequences and responsibility',
+    'text': '',
+    'href': '#',
+    'card_color': 'cyansblue',
+  },
+  {
+    'img': '/static/img/general/piggybank.png',
+    'theme': 'Earnings',
+    'title': 'How much can you earn with One Planet Club',
+    'text': '',
+    'href': '#',
+    'card_color': 'yellow',
+  },
+  {
+    'img': '/static/img/general/handshake.png',
+    'theme': 'Parenting',
+    'title': 'How to influence a teenager? How to find common ground?',
+    'text': '',
+    'href': '#',
+    'card_color': 'cyans',
+  },
+  {
+    'img': '/static/img/general/pin.png',
+    'theme': 'About NLP',
+    'title': 'Why did the professor of psychology move from California to the CIS?',
+    'text': '',
+    'href': '#',
+    'card_color': 'orange',
+  },
+] %}
+
+{% set blog = [
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Parenting',
+    'title': 'Строгое воспитание детей. Последствия и ответственность.',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': 'article.html',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '<p>А что, если личного «я» не существует и любой человек может стать таким, как хочет?</p><p>Каждую минуту мы неосознанно выбираем, каким образом нам реагировать на события и действия из внешнего мира. Значит, выбор в любой ситуации за нами! Мы можем самостоятельно сформировать этику и набор личных убеждений. Не это ли является истинной манипуляцией?</p><p>Как изменить свои естественные реакции в сторону повышения эффективности и успеха во всём, чем вы занимаетесь?</p><p>Эти и другие вопросы подробно раскрывает профессор психологии Фрэнк Пьюселик в данном видео.</p>',
+  },
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Про партнерку',
+    'title': 'Сколько можно зарабатывать с One Planet Club',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': '#',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '',
+  },
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Parenting',
+    'title': 'Как повлиять на подростка? Как найти общий язык?',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': '#',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '',
+  },
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Parenting',
+    'title': 'Строгое воспитание детей. Последствия и ответственность.',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': '#',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '',
+  },
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Про партнерку',
+    'title': 'Сколько можно зарабатывать с One Planet Club',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': '#',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '',
+  },
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Parenting',
+    'title': 'Как повлиять на подростка? Как найти общий язык?',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': '#',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '',
+  },
+  {
+    'img': '/static/img/general/frank-speaker.png',
+    'category': 'Parenting',
+    'title': 'Как повлиять на подростка? Как найти общий язык?',
+    'time': '20 мин',
+    'date': '24 авг.',
+    'href': '#',
+    'video': 'https://player.vimeo.com/video/468581776',
+    'content': '',
+  },
+] %}
+
+{% set comments = [
+  {
+    'author': 'User1',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat.',
+  },
+  {
+    'author': 'User1',
+    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat.',
+  },
+] %}
+
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <title>One planet club</title>
+  <link rel="icon" href="/static/img/general/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/img/general/favicon.ico" type="image/x-icon">
+  <meta name="description" content="Онлайн-образование и партнёрские программы платформы One Planet Club. Зарабатывай на онлайн образовании: Курсы по психологии, иностранные языки и школьное образование, интернет-профессии и финансовая грамотность"/>
+  <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+  <link rel="canonical" href="https://oneplanet.club/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="One Planet Club">
+  <meta property="og:description" content="Онлайн-образование и партнёрские программы платформы One Planet Club. Зарабатывай на онлайн образовании: Курсы по психологии, иностранные языки и школьное образование, интернет-профессии и финансовая грамотность">
+  <meta property="og:url" content="https://oneplanet.club/">
+  <meta property="og:site_name" content="OnePlanetClub">
+{#  <link rel="stylesheet" type="text/css" href="static/css/fonts.css"/>#}
+  <link rel="stylesheet" type="text/css" href="/static/css/libs.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <link rel="stylesheet" href="/static/css/main.css"/>
+  {% block styles %}{% endblock %}
+</head>
+<body>
+
+  {% include "../../partials/en/header.twig" %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "../../partials/en/footer.twig" %}
+
+  <script src="/static/js/libs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+  <script src="/static/js/common.js"></script>
+
+  {% block sctipts %}{% endblock %}
+</body>
+</html>

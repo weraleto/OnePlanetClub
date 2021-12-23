@@ -1,0 +1,220 @@
+// Подключаем утилиты
+@import "utils/index";
+
+// Стили
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  line-height: 1.25;
+  @include xs {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: #fff;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  color: $main-font-color;
+  // overflow-x: hidden;
+  
+}
+
+main {
+  overflow: hidden;
+}
+
+section,
+header {
+  @extend %c-container-fluid;
+  position: relative;
+
+  &.offset-top {
+    @extend %section-offset-top;
+  }
+}
+
+section:not(.wihout-offset) {
+  @extend %section-offset;
+}
+
+h1 {
+  @extend %title-great;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.bg-grey {
+  background-color: #fafafa;
+}
+
+.bg-beige {
+  position: relative;
+  &::before {
+    @include before;
+    background: $main-bg;
+    z-index: -1;
+  }
+}
+
+.bg-orange {
+  background-color: rgba(#ffebe2, 0.6);
+}
+
+.bg-green {
+  background-color: #e4f4f0;
+}
+
+.bg-yellow {
+  background-color: #fffcec;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.color-blue {
+  color: $main-blue-color !important;
+}
+
+.color-orange {
+  color: #ff783e;
+}
+
+.color-green {
+  color: $main-green-color;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  @include lg {
+    font-size: 36px;
+  }
+  @include md {
+    font-size: 30px;
+  }
+  @include xs {
+    font-size: 24px;
+  }
+}
+
+/*
+html
+  font-size: $font-size-base
+  line-height: $line-height-base
+
+body
+  font-family: $font
+  font-weight: $font-weight-base
+  color: $main-color
+  text-align: left
+  background-color: white
+
+.body-no-scroll
+  position: fixed
+  overflow: hidden
+  width: 100%
+
+.c-total-wrap
+  position: relative
+  overflow: hidden
+  min-height: 100vh
+
+.overlay
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 900
+  width: 100%
+  height: 100%
+  background-color: rgba(black, 0.6)
+
+a
+  color: inherit
+  text-decoration: none
+
+//p
+//  +xs
+//    font-size: 16px
+//  &:not(:last-child)
+//    margin-bottom: 35px
+//    +sm
+//      margin-bottom: 10px
+
+.container
+  width: 100%
+  max-width: $max-width
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+  +lg
+    max-width: 960px
+  +md
+    max-width: 720px
+  +sm
+    max-width: 540px
+
+.c-logo
+  font-size: 30px
+  font-weight: 900
+
+.c-title
+  font-size: 40px
+  font-weight: 900
+  +xs
+    font-size: 30px
+
+.offset-section
+  padding-top: 95px
+  padding-bottom: 120px
+  +lg
+    padding-top: 60px
+    padding-bottom: 60px
+  +sm
+    padding-top: 30px
+    padding-bottom: 30px
+*/
+
+.toast {
+  display: none;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  max-width: 500px;
+  min-width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  color: white;
+  &__image {
+    width: 22px;
+    height: 22px;
+    margin-right: 15px;
+  }
+}
+
+// МОДУЛИ
+@import "modules/index";
+
+//КОМПОНЕНТЫ
+@import "components/index";
+
+// СТРАНИЦЫ
+@import "pages/index";

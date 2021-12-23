@@ -1,0 +1,143 @@
+footer {
+  border-top: 1px solid #E5E9F2;
+  font-size: 14px;
+  color: #fff;
+  background-color: $main-font-color;
+}
+
+
+/* ========================= FOOTER TOP ============================= */
+
+
+.footer-top {
+  @extend %flex-start;
+  @extend %c-container-fluid;
+  margin-top: 40px;
+  margin-bottom: 22px;
+  line-height: 1.4;
+  @include md {
+    justify-content: space-between;
+  }
+  @include sm {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.footer-top__header {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  @include sm {
+    font-size: 18px;
+  }
+}
+
+.footer-top__left {
+  max-width: 267px;
+  margin-right: auto;
+  @include md {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-top__center {
+  margin-right: 100px;
+  @include md {
+    margin-right: 0;
+    padding-right: 20px;
+  }
+  @include xs {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-top__right {
+  max-width: 205px;
+  // margin-left: 125px;
+  @include md {
+    margin-left: 0;
+  }
+}
+
+.footer-top__logo {
+  // @include sm {
+  //   display: none;
+  // }
+}
+
+.footer-top__text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  @include md {
+    display: none;
+  }
+
+  &-subscribe {
+    color: #FAE870;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.footer-top__social {
+  @extend %flex-center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  @include md {
+    margin: 20px 0;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.footer-top__social-item {
+  @extend %default-style;
+  width: 39px;
+  height: 39px;
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+  @include xs {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.footer-top__nav {
+  @extend %default-style;
+
+  li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    @extend %default-style;
+    font-size: 14px;
+  }
+}
+
+.footer-top__contacts__item {
+  @extend %flex-center;
+  flex-wrap: nowrap !important;
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  &.center {
+    @include sm {
+      display: none !important;
+    }
+  }
+}
+
+.footer-top__contacts__item-text {
+  @extend %default-style;
+  display: block;
+  margin-left: 8px;
+}

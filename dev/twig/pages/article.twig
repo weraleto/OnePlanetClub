@@ -1,0 +1,128 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+  {% set item = blog[0] %}
+
+  <section class="article">
+    <ul class="article__breadcrumbs">
+      <li><a href="index.html">Полезно + Бесплатно</a></li>
+      <li><a href="#">{{ item.title }}</a></li>
+    </ul>
+    <div class="article__row">
+      <div class="article__col">
+        <div class="article__frame-wrap">
+          <iframe
+            class="article__frame"
+            src="{{ item.video }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="article__info">
+          <div class="article__info__category">{{ item.category }}</div>
+          <div class="article__info__date">{{ item.date }}</div>
+        </div>
+        <div class="title">{{ item.title }}</div>
+        <div class="article__text">
+          <div class="article__text__content">{{ item.content }}</div>
+          <div class="article__text__additional-content">
+            <p>Почему НЛП не является манипуляцией над последователями методики? Ответ на этот вопрос вы узнаете из видео
+              <a href="#">«Зачем профессор психологии переехал из Калифорнии в СНГ?»</a>.</p>
+            <p>Об истории формирования направления подробно рассказывает профессор психологии Фрэнк Пьюселик в видео <a
+                href="#">«Как создавали НЛП. История соавтора»</a>.</p>
+          </div>
+        </div>
+{#
+        <div class="article__cta">
+          <div class="article__cta__col left">
+            <div class="article__cta__title">Сделайте первый шаг к стабильному заработку на онлайн-образовании</div>
+            <div class="article__cta__description">Активируйте демо-пакет за 0.99$</div>
+            <a class="article__cta__btn" href="#">Узнать подробнее</a>
+          </div>
+          <div class="article__cta__col right">
+            <div class="article__img-wrap">
+              <img src="/static/img/general/hand-thumbls-up.png" alt="">
+            </div>
+          </div>
+        </div>
+#}
+        <div class="article__cta">
+          <div class="article__cta-inner">
+            <div class="article__cta__title">Сделайте первый шаг к стабильному заработку на онлайн-образовании</div>
+            <div class="article__cta__description">Активируйте демо-пакет за 0.99$</div>
+            <a class="article__cta__btn" href="#">Узнать подробнее</a>
+            <div class="article__cta__additional-img-1"></div>
+            <div class="article__cta__additional-img-2"></div>
+            <div class="article__cta__additional-img-3"></div>
+            <div class="article__cta__additional-img-4"></div>
+          </div>
+        </div>
+      </div>
+      {% include "../partials/sidebar.twig" %}
+    </div>
+    <div class="article__comments">
+      <div class="article__comments__title">
+        <img src="/static/img/general/comment.png" alt="">
+        Оставить комментарий
+      </div>
+      <form class="article__comments__form">
+        <label>
+          <textarea class="article__comments__textarea" type="text" id="add_comment" name="add_comment" placeholder="Напишите комментарий"></textarea>
+        </label>
+        <div class="article__comments__mark">
+          <a href="#"><img src="/static/img/general/comment-bold.svg" alt=""></a>
+          <a href="#"><img src="/static/img/general/comment-underline.svg" alt=""></a>
+          <a href="#"><img src="/static/img/general/comment-italic.svg" alt=""></a>
+          <a href="#"><img src="/static/img/general/comment-quote.svg" alt=""></a>
+          <a href="#"><img src="/static/img/general/comment-ul.svg" alt=""></a>
+          <a href="#"><img src="/static/img/general/comment-ol.svg" alt=""></a>
+          <a href="#"><img src="/static/img/general/comment-link.svg" alt=""></a>
+        </div>
+
+        {% if not auth %}
+          <div class="article__comments-login">
+            <div class="article__comments-login__col left">
+              <div class="article__comments-login__title">Войти как гость</div>
+              <label>
+                <input class="article__comments-login__input" type="text" id="text" name="text" placeholder="Имя">
+              </label>
+              <label>
+                <input class="article__comments-login__input" type="email" id="email" name="email" placeholder="Email">
+              </label>
+            </div>
+            <div class="article__comments-login__col">
+              <div class="article__comments-login__title">или войти с</div>
+              <div class="article__comments-login__socials">
+                <a class="article__comments-login__socials__item" href="#"><img src="/static/img/general/icon-vk.svg" alt=""></a>
+                <a class="article__comments-login__socials__item" href="#"><img src="/static/img/general/icon-fb.svg" alt=""></a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        <button class="article__comments__btn" type="submit">Отправить</button>
+      </form>
+
+      <div class="article__comments-list">
+        <div class="article__comments-list__head">
+          <div class="article__comments-list__head__title">Комментарии</div>
+          <div class="article__comments-list__head__count">({{ comments.length }})</div>
+          <div class="article__comments-list__head__sort">
+            <span>Сначала</span>
+            <span class="article__comments-list__head__sort__item">новые</span>
+            <img class="article__comments-list__head__sort__img" src="/static/img/general/icon-sort.svg" alt="">
+          </div>
+        </div>
+        <div class="article__comments-list__content">
+          {% for item in comments %}
+            <div class="article__comments-list__content__item">
+              <div class="article__comments-list__content__item__author">{{ item.author }}</div>
+              <div class="article__comments-list__content__item__text">{{ item.text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

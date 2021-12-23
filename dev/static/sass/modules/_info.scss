@@ -1,0 +1,214 @@
+.info--offset {
+  padding-top: 140px;
+  @include lg {
+    padding-top: 0;
+  }
+}
+
+.info__card {
+  @extend %flex-center;
+  position: relative;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 50px 185px 50px 125px;
+  @include xxl {
+    padding-right: 75px;
+  }
+  @include lg {
+    flex-direction: column;
+    text-align: center;
+  }
+  @include sm {
+    padding: 40px 20px;
+  }
+  &--blue {
+    background-color: #EEF8FB;
+  }
+  &--orange {
+    background-color: #FFFCEC;
+  }
+}
+
+.info__card_sec {
+  padding: 75px 100px 75px 70px;
+  @include xxl {
+    padding: 100px 55px;
+  }
+  @include lg {
+    flex-direction: column-reverse;
+    padding: 70px 35px 90px;
+  }
+  @include sm {
+    padding: 40px 25px 60px;
+  }
+}
+
+.info__card_third {
+  @include lg {
+    padding: 85px 40px;
+  }
+  @include sm {
+    padding: 50px 20px;
+  }
+}
+
+.info__col {
+  position: relative;
+  z-index: 1;
+  @extend %col-2;
+  &.left {
+    max-width: 450px;
+    @include lg {
+      margin-bottom: 40px;
+    }
+  }
+  &.left_sec {
+    width: 55%;
+    max-width: 630px;
+    @include xl {
+      max-width: 435px;
+    }
+    @include lg {
+      align-self: flex-start;
+      width: auto;
+      max-width: none;
+      text-align: left;
+    }
+  }
+  &.right_sec {
+    width: 45%;
+    max-width: 415px;
+    margin-top: -70px;
+    @include lg {
+      margin-top: 50px;
+      width: auto;
+      align-self: flex-start;
+      text-align: left;
+    }
+  }
+  &.left_third {
+    max-width: 535px;
+  }
+  &.left_four {
+    width: 63%;
+    max-width: 730px;
+    @include xxl {
+      max-width: 615px;
+    }
+    @include xl {
+      max-width: 560px;
+    }
+    @include lg {
+      max-width: none;
+      width: 100%;
+    }
+  }
+  &.right_four {
+    width: 37%;
+    max-width: 500px;
+    @include lg {
+      max-width: 515px;
+      width: auto;
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.info__img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.info__description {
+  margin-top: 30px;
+  max-width: 400px;
+  color: #313131;
+  @include lg {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.info__btn {
+  @extend %btn-link;
+  @extend %btn-primary;
+  @extend %btn-md;
+  margin-top: 35px;
+}
+
+.info__btn-green {
+  @extend %btn-link;
+  @extend %btn-green;
+  @extend %btn-md;
+  margin-top: 35px;
+}
+
+.info__place {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.info__year {
+  margin-top: 5px;
+}
+
+.info__frame-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  max-width: 730px;
+  @include lg {
+    max-width: none;
+  }
+  //width: 730px;
+  //height: 440px;
+  //border-radius: 10px;
+  //overflow: hidden;
+}
+
+.info__frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  //width: 100%;
+  //height: 100%;
+}
+
+
+.info__additional-circle-blue {
+  @include additional-circle(60, #3B67FF);
+  top: -30px;
+  right: 280px;
+  @include lg {
+    display: none;
+  }
+}
+
+
+.info__additional-circle-pink {
+  @include additional-circle(24, #FAB8C4);
+  top: 210px;
+  right: 125px;
+}
+
+
+.info__additional-circle-yellow {
+  @include additional-circle(50, #FCD14E);
+  bottom: -25px;
+  right: calc(50% - 140px);
+  @include lg {
+    bottom: -20px;
+    width: 40px;
+    height: 40px;
+  }
+  @include sm {
+    width: 20px;
+    height: 20px;
+    right: 65px;
+    bottom: -10px;
+  }
+}

@@ -1,0 +1,30 @@
+<header>
+  {% include "../logo.twig" %}
+  <div class="header-right">
+    {% if not isNotHeaderItems %}
+      <ul class="header-right__nav">
+        {% for item in nav %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if not isNotHeaderItems %}
+      <a href="https://my.oneplanet.club" target="_blank" class="header-right__btn">Login</a>
+    {% else %}
+      <button class="header-right__btn">Sign Up</button>
+    {% endif %}
+    {% if not isNotHeaderItems %}
+      <button class="header-right__btn-burger burger active js-burger"></button>
+      <button class="header-right__btn-burger close js-close"></button>
+    {% endif %}
+  </div>
+  {% if not isNotHeaderItems %}
+    <div class="header-mobile-wrap js-mobile">
+      <ul class="header-mobile">
+        {% for item in nav %}
+          <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</header>

@@ -1,0 +1,530 @@
+{% extends "../layouts/default.twig" %}
+
+
+{% set faq = [
+  {
+    title: 'Что такое партнерские программы и как это работает',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'У вас партнерская программа или сетевой маркетинг',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'Несколько слов о нашей бизнес-модели',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'Откуда формируется Ваш доход с One Planet Club',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'Как заработать первые 300-500-1000$',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'Люди приводят людей. Не является ли компания финансовой пирамидой',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'У кого здесь лучшие шансы на успех',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'Почему получается у тех, кто приходит без опыта',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+  {
+    title: 'Система обучения для Вас и ваших партнеров',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci aliquid consectetur corporis, dolore doloremque, ea ipsum iusto laudantium officiis perspiciatis quam quibusdam quisquam ratione sequi suscipit vitae voluptatibus.'
+  },
+] %}
+
+{% set features = [
+  {
+    title: 'Качественный продукт на востребованную тему',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-1.svg',
+  },
+  {
+    title: 'Автоворонки продают вместо Вас',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-2.svg',
+  },
+  {
+    title: 'Высокие % выплат',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-3.svg',
+  },
+  {
+    title: 'Возможность создать “белый” источник пассивного дохода онлайн',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-4.svg',
+  },
+  {
+    title: 'Сохраните репутацию',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-5.svg',
+  },
+  {
+    title: 'Свободная ниша на растущем рынке',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-6.svg',
+  },
+  {
+    title: 'Не надо становиться врачом или консультантом, оставайтесь собой',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-7.svg',
+  },
+  {
+    title: 'Онлайн-курсы востребованы во карантина и необходимость будет только расти',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-8.svg',
+  },
+  {
+    title: 'Вести дела из любой точки с людьми из любой точки мира',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-9.svg',
+  },
+  {
+    title: 'Легкий старт с минимальными вложениями и готовой системой',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-10.svg',
+  },
+  {
+    title: 'Быстрая окупаемость и возможность совмещать',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-11.svg',
+  },
+  {
+    title: 'Широкая аудитория - для родителей, для женщин, для мужчин',
+    subtitle: 'Мы не любим, когда кто-то кому-то что-то навязывает, и делаем все возможное, чтобы партнерам было достаточно поделиться своей реферальной ссылкой на бесплатные ознакомительные материалы. И поделиться своими эмоциями, впечатлениями.',
+    dot_img: '/static/img/general/icon-features-12.svg',
+  },
+] %}
+
+{% set stories = [
+  {
+    'link': 'https://player.vimeo.com/video/468581776', 
+    'text': 'Прежде всего, синтетическое тестирование прекрасно подходит для реализации поэтапного и последовательного развития общества. Являясь всего лишь частью общей картины, акционеры крупнейших компаний подвергнуты целой серии независимых исследований. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки переосмысления внешнеэкономических политик.'
+  },
+  {
+    'link': 'https://player.vimeo.com/video/468581776', 
+    'text': 'Прежде всего, синтетическое тестирование прекрасно подходит для реализации поэтапного и последовательного развития общества. Являясь всего лишь частью общей картины, акционеры крупнейших компаний подвергнуты целой серии независимых исследований. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки переосмысления внешнеэкономических политик.'
+  },
+  {
+    'link': 'https://player.vimeo.com/video/468581776', 
+    'text': 'Прежде всего, синтетическое тестирование прекрасно подходит для реализации поэтапного и последовательного развития общества. Являясь всего лишь частью общей картины, акционеры крупнейших компаний подвергнуты целой серии независимых исследований. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки переосмысления внешнеэкономических политик.'
+  },
+]
+%}
+
+{% set table = [
+  {
+    title: 'Личный кабинет с возможностью приглашать партнёров и клиентов',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Полный доступ к системе обучения для партнёров',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Доступ в закрытое сообщество партнёров компании в социальных сетях',
+    tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Доступ к модулям любой из обучающих программ Фрэнка Пьюселика',
+    tariffs: [
+      { name: 'base', data: '' },
+      { name: 'bronze', data: '<div class="modules"><b>1</b></div>' },
+      { name: 'silver', data: '<div class="modules"><b>2</b></div>' },
+      { name: 'gold', data: '<div class="modules"><b>3</b> <div>(1 полный курс)</div></div>' },
+      { name: 'platinum', data: '<div class="modules"><b>3</b> <div>(1 полный курс)</div></div>' },
+    ],
+  },
+  {
+    title: 'Все бонусы набора “самоокупаемость” (реферальный, бинарный, матчинг, быстрый старт, лидерский старт)',
+      tariffs: [
+      { name: 'base', data: 'true' },
+      { name: 'bronze', data: 'true' },
+      { name: 'silver', data: 'true' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: '% с личных рекомендаций продукта',
+    tariffs: [
+      { name: 'base', data: 'Обычный' },
+      { name: 'bronze', data: 'Обычный' },
+      { name: 'silver', data: 'Повышенный' },
+      { name: 'gold', data: 'Повышенный' },
+      { name: 'platinum', data: 'Максимальный' },
+    ],
+  },
+  {
+    title: 'Ограничение по доходу со щелчков',
+    tariffs: [
+      { name: 'base', data: '' },
+      { name: 'bronze', data: '500$ <br> в неделю' },
+      { name: 'silver', data: '1500$ <br> в неделю' },
+      { name: 'gold', data: '3500$ <br> в неделю' },
+      { name: 'platinum', data: '8000$ <br> в неделю' },
+    ],
+  },
+  {
+    title: 'Все бизнес пакеты в бинарной структуре выше уровня вашего пакета засчитываются',
+    tariffs: [
+      { name: 'base', data: 'Уровнем Base' },
+      { name: 'bronze', data: 'Уровнем Bronze' },
+      { name: 'silver', data: 'Уровнем Silver' },
+      { name: 'gold', data: 'Уровнем Gold' },
+      { name: 'platinum', data: 'Без ограничений' },
+    ],
+  },
+  {
+    title: 'Выплаты за рекомендации продукта Вашей командой',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'true' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Туристический бонус',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'true' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Лидерский бонус за достижения в карьере',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'true' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Доступ к большому полному онлайн-курсу по НЛП от Фрэнка Пьюселика',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Специальное обучение по лидерству от Фрэнка',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Обучение по развитию личного бренда в Instagram и Youtube',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Участие в одной из трех дополнительных программ Фрэнка в течение года на выбор',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Автобонус',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Бонус Недвижимость',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+  {
+    title: 'Премия за почётные статусы',
+    tariffs: [
+      { name: 'base', data: 'false' },
+      { name: 'bronze', data: 'false' },
+      { name: 'silver', data: 'false' },
+      { name: 'gold', data: 'false' },
+      { name: 'platinum', data: 'true' },
+    ],
+  },
+] %}
+
+{% block content %}
+  <section class="earnings-promo offset-top">
+    <div class="earnings-promo__row">
+      <h1 class="earnings-promo__title">Как создать дополнительный 
+      или основной 
+      источник 
+      <span class="color-blue">дохода</span>?</h1>
+      <div class="earnings-promo__row-col left">
+        <div class="earnings-promo__subtitle">
+          <p>
+            C помощью нашей партнерской программы, даже если у Вас никогда прежде не было опыта работы через интернет и почти без вложений.
+          </p>
+          <p>Наша партнерка идеально подойдет нашим студентам, блогерам и владельцам онлайн-школ. А также будет интересна предпринимателям, сетевикам и тем, кто в поиске новых интересных возможностей</p>
+        </div>
+        
+      </div>
+      <div class="earnings-promo__row-col right">
+        <div class="earnings-promo__img-wrap">
+          {# <img src="/static/img/general/desktop-video.png" alt=""> #}
+          <div class="earnings-promo__frame-wrap">
+            <iframe
+              class="earnings-promo__frame"
+              src="https://player.vimeo.com/video/468581776"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="earnings-promo__btn-wrapper">
+      <a href="http://coron.su/lp/demo" class="earnings-promo__btn">Узнайте подробнее в демо-пакете</a>
+    </div>
+  </section>
+
+  <section class="earnings-steps">
+    <div class="earnings-steps-inner">
+      <div class="earnings-steps__header">
+        <div class="earnings-steps__title"><span class="color-green">Свой бизнес</span> - это просто!</div>
+        <div class="earnings-steps__subtitle title">Пошаговая инструкция как зарабатывать <span class="color-green">от 1000$</span> в месяц с One planet club</div>
+        <div class="earnings-steps__description">Начните зарабатывать, даже если ранее у Вас никогда не было опыта работы с партнерскими программами</div>
+      </div>
+      <div class="earnings-steps__items">
+        <div class="earnings-steps__items-item">
+          <div class="earnings-steps__items-item__img-wrap">
+            <img src="/static/img/general/part-easy-1.svg" alt="">
+          </div>
+          <div class="earnings-steps__items-item__title">Используйте продукт сами</div>
+          <div class="earnings-steps__items-item__subtitle">
+            Занимайтесь и получайте результаты. Один из лучших в мире тренеров будет передавать Вам свои знания и навыки, помогая улучшать Вашу жизнь.
+          </div>
+        </div>
+        <div class="earnings-steps__items-item">
+          <div class="earnings-steps__items-item__img-wrap">
+            <img src="/static/img/general/part-easy-2.svg" alt="">
+          </div>
+          <div class="earnings-steps__items-item__title">Пригласите в команду активных людей</div>
+          <div class="earnings-steps__items-item__subtitle">
+            Приглашайте в команду партнеров, поддерживайте их, помогайте им получать собственные результаты. Мы расскажем секреты и дадим рекомендации, как это делать успешнее.
+          </div>
+        </div>
+        <div class="earnings-steps__items-item">
+          <div class="earnings-steps__items-item__img-wrap">
+            <img src="/static/img/general/part-easy-3.svg" alt="">
+          </div>
+          <div class="earnings-steps__items-item__title">Рекомендуйте продукт</div>
+          <div class="earnings-steps__items-item__subtitle">
+            Покажите пример партнерам, чтобы они сделали тоже самое. И Вы будете очень довольны своим финансовым результатом.
+          </div>
+        </div>
+      </div>
+      <a class="earnings-steps__btn" href="http://coron.su/lp/demo">Попробовать демо-пакет за 0,99 $</a>
+    </div>
+  </section>
+
+  {% include '../partials/features.twig' with {'features' : features, 'title_blue': 'у вас получится' ,'title': '12 причин почему&nbsp;', 'title_reverse':'reverse'} %}
+
+  <div class="slider-stories__wrapper"> 
+   {% include '../partials/slider-stories.twig' with {title: 'Истории успеха от партнеров', data: stories } %}
+  </div>
+
+
+  <section class="earnings-partnership">
+    <div class="earnings-partnership__title">
+      <h2>С чего начать</h2>
+      <div class="earnings-partnership__subtitle title color-green">Пошаговая инструкция к успеху.</div>
+    </div>
+    <div class="earnings-partnership__items">
+      <div class="earnings-partnership__items-item">
+        <div class="earnings-partnership__items-item__text__step title">ШАГ 1</div>
+        <div class="earnings-partnership__items-item__img-wrap">
+          <img src="/static/img/general/how-to-start-1.svg" alt="">
+        </div>
+        <div class="earnings-partnership__items-item__text">
+          <div class="earnings-partnership__items-item__text__title">Активируйте бизнес пакет и начните использовать продукт</div>
+          <div class="earnings-partnership__items-item__text__subtitle">Для тех, кто впервые начинает работу с партнерской программой рекомендуем пакеты Bronze и Silver. Для людей с опытом подойдут пакеты Gold и Platinum.</div>
+        </div>
+      </div>
+      <div class="earnings-partnership__items-item">
+        <div class="earnings-partnership__items-item__text__step title">ШАГ 2</div>
+        <div class="earnings-partnership__items-item__img-wrap">
+          <img src="/static/img/general/how-to-start-2.svg" alt="">
+        </div>
+        <div class="earnings-partnership__items-item__text">
+          <div class="earnings-partnership__items-item__text__title">Используйте систему обучения для партнеров. Изучите систему вознаграждения</div>
+          <div class="earnings-partnership__items-item__text__subtitle">В ней Вы найдете все ответы на вопросы, в том числе рекомендации, что нужно делать, чтобы развивать бизнес наиболее успешно.</div>
+        </div>
+      </div>
+      <div class="earnings-partnership__items-item">
+        <div class="earnings-partnership__items-item__text__step title">ШАГ 3</div>
+        <div class="earnings-partnership__items-item__img-wrap">
+          <img src="/static/img/general/how-to-start-3.svg" alt="">
+        </div>
+        <div class="earnings-partnership__items-item__text">
+          <div class="earnings-partnership__items-item__text__title">Поставьте цели, начните рекомендовать онлайн-курсы и приглашать партнеров</div>
+          <div class="earnings-partnership__items-item__text__subtitle">Сколько Вы хотите зарабатывать, что необходимо сделать, чтобы иметь здесь такой доход. Сформулируйте для себя ответы на эти вопросы и действуйте.</div>
+        </div>
+      </div>
+    </div>
+    {# <div class="earnings-partnership__cta">
+      <div class="earnings-partnership__cta__col left">
+        <div class="earnings-partnership__cta__title">Интересует эта возможность, но не уверены на 100%?</div>
+        <div class="earnings-partnership__cta__subtitle">Набор вводных уроков о том, как устроена система и что надо делать, чтобы преуспеть. Начните с демо-пакета.</div>
+        <a class="earnings-partnership__cta__btn" href="#">Подробнее</a>
+      </div>
+      <div class="earnings-partnership__cta__col right">
+        <div class="earnings-partnership__cta__circle"></div>
+        <div class="earnings-partnership__cta__img-wrap">
+          <img class="earnings-partnership__cta__img" src="/static/img/general/hand-ok.png" alt="">
+        </div>
+      </div>
+      <div class="earnings-partnership__additional-circle-blue"></div>
+      <div class="earnings-partnership__additional-circle-pink"></div>
+    </div> #}
+  </section>
+
+   <section class="earnings-tariffs">
+    <div class="earnings-tariffs__title">
+      <h2 class="color-blue">Выберите свой пакет</h2>
+    </div>
+    <div class="tariffs-wrap">
+      <table class="tariffs">
+        <thead>
+        <tr>
+          <td></td>
+          <td><div class="earnings-tariffs__name">Base <div>$50</div></div></td>
+          <td><div class="earnings-tariffs__name">Bronze <div>$125</div></div></td>
+          <td><div class="earnings-tariffs__name">Silver <div>$250</div></div></td>
+          <td><div class="earnings-tariffs__name">Gold <div>$500</div></div></td>
+          <td><div class="earnings-tariffs__name">Platinum <div>$1500</div></div></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in table %}
+          <tr>
+            <td>{{ row.title }}</td>
+            {% for tariff in row.tariffs %}
+              <td>
+                {% if tariff.data == 'true' %}
+                  <img src="/static/img/general/icon-done.svg" alt="">
+                {% elseif tariff.data == 'false' %}
+                  <img src="/static/img/general/icon-undone.svg" alt="">
+                {% else %}
+                  {{ tariff.data }}
+                {% endif %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+          <td></td>
+          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
+          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
+          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
+          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
+          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <div class="earnings-author__wrapper pos-relative">  
+    <div class="earnings-author__header"> 
+      <h2>
+        <span class="color-blue">Бонус для партнеров</span> – авторский курс Фрэнка Пьюселика
+      </h2>
+    </div>
+    {% include "../partials/about-author.twig" %}
+    <div class="earnings-author__additional-circle"></div>
+  </div>
+
+  <section class="earnings-faq">
+    <div class="title">Часто задаваемые вопросы</div>
+    <div class="earnings-faq__accordion js-accordion">
+      {% for item in faq %}
+        <div class="earnings-faq__accordion__item">
+          <div class="earnings-faq__accordion__item__trigger">{{ item.title }}</div>
+          <div class="earnings-faq__accordion__item__content">{{ item.content }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <a class="earnings-faq__accordion__btn" href="#">Показать больше</a>
+  </section>
+
+  <section class="earnings-demo pos-relative">
+    <div class="earnings-demo__inner">
+      <div class="earnings-demo__title">
+        Активируйте демо-пакет за <span class="color-green">0,99</span> долларов
+      </div>
+      <div class="earnings-demo__text">
+        <p>Учитывая ключевые сценарии поведения, дальнейшее развитие различных форм деятельности требует анализа распределения внутренних резервов и ресурсов!</p>
+        <p>Прежде всего, сплочённость команды профессионалов однозначно определяет каждого участника как способного принимать собственные решения касаемо соответствующих условий активизации.</p>
+      </div>
+      <a href="http://coron.su/lp/demo" class="earnings-demo__btn">
+        Подробнее
+      </a>
+    </div>
+    <div class="earnings-demo__additional-circle__top"></div>
+    <div class="earnings-demo__additional-circle__right"></div>
+  </section>
+
+{% endblock %}
