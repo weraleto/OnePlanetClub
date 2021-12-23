@@ -148,38 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // const earningsSlider = document.querySelector(".earnings-features__items");
-
-  // if (earningsSlider) {
-  //   tns({
-  //     container: earningsSlider,
-  //     items: 1,
-  //     // gutter: 30,
-  //     // edgePadding: 150,
-  //     loop: false,
-  //     // fixedWidth: 230,
-  //     mode: "gallery",
-  //     // nav: false,
-  //     navContainer: ".earnings-features__dots",
-  //     prevButton: ".earnings-features__arrows-prev",
-  //     nextButton: ".earnings-features__arrows-next",
-  //     // responsive: {
-  //     //   // 768: {
-  //     //   //   fixedWidth: false,
-  //     //   //   items: 2,
-  //     //   //   gutter: 38,
-  //     //   // },
-  //     //   576: {
-  //     //     items: 2,
-  //     //   },
-  //     //   1200: {
-  //     //     items: 3,
-  //     //     // gutter: 55,
-  //     //   },
-  //     // },
-  //   });
-  // }
-
   /* VALIDATE */
 
   const form = document.querySelector("#order-form");
@@ -265,6 +233,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const inputFields = document.querySelectorAll('.input-decorator').forEach(function (el) {
+    el.addEventListener("input", function () {
+      if(el.value.length) {
+        el.nextElementSibling.classList.add('focused')
+      }else {
+        el.nextElementSibling.classList.remove('focused')
+      }
+    });
+  });
+
   /* TABS */
 
   const whoNeedsTabSelectors = {
@@ -312,6 +290,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // BURGER BLOG 
+
+  const burgerBlogBtn = document.querySelector('#js-blog-burger')
+  const blogCategoriesList = document.querySelector('.blog-navigation__list')
+
+  if (burgerBlogBtn) {
+    burgerBlogBtn.addEventListener('click', function(){
+      blogCategoriesList.classList.toggle('opened')
+    })
+  }
+
+  // SHOW SEARCH BLOG 
+
+  const showSearchTrigger = document.querySelector('.search-open-trigger')
+  const searchBlog = document.querySelector('.blog-navigation__search')
+  
+  if (showSearchTrigger) {
+    showSearchTrigger.addEventListener('click', function(){
+      searchBlog.classList.toggle('opened')
+      showSearchTrigger.classList.toggle('opened')
+    })
+  }
+
   /* ROTATE TO SCROLL */
 
   const rotateElems = document.querySelectorAll(".js-rotate");
@@ -338,39 +339,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* TYPING TEXT */
+  // FADING TEXT 
 
-  const typeEl1 = document.querySelector("#typed");
-  const typeEl2 = document.querySelector("#typed2");
-  const typeEl3 = document.querySelector("#typed3");
-
-  if (typeEl1) {
-    new Typed("#typed", {
-      stringsElement: "#typed-strings",
-      typeSpeed: 80,
-      showCursor: false,
-    });
-  }
-
-  let type2;
-  if (typeEl2) {
-    type2 = new Typed("#typed2", {
-      stringsElement: "#typed-strings2",
-      typeSpeed: 40,
-      onTypingPaused: (arrayPos, self) => {
-        self.stop();
-      },
-    });
-  }
-
-  if (typeEl3) {
-    new Typed("#typed3", {
-      stringsElement: "#typed-strings3",
-      typeSpeed: 40,
-      onTypingResumed: () => {
-        type2.start();
-      },
-    });
+  const typed = $('#typed2')
+  if (typed.length){
+    loop("#typed2 p")
   }
 
 
@@ -381,10 +354,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // other options
   });
 
+
+  // handle select 
+
+  $('.js-tarif-picker').select2({
+    placeholder: 'Select an option',
+    width: 'resolve'
+  })
+
   /* END DOCUMENT LISTENER*/
 });
 
 /* FUNCTIONS */
+
+function loop(els) {
+  $(els).each(function() {
+    var $self = $(this);
+    $self.parent().queue(function (n) {
+      $self.fadeIn(2000).delay(2000).fadeOut(2000, n);
+    });
+  }).promise().done(loop);
+};
 
 function isHasSlider(sliders) {
   let bool = false;
@@ -527,4 +517,3 @@ function validate(form, fields) {
 
   return errors.length === 0;
 }
-
