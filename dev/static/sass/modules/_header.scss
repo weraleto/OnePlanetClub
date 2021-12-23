@@ -11,6 +11,9 @@ header {
   @include lg {
     background-color: rgba(255, 255, 255, 0.8);
   }
+  @include xs {
+    padding-left: 5px!important;
+  }
 }
 
 .header-right {

@@ -1,74 +1,255 @@
+{% set blog_categories = [
+  {
+    title: 'Отношения',
+    cat_list: ['Родители', 'Любовь', 'Дети', 'Друзья']
+  },
+  {
+    title: 'Здоровье',
+    cat_list: ['Питание', 'Спорт', 'Эмоциональный баланс', 'Уход за собой']
+  },
+  {
+    title: 'Саморазвитие',
+    cat_list: ['Soft skill', 'Иностранные языки', 'Хобби', 'Впечатления']
+  },
+  {
+    title: 'Деньги',
+    cat_list: ['Карьера', 'Создание дохода', 'Бизнес окружение', 'Финансовая грамотность']
+  },
+] %}
+
 {% extends "../layouts/default.twig" %}
 
 {% block content %}
-  <section class="useful-free">
-    <div class="title">
-      <img src="/static/img/general/light.png" alt="" width="35">
-      Полезно + <span class="color-green">Бесплатно</span>
-    </div>
-    <div class="useful-free__description">
-      Блог с полезными видео материалами
-    </div>
-    <div class="useful-free__btns">
-      <button class="useful-free__btn js-btn active" data-target="#row-1">Все</button>
-      <button class="useful-free__btn js-btn" data-target="#row-2">Воспитание детей</button>
-      <button class="useful-free__btn js-btn" data-target="#row-3">Про НЛП</button>
-      <button class="useful-free__btn js-btn" data-target="#row-4">Про партнерку</button>
-      <button class="useful-free__btn js-btn" data-target="#row-5">Истории партнеров</button>
-    </div>
-    <div class="useful-free__row-wrap">
-      {# ROW 1 #}
-      <div class="useful-free__row js-content" id="row-1">
-        <div class="useful-free__items">
-          {% for item in blog %}
-            {% if loop.index <= 6 %}
-              <div class="useful-free__items-item">
-                <div class="useful-free__items-item__img-wrap" style="background-image: url({{ item.img }});"></div>
-                <div class="useful-free__items-item__text">
-                  <div class="useful-free__items-item__text__category">{{ item.category }}</div>
-                  <a class="useful-free__items-item__text__title" href="{{ item.href }}">{{ item.title }}</a>
-                  <div class="useful-free__items-item__text__time">{{ item.time }}</div>
-                </div>
-              </div>
-            {% endif %}
+  <div class="useful-free">
+    <div class="blog-navigation">
+      <div class="blog-navigation__header ">
+        <div class="blog-navigation__header-burger">
+          <img id="js-blog-burger" src="/static/img/general/blog-burger.svg" alt="Поиск">
+          <span>Темы блога</span>
+        </div>
+        <div class="blog-navigation__header-search search-open-trigger">
+          <img class="search-closed" src="/static/img/general/search-2.svg" alt="Поиск">
+          <img class="search-opened" src="/static/img/general/blog-search-opened.svg" alt="Поиск">
+        </div>
+      </div>
+      <div class="blog-navigation__list blog-navigation__header">
+        {% for cat in blog_categories %}
+        <div class="blog-navigation__list-block">
+          <span class="blog-navigation__list-title">{{cat.title}}</span>
+          {% for cat_name in cat.cat_list %}
+            <a href="#" class="blog-navigation__list-item">{{cat_name}}</a>
           {% endfor %}
         </div>
-        {% if blog.length > 6 %}
-          <div class="useful-free__more-btn-wrap">
-            <button class="useful-free__more-btn">Показать еще</button>
-          </div>
-        {% endif %}
+        {% endfor %}
       </div>
-      {# ROW 2 #}
-      <div class="useful-free__row js-content" id="row-2" style="display: none;">
-        <div class="useful-free__items">
-          <div>Нет записей</div>
-        </div>
-      </div>
-      {# ROW 3 #}
-      <div class="useful-free__row js-content" id="row-3" style="display: none;">
-        <div class="useful-free__items">
-          <div>Нет записей</div>
-        </div>
-      </div>
-      {# ROW 4 #}
-      <div class="useful-free__row js-content" id="row-4" style="display: none;">
-        <div class="useful-free__items">
-          <div>Нет записей</div>
-        </div>
-      </div>
-      {# ROW 5 #}
-      <div class="useful-free__row js-content" id="row-5" style="display: none;">
-        <div class="useful-free__items">
-          <div>Нет записей</div>
+      <div class="blog-navigation__search blog-navigation__header ">
+        <input type="search" placeholder="Поиск по блогу" class="blog-navigation__input">
+        <div class="blog-navigation__header-search search-open-trigger">
+          <img src="/static/img/general/search-2.svg" alt="Поиск">
         </div>
       </div>
     </div>
+    <section class="">
+      <h1 class="title">
+        <span class="color-blue">One planet</span> блог
+      </h1>
+      <div class="useful-free__banner">
+        <h2 class="useful-free__banner-title">Строгое воспитание детей</h2>
+        <h3 class="useful-free__banner-subtitle">Последствия и ответственность.</h3>
+        <a href="/article.html" class="useful-free__banner-btn">Читать</a>
+      </div>
+      <div class="useful-free__content nav-title">
+        <div></div>
+        <h2 class="useful-free__nav-title">
+          Навигация по блогу
+        </h2>
+      </div>
+
+      <div class="useful-free__content">
+        <aside class="useful-free__sidebar">
+          <div class="useful-free__sidebar-container">
+            <div class="useful-free__sidebar-tags">
+              <h3 class="useful-free__sidebar-tag__title">Темы блога: </h3>
+              {% for cat in blog_categories %}
+              <div class="useful-free__sidebar-tag__group">
+                <h4 class="useful-free__sidebar-tag__link">{{cat.title}}</h3>
+                {% for cat_name in cat.cat_list %}
+                    <a class="useful-free__sidebar-tag__link" href="#">{{cat_name}}</a>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="useful-free__sidebar-promo-item"
+              style="background-image: url(/static/img/general/about-start-1.jpeg)">
+              <div class="useful-free__sidebar-promo-item__col left">
+                <div class="useful-free__sidebar-promo-item__title">
+                  Начните учиться бесплатно
+                </div>
+                <div class="useful-free__sidebar-promo-item__description">Обучайтесь у основателя НЛП первые 7 дней
+                  бесплатно, далее от 3500 рублей в месяц</div>
+              </div>
+              <div class="useful-free__sidebar-promo-item__col right">
+                <a class="useful-free__sidebar-promo-item__btn" href="#">Подробнее</a>
+              </div>
+            </div>
+          </div>
+          <div class="useful-free__sidebar-btns">
+            <a href="#" class="useful-free__sidebar-btns__item">
+              Подписаться на YouTube
+            </a>
+            <a href="#" class="useful-free__sidebar-btns__item">
+              Подписаться в VK
+            </a>
+            <a href="#" class="useful-free__sidebar-btns__item">
+              Подписаться на Instagram
+            </a>
+            <a href="#" class="useful-free__sidebar-btns__item">
+              Подписаться на Telegram
+            </a>
+            <a href="#" class="useful-free__sidebar-btns__item">
+              Подписаться в Facebook
+            </a>
+          </div>
+        </aside>
+        <div class="useful-free__row-wrap">
+
+          <div class="useful-free__nav">
+            <form class="useful-free__nav-searchform">
+              <input type="search" placeholder="Поиск">
+              <button type="submit" class="useful-free__nav-searchbtn">
+                <img src="/static/img/general/search.svg" alt="Поиск">
+              </button>
+            </form>
+            <div class="useful-free__nav-taglist">
+              <a href="#" class="useful-free__nav-taglist__item">Про партнерку</a>
+              <a href="#" class="useful-free__nav-taglist__item active">Воспитание детей</a>
+              <a href="#" class="useful-free__nav-taglist__item">Саморазвитие</a>
+              <a href="#" class="useful-free__nav-taglist__item">Обучение</a>
+              <a href="#" class="useful-free__nav-taglist__item">Отношения</a>
+            </div>
+          </div>
+
+
+          <div class="useful-free__row js-content" id="row-1">
+
+            <div class="useful-free__items">
+            {% for item in range(1, 2) %}
+              <div class="useful-free__items-item">
+                <div class="useful-free__items-item__text__category desktop">Воспитание детей</div>
+                <div class="useful-free__items-item__text__category desktop">Отношения</div>
+
+                <a class="useful-free__items-item__text__title color-blue" href="article.html">Строгое воспитание
+                  детей. Последствия и ответственность.</a>
+                <div class="useful-free__items-item__container">
+                  <div class="useful-free__items-item__img-wrap">
+                    <a href="/article.html">
+                      <img src="/static/img/general/blog-2.jpeg"
+                        alt="Строгое воспитание детей. Последствия и ответственность.">
+                    </a>
+                  </div>
+                  <div class="useful-free__items-item__text">
+
+                    <div class="useful-free__items-item__content">
+                      <div class="useful-free__items-item__text__category mobile">Воспитание детей</div>
+                      <div class="useful-free__items-item__text__category mobile">Отношения</div>
+                      <p>
+                        С учётом сложившейся международной обстановки, сплочённость команды профессионалов
+                        обеспечивает широкому кругу (специалистов) участие в формировании как самодостаточных, так и
+                        внешне зависимых концептуальных решений. Таким образом, существующая теория позволяет
+                        оценить значение направлений прогрессивного развития....
+                      </p>
+                      <a href="/article.html" class="useful-free__items-item__more color-green">
+                        Читать далее
+                      </a>
+                    </div>
+
+                    <div class="useful-free__items-item__socials">
+
+
+                      <a class="useful-free__items-item__link" target="_blank" href="/">
+                        <svg width="38" height="39" viewBox="0 0 38 39" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M38 19.5C38 8.7293 29.4945 0 19 0C8.50547 0 0 8.7293 0 19.5C0 30.2707 8.50547 39 19 39C19.1113 39 19.2227 39 19.334 38.9924V23.8189H15.252V18.9363H19.334V15.341C19.334 11.1744 21.8129 8.90449 25.4348 8.90449C27.1715 8.90449 28.6633 9.03398 29.0938 9.09492V13.452H26.6C24.6332 13.452 24.2473 14.4117 24.2473 15.8209V18.9287H28.9602L28.3441 23.8113H24.2473V38.2459C32.1887 35.9074 38 28.4045 38 19.5Z"
+                            fill="#FAE870" /></svg>
+                      </a>
+
+                      <a class="useful-free__items-item__link" target="_blank" href="/">
+                        <svg width="38" height="39" viewBox="0 0 38 39" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M19 0C8.50695 0 0 8.73041 0 19.5C0 30.2696 8.50695 39 19 39C29.4931 39 38 30.2696 38 19.5C38 8.73041 29.4931 0 19 0ZM28.6378 21.609C29.5234 22.4967 30.4603 23.3322 31.2552 24.3117C31.6074 24.745 31.9394 25.193 32.1921 25.6969C32.5529 26.4155 32.2271 27.2034 31.6005 27.2461L27.7079 27.2453C26.7026 27.3307 25.9026 26.9146 25.2281 26.2092C24.6897 25.647 24.1902 25.0466 23.6716 24.4653C23.4597 24.2267 23.2366 24.0021 22.9707 23.8253C22.44 23.471 21.979 23.5795 21.675 24.1485C21.3651 24.7274 21.2944 25.3689 21.2648 26.0133C21.2225 26.9553 20.9457 27.2015 20.0247 27.2457C18.0569 27.3403 16.1897 27.0339 14.4544 26.0157C12.9235 25.1176 11.7386 23.85 10.7061 22.4149C8.69549 19.6173 7.15566 16.5468 5.77211 13.3881C5.46073 12.6767 5.68853 12.2961 6.4532 12.2813C7.72362 12.2562 8.99405 12.2594 10.2645 12.2801C10.7815 12.2885 11.1236 12.5921 11.3223 13.0928C12.0088 14.8264 12.8504 16.4758 13.9051 18.0054C14.1861 18.4128 14.473 18.8189 14.8816 19.1066C15.3326 19.4242 15.6762 19.3193 15.8889 18.8026C16.0249 18.4742 16.0836 18.1231 16.1132 17.7712C16.2142 16.5659 16.2263 15.361 16.0514 14.1605C15.9425 13.4092 15.5308 12.9241 14.8011 12.782C14.4295 12.7098 14.4839 12.5686 14.6647 12.3507C14.9784 11.9741 15.2723 11.7411 15.8597 11.7411L20.2576 11.7403C20.9507 11.8799 21.1062 12.1991 21.2003 12.9157L21.2042 17.9316C21.196 18.2089 21.3399 19.0308 21.825 19.2123C22.2138 19.344 22.4703 19.024 22.7028 18.7715C23.7575 17.6228 24.5089 16.2671 25.1819 14.8639C25.4789 14.2451 25.735 13.6047 25.9838 12.9632C26.1689 12.4888 26.4566 12.2554 26.9783 12.2634L31.2133 12.2685C31.338 12.2685 31.4648 12.2697 31.5884 12.2917C32.3021 12.417 32.4977 12.7322 32.2769 13.4467C31.9293 14.5694 31.2541 15.5046 30.594 16.4422C29.8865 17.4461 29.1319 18.4148 28.4314 19.423C27.7876 20.3446 27.8385 20.8086 28.6378 21.609Z"
+                            fill="#FAE870" /></svg>
+                      </a>
+
+                      <a class="useful-free__items-item__link" target="_blank" href="/">
+                        <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M19.5 39C30.2721 39 39 30.2721 39 19.5C39 8.72787 30.2721 0 19.5 0C8.72787 0 0 8.72787 0 19.5C0 30.2721 8.72787 39 19.5 39ZM8.92288 19.0775L27.7241 11.8284C28.5968 11.5131 29.3589 12.0413 29.0761 13.3608L29.0777 13.3591L25.8765 28.4408C25.6392 29.51 25.0039 29.77 24.115 29.2663L19.24 25.6734L16.8886 27.9386C16.6286 28.1986 16.4093 28.418 15.9055 28.418L16.2516 23.4569L25.2866 15.2945C25.6799 14.9484 25.1989 14.7534 24.6805 15.0979L13.5151 22.1276L8.70187 20.6261C7.657 20.2946 7.63425 19.5812 8.92288 19.0775Z"
+                            fill="#FAE870" /></svg>
+                      </a>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+
+          <div class="useful-free__row js-content" id="row-2" style="display: none;">
+            <div class="useful-free__items">
+              <div>Нет записей</div>
+            </div>
+          </div>
+
+          <div class="useful-free__row js-content" id="row-3" style="display: none;">
+            <div class="useful-free__items">
+              <div>Нет записей</div>
+            </div>
+          </div>
+
+          <div class="useful-free__row js-content" id="row-4" style="display: none;">
+            <div class="useful-free__items">
+              <div>Нет записей</div>
+            </div>
+          </div>
+
+          <div class="useful-free__row js-content" id="row-5" style="display: none;">
+            <div class="useful-free__items">
+              <div>Нет записей</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="useful-free__content">
+        <div></div>
+        <div class="useful-free__pagination">
+          <a href="#" class="useful-free__pagination-item active">1</a>
+          <a href="#" class="useful-free__pagination-item">2</a>
+          <a href="#" class="useful-free__pagination-item">3</a>
+          <a href="#" class="useful-free__pagination-item">4</a>
+          <a href="#" class="useful-free__pagination-item">5</a>
+          <div class="useful-free__pagination-item">...</div>
+          <a href="#" class="useful-free__pagination-item">15</a>
+          <a href="#" class="useful-free__pagination-item">
+            <img src="/static/img/general/arrow-pag.svg" alt="Следующая страница">
+          </a>
+        </div>
+      </div>
+    </section>
     <div class="useful-free__additional-triangle-pink"></div>
-    <div class="useful-free__additional-plus-green_1 js-rotate"></div>
-    <div class="useful-free__additional-plus-blue_1 js-rotate"></div>
-    <div class="useful-free__additional-plus-blue_2 js-rotate"></div>
     <div class="useful-free__additional-circle-pink"></div>
-    <div class="useful-free__additional-plus-green_2 js-rotate"></div>
-  </section>
+    </section>
+    <div id="toast" class="toast">
+      <img id="toast-image" class="toast__image">
+      <span id="toast-text">
+      </span>
+    </div>
 {% endblock %}
