@@ -385,9 +385,7 @@ ul%default-style {
 %checkbox_green {
   @extend %checkbox;
   &:checked {
-    &::after {
-      background-color: $main-green-color;
-    }
+    background-color: $main-green-color;
   }
 }
 

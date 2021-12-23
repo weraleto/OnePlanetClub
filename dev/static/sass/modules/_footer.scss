@@ -13,14 +13,13 @@ footer {
   @extend %flex-start;
   @extend %c-container-fluid;
   margin-top: 40px;
-  margin-bottom: 22px;
   line-height: 1.4;
+  padding-bottom: 30px;
   @include md {
     justify-content: space-between;
   }
   @include sm {
     margin-top: 30px;
-    margin-bottom: 30px;
   }
 }
 
@@ -37,10 +36,15 @@ footer {
   max-width: 267px;
   margin-right: auto;
   @include md {
-    margin-right: 0;
-    max-width: 100%;
     width: 100%;
-    margin-bottom: 20px;
+    max-width: 100%;
+    margin-top: 40px;
+    margin-right: 0;
+    order: 5;
+
+    .footer-top__logo {
+      display: none;
+    }
   }
 }
 
@@ -62,12 +66,6 @@ footer {
   @include md {
     margin-left: 0;
   }
-}
-
-.footer-top__logo {
-  // @include sm {
-  //   display: none;
-  // }
 }
 
 .footer-top__text {
