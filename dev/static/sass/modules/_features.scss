@@ -188,15 +188,15 @@
     }
   }
   img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     width: 100px;
     height: 100px;
     @include lg {
       width: 70px;
       height: 70px;
+    }
+    @include sm {
+      width: 50px;
+      height: 50px;
     }
   }
 }
@@ -210,6 +210,18 @@
     padding: 5px 20px;
   }
 }
+
+.earnings-features__row-front--inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  @include sm {
+    font-size: 12px;
+  }
+}
+
 .earnings-features__row-back {
   @extend %flex-col-center; 
   height: 100%;
@@ -230,13 +242,10 @@
 }
 
 .earnings-features__dots-item__count {
-  margin-top: 10px;
-  // max-width: .6em;
-  line-height: 1.17;
-  // text-align: center;
   font-size: 36px;
-  // word-break: break-all;
-  font-weight: bold;
+  font-weight: 700;
+  line-height: 1.17;
+  margin-top: 10px;
   color: #fff;
   @include xs {
     font-size: 16px;
