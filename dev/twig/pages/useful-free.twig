@@ -1,54 +1,8 @@
-{% set blog_categories = [
-  {
-    title: 'Отношения',
-    cat_list: ['Родители', 'Любовь', 'Дети', 'Друзья']
-  },
-  {
-    title: 'Здоровье',
-    cat_list: ['Питание', 'Спорт', 'Эмоциональный баланс', 'Уход за собой']
-  },
-  {
-    title: 'Саморазвитие',
-    cat_list: ['Soft skill', 'Иностранные языки', 'Хобби', 'Впечатления']
-  },
-  {
-    title: 'Деньги',
-    cat_list: ['Карьера', 'Создание дохода', 'Бизнес окружение', 'Финансовая грамотность']
-  },
-] %}
-
 {% extends "../layouts/default.twig" %}
 
 {% block content %}
   <div class="useful-free">
-    <div class="blog-navigation">
-      <div class="blog-navigation__header ">
-        <div class="blog-navigation__header-burger">
-          <img id="js-blog-burger" src="/static/img/general/blog-burger.svg" alt="Поиск">
-          <span>Темы блога</span>
-        </div>
-        <div class="blog-navigation__header-search search-open-trigger">
-          <img class="search-closed" src="/static/img/general/search-2.svg" alt="Поиск">
-          <img class="search-opened" src="/static/img/general/blog-search-opened.svg" alt="Поиск">
-        </div>
-      </div>
-      <div class="blog-navigation__list blog-navigation__header">
-        {% for cat in blog_categories %}
-        <div class="blog-navigation__list-block">
-          <span class="blog-navigation__list-title">{{cat.title}}</span>
-          {% for cat_name in cat.cat_list %}
-            <a href="#" class="blog-navigation__list-item">{{cat_name}}</a>
-          {% endfor %}
-        </div>
-        {% endfor %}
-      </div>
-      <div class="blog-navigation__search blog-navigation__header ">
-        <input type="search" placeholder="Поиск по блогу" class="blog-navigation__input">
-        <div class="blog-navigation__header-search search-open-trigger">
-          <img src="/static/img/general/search-2.svg" alt="Поиск">
-        </div>
-      </div>
-    </div>
+    {% include "../partials/blog-nav-list.twig" %}
     <section class="">
       <h1 class="title">
         <span class="color-blue">One planet</span> блог

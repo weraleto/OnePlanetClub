@@ -1,0 +1,28 @@
+<div class="blog-navigation">
+    <div class="blog-navigation__header ">
+        <div class="blog-navigation__header-burger">
+            <img id="js-blog-burger" src="/static/img/general/blog-burger.svg" alt="Поиск">
+            <span>Темы блога</span>
+        </div>
+        <div class="blog-navigation__header-search search-open-trigger">
+            <img class="search-closed" src="/static/img/general/search-2.svg" alt="Поиск">
+            <img class="search-opened" src="/static/img/general/blog-search-opened.svg" alt="Поиск">
+        </div>
+    </div>
+    <div class="blog-navigation__list blog-navigation__header">
+        {% for cat in blog_categories %}
+        <div class="blog-navigation__list-block">
+            <span class="blog-navigation__list-title">{{cat.title}}</span>
+            {% for cat_name in cat.cat_list %}
+            <a href="#" class="blog-navigation__list-item">{{cat_name}}</a>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="blog-navigation__search blog-navigation__header ">
+        <input type="search" placeholder="Поиск по блогу" class="blog-navigation__input">
+        <div class="blog-navigation__header-search search-open-trigger">
+            <img src="/static/img/general/search-2.svg" alt="Поиск">
+        </div>
+    </div>
+</div>

@@ -5,54 +5,8 @@
 
   
 <div class="article useful-free">
-  <div class="blog-navigation">
-    <div class="blog-navigation__header ">
-        <div class="blog-navigation__header-burger">
-            <img id="js-blog-burger" src="/static/img/general/blog-burger.svg" alt="Поиск">
-            <span>Темы блога</span>
-        </div>
-        <div class="blog-navigation__header-search search-open-trigger">
-            <img class="search-closed" src="/static/img/general/search-2.svg" alt="Поиск">
-            <img class="search-opened" src="/static/img/general/blog-search-opened.svg" alt="Поиск">
-        </div>
-    </div>
-    <div class="blog-navigation__list blog-navigation__header">
-        <div class="blog-navigation__list-block">
-            <span class="blog-navigation__list-title">Отношения</span>
-            <a href="#" class="blog-navigation__list-item">Родители</a>
-            <a href="#" class="blog-navigation__list-item">Любовь</a>
-            <a href="#" class="blog-navigation__list-item">Дети</a>
-            <a href="#" class="blog-navigation__list-item">Друзья</a>            
-        </div>
-        <div class="blog-navigation__list-block">
-            <span class="blog-navigation__list-title">Саморазвитие</span>
-            <a href="#" class="blog-navigation__list-item">Soft skills</a>
-            <a href="#" class="blog-navigation__list-item">Иностранные языки</a>
-            <a href="#" class="blog-navigation__list-item">Хобби</a>
-            <a href="#" class="blog-navigation__list-item">Впечатления</a>            
-        </div>
-        <div class="blog-navigation__list-block">
-            <span class="blog-navigation__list-title">Здоровье</span>
-            <a href="#" class="blog-navigation__list-item">Питание</a>
-            <a href="#" class="blog-navigation__list-item">Спорт</a>
-            <a href="#" class="blog-navigation__list-item">Эмоциональный баланс</a>
-            <a href="#" class="blog-navigation__list-item">Уход за собой</a>            
-        </div>
-        <div class="blog-navigation__list-block">
-            <span class="blog-navigation__list-title">Деньги</span>
-            <a href="#" class="blog-navigation__list-item">Карьера</a>
-            <a href="#" class="blog-navigation__list-item">Создание дохода</a>
-            <a href="#" class="blog-navigation__list-item">Бизнес окружение</a>
-            <a href="#" class="blog-navigation__list-item">Финансовая грамотность</a>            
-        </div>
-    </div>
-    <div class="blog-navigation__search blog-navigation__header ">
-        <input type="search" placeholder="Поиск по блогу" class="blog-navigation__input">
-        <div class="blog-navigation__header-search search-open-trigger">
-            <img src="/static/img/general/search-2.svg" alt="Поиск">
-        </div>
-    </div>
-</div>  <div class="useful-free__additional-triangle-pink"></div>
+  {% include "../partials/blog-nav-list.twig" %}
+  <div class="useful-free__additional-triangle-pink"></div>
   <div class="useful-free__additional-circle-pink"></div>
 
   <section class="">
