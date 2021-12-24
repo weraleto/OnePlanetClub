@@ -3,126 +3,496 @@
 {% block content %}
   {% set item = blog[0] %}
 
-  <section class="article">
-    <ul class="article__breadcrumbs">
-      <li><a href="index.html">Полезно + Бесплатно</a></li>
-      <li><a href="#">{{ item.title }}</a></li>
-    </ul>
-    <div class="article__row">
-      <div class="article__col">
-        <div class="article__frame-wrap">
-          <iframe
-            class="article__frame"
-            src="{{ item.video }}"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+  
+<div class="article useful-free">
+  <div class="blog-navigation">
+    <div class="blog-navigation__header ">
+        <div class="blog-navigation__header-burger">
+            <img id="js-blog-burger" src="/static/img/general/blog-burger.svg" alt="Поиск">
+            <span>Темы блога</span>
         </div>
-        <div class="article__info">
-          <div class="article__info__category">{{ item.category }}</div>
-          <div class="article__info__date">{{ item.date }}</div>
+        <div class="blog-navigation__header-search search-open-trigger">
+            <img class="search-closed" src="/static/img/general/search-2.svg" alt="Поиск">
+            <img class="search-opened" src="/static/img/general/blog-search-opened.svg" alt="Поиск">
         </div>
-        <div class="title">{{ item.title }}</div>
-        <div class="article__text">
-          <div class="article__text__content">{{ item.content }}</div>
-          <div class="article__text__additional-content">
-            <p>Почему НЛП не является манипуляцией над последователями методики? Ответ на этот вопрос вы узнаете из видео
-              <a href="#">«Зачем профессор психологии переехал из Калифорнии в СНГ?»</a>.</p>
-            <p>Об истории формирования направления подробно рассказывает профессор психологии Фрэнк Пьюселик в видео <a
-                href="#">«Как создавали НЛП. История соавтора»</a>.</p>
-          </div>
-        </div>
-{#
-        <div class="article__cta">
-          <div class="article__cta__col left">
-            <div class="article__cta__title">Сделайте первый шаг к стабильному заработку на онлайн-образовании</div>
-            <div class="article__cta__description">Активируйте демо-пакет за 0.99$</div>
-            <a class="article__cta__btn" href="#">Узнать подробнее</a>
-          </div>
-          <div class="article__cta__col right">
-            <div class="article__img-wrap">
-              <img src="/static/img/general/hand-thumbls-up.png" alt="">
-            </div>
-          </div>
-        </div>
-#}
-        <div class="article__cta">
-          <div class="article__cta-inner">
-            <div class="article__cta__title">Сделайте первый шаг к стабильному заработку на онлайн-образовании</div>
-            <div class="article__cta__description">Активируйте демо-пакет за 0.99$</div>
-            <a class="article__cta__btn" href="#">Узнать подробнее</a>
-            <div class="article__cta__additional-img-1"></div>
-            <div class="article__cta__additional-img-2"></div>
-            <div class="article__cta__additional-img-3"></div>
-            <div class="article__cta__additional-img-4"></div>
-          </div>
-        </div>
-      </div>
-      {% include "../partials/sidebar.twig" %}
     </div>
-    <div class="article__comments">
-      <div class="article__comments__title">
-        <img src="/static/img/general/comment.png" alt="">
-        Оставить комментарий
-      </div>
-      <form class="article__comments__form">
-        <label>
-          <textarea class="article__comments__textarea" type="text" id="add_comment" name="add_comment" placeholder="Напишите комментарий"></textarea>
-        </label>
-        <div class="article__comments__mark">
-          <a href="#"><img src="/static/img/general/comment-bold.svg" alt=""></a>
-          <a href="#"><img src="/static/img/general/comment-underline.svg" alt=""></a>
-          <a href="#"><img src="/static/img/general/comment-italic.svg" alt=""></a>
-          <a href="#"><img src="/static/img/general/comment-quote.svg" alt=""></a>
-          <a href="#"><img src="/static/img/general/comment-ul.svg" alt=""></a>
-          <a href="#"><img src="/static/img/general/comment-ol.svg" alt=""></a>
-          <a href="#"><img src="/static/img/general/comment-link.svg" alt=""></a>
+    <div class="blog-navigation__list blog-navigation__header">
+        <div class="blog-navigation__list-block">
+            <span class="blog-navigation__list-title">Отношения</span>
+            <a href="#" class="blog-navigation__list-item">Родители</a>
+            <a href="#" class="blog-navigation__list-item">Любовь</a>
+            <a href="#" class="blog-navigation__list-item">Дети</a>
+            <a href="#" class="blog-navigation__list-item">Друзья</a>            
         </div>
+        <div class="blog-navigation__list-block">
+            <span class="blog-navigation__list-title">Саморазвитие</span>
+            <a href="#" class="blog-navigation__list-item">Soft skills</a>
+            <a href="#" class="blog-navigation__list-item">Иностранные языки</a>
+            <a href="#" class="blog-navigation__list-item">Хобби</a>
+            <a href="#" class="blog-navigation__list-item">Впечатления</a>            
+        </div>
+        <div class="blog-navigation__list-block">
+            <span class="blog-navigation__list-title">Здоровье</span>
+            <a href="#" class="blog-navigation__list-item">Питание</a>
+            <a href="#" class="blog-navigation__list-item">Спорт</a>
+            <a href="#" class="blog-navigation__list-item">Эмоциональный баланс</a>
+            <a href="#" class="blog-navigation__list-item">Уход за собой</a>            
+        </div>
+        <div class="blog-navigation__list-block">
+            <span class="blog-navigation__list-title">Деньги</span>
+            <a href="#" class="blog-navigation__list-item">Карьера</a>
+            <a href="#" class="blog-navigation__list-item">Создание дохода</a>
+            <a href="#" class="blog-navigation__list-item">Бизнес окружение</a>
+            <a href="#" class="blog-navigation__list-item">Финансовая грамотность</a>            
+        </div>
+    </div>
+    <div class="blog-navigation__search blog-navigation__header ">
+        <input type="search" placeholder="Поиск по блогу" class="blog-navigation__input">
+        <div class="blog-navigation__header-search search-open-trigger">
+            <img src="/static/img/general/search-2.svg" alt="Поиск">
+        </div>
+    </div>
+</div>  <div class="useful-free__additional-triangle-pink"></div>
+  <div class="useful-free__additional-circle-pink"></div>
 
-        {% if not auth %}
-          <div class="article__comments-login">
-            <div class="article__comments-login__col left">
-              <div class="article__comments-login__title">Войти как гость</div>
-              <label>
-                <input class="article__comments-login__input" type="text" id="text" name="text" placeholder="Имя">
-              </label>
-              <label>
-                <input class="article__comments-login__input" type="email" id="email" name="email" placeholder="Email">
-              </label>
+  <section class="">
+
+    <h1 class="title color-blue">
+      Строгое воспитание детей. Последствия и ответственность.
+    </h1>
+
+    <div class="useful-free__content">
+      <aside class="useful-free__sidebar">
+        <div class="useful-free__sidebar-container">
+          <div class="useful-free__sidebar-tags">
+            <h3 class="useful-free__sidebar-tag__title">Темы блога: </h3>
+
+            <div class="useful-free__sidebar-tag__group">
+              <h4 class="useful-free__sidebar-tag__link">Отношения</h3>
+                <a class="useful-free__sidebar-tag__link" href="#">Родители</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Любовь</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Дети</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Друзья</a>
             </div>
-            <div class="article__comments-login__col">
-              <div class="article__comments-login__title">или войти с</div>
-              <div class="article__comments-login__socials">
-                <a class="article__comments-login__socials__item" href="#"><img src="/static/img/general/icon-vk.svg" alt=""></a>
-                <a class="article__comments-login__socials__item" href="#"><img src="/static/img/general/icon-fb.svg" alt=""></a>
+            <div class="useful-free__sidebar-tag__group">
+              <h4 class="useful-free__sidebar-tag__link">Саморазвитие</h3>
+                <a class="useful-free__sidebar-tag__link" href="#">Soft skills</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Иностранные языки</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Хобби</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Впечатления</a>
+            </div>
+            <div class="useful-free__sidebar-tag__group">
+              <h4 class="useful-free__sidebar-tag__link">Здоровье</h3>
+                <a class="useful-free__sidebar-tag__link" href="#">Питание</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Спорт</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Эмоциональный баланс</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Уход за собой</a>
+            </div>
+            <div class="useful-free__sidebar-tag__group">
+              <h4 class="useful-free__sidebar-tag__link">Деньги</h3>
+                <a class="useful-free__sidebar-tag__link" href="#">Карьера</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Создание дохода</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Бизнес окружение</a>
+                <a class="useful-free__sidebar-tag__link" href="#">Финансовая грамотность</a>
+            </div>
+          </div>
+
+          <div class="useful-free__sidebar-promo-item"
+            style="background-image: url(/static/img/general/about-start-1.jpeg)">
+            <div class="useful-free__sidebar-promo-item__col left">
+              <div class="useful-free__sidebar-promo-item__title">
+                Начните учиться бесплатно
+              </div>
+              <div class="useful-free__sidebar-promo-item__description">Обучайтесь у основателя НЛП первые 7 дней
+                бесплатно, далее от 3500 рублей в месяц</div>
+            </div>
+            <div class="useful-free__sidebar-promo-item__col right">
+              <a class="useful-free__sidebar-promo-item__btn" href="#">Подробнее</a>
+            </div>
+          </div>
+        </div>
+        <div class="useful-free__sidebar-btns">
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться на YouTube
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться в VK
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться на Instagram
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться на Telegram
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться в Facebook
+          </a>
+        </div>
+      </aside>
+      <div class="useful-free__row-wrap">
+
+        <article class="article__inner">
+          <div class="article__frame-wrap">
+            <iframe class="article__frame" src="https://player.vimeo.com/video/468581776" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+
+          <div>
+                        <div class="useful-free__items-item__text__category">Воспитание детей</div>
+                        <div class="useful-free__items-item__text__category">Отношения</div>
+                      </div>
+
+          <h2 class="article__subtitle title">
+            Почему нельзя в строгости воспитывать ребёнка. К чему приводит жёсткое воспитание.
+          </h2>
+
+          <div class="article__block">
+            <h3>
+              Как проводились исследования.
+            </h3>
+            <p>
+              К такому мнению пришли ученые Питтсбургского университета, изучившие прямые и косвенные последствия
+              строгого
+              воспитания в формировании поведения ребенка.
+            </p>
+
+            <p>
+              В ходе такого исследования выяснилось, что подростки, чьи потребности не удовлетворяются близкими людьми,
+              в
+              первую очередь родителями, ищут подтверждения своей значимости у других.
+            </p>
+            <p>
+              Ученые отобрали 1482 участники, по которым они наблюдали в течение девяти лет. В исследовании принимали
+              участие дети разного возраста, расы, из разных социальных слоев и городов. Главной задачей детей было
+              сообщать о проявлениях вербальной или физической агрессии к ним со стороны родителей.</p>
+            <p>
+              При этом ученые собирали информацию об общении участников исследования со сверстниками, их склонность к
+              преступности, сексуальное поведение и успехи в учебе. Результаты показали, что последствия строгого
+              воспитания значительно печальнее, чем считали родители.</p>
+
+            <div class="article__pic">
+              <img src="/static/img/general/art-1.jpeg" alt="Почему нельзя в строгости воспитывать ребёнка.">
+            </div>
+
+          </div>
+          <div class="article__block">
+            <h3>
+              К чему приводит строгое воспитание ребёнка.
+            </h3>
+
+            <p>Сторонники строгого воспитания считают, что прививают своим чадам дисциплинированность, уважение,
+              определенную самостоятельность, аккуратность. Однако, как оказалось в ходе исследования, такая манера
+              воспитания только вредит.</p>
+            <p>Опрашиваемые, которые заявляли о родительской агрессии, к концу исследования были более склонны
+              подчиняться
+              авторитету сверстников, проявляли рискованное поведение и рано начинали половую жизнь. В свою очередь это
+              приводило к низкой успеваемости.</p>
+            <p>Давайте попробуем подробнее разобраться в том, к чему может привести такой способ воспитания. И чего не
+              стоит делать, чтобы воспитать социально полноценно и психологически здорового ребенка.</p>
+          </div>
+          <div class="article__block">
+            <h3>
+              Отсутствие самодисциплины и ответственности у детей.
+            </h3>
+            <p>Жесткие рамки в воспитании дают лишь временный эффект и не позволяют взять ребенку ответственность за
+              свои
+              поступки. К тому же, никому не нравится тотальный контроль, появляется внутренний протест. Поэтому ребенок
+              и
+              начинает делать «назло», умышленно отстраняться от родителей и делать то, чего не позволяют.</p>
+
+            <div class="article__pic">
+              <img src="/static/img/general/art-2.jpeg" alt="Почему нельзя в строгости воспитывать ребёнка.">
+            </div>
+
+            <div class="article__infoblock">
+              Лучший способ - это разговор о том, к каким последствиям может привести определенное поведение или
+              поступки.
+            </div>
+
+            <p>Если ребенок все же не послушал, сломал, разлил или потерял что-то, не стоит сразу кричать!</p>
+            <p>Нужно объяснить, почему так произошло и дать возможность исправить положение самому ребенку: дать тряпку,
+              чтобы вытер сам разлитое или нашёл потерянную вещь.</p>
+
+          </div>
+          <div class="article__block">
+            <h3>
+              Несамостоятельность и безынициативность детей.
+            </h3>
+            <p>Послушный ребенок действует только по указаниям. Это приводит к нехватке самостоятельности
+              и нежелание проявлять минимальную инициативу и <span class="article__accent">участие в собственной
+                жизни</span>.</p>
+            <p>Из таких детей не получится ни лидера, ни самодостаточной личности - ведь ваше чадо, даже во взрослом
+              возрасте, будет искать человека, который скажет, что и как нужно делать.</p>
+
+
+            <div class="article__infoblock">
+              Чтобы избежать этого, дайте ребенку больше свободы!
+            </div>
+
+            <p>Пусть сам выбирает, чем он хочет играть - красками или пластилином, какую книгу хочет читать далее.
+              Предлагайте малышу самостоятельно выбрать место прогулки или варианты возможного досуга.</p>
+
+          </div>
+
+          <div class="article__block">
+            <h3>
+              Склонность к агрессии и депрессии.
+            </h3>
+            <p>Агрессия и депрессия появляются потому, что авторитарное воспитание подразумевает неприятие родителями
+              определенных аспектов психики ребенка и нежелание помочь ему, при возникновении сложных эмоций и чувств.
+              Дети остаются наедине со своими <span class="article__accent">эмоциональными импульсами</span>, вследствие
+              чего, чувствуют себя одинокими.</p>
+
+            <div class="article__infoblock">
+              Прежде всего, нужно интересоваться предпочтениями ребенка и участвовать в происходящих событиях в жизни
+              вашего малыша, а дальше - подростка.
+            </div>
+            <div class="article__pic">
+              <img src="/static/img/general/art-3.jpeg" alt="Почему нельзя в строгости воспитывать ребёнка.">
+            </div>
+          </div>
+          <div class="article__block">
+            <h3>
+              Подверженность чужому влиянию.
+            </h3>
+            <p>Когда ваш ребенок маленький, проще и удобнее, чтобы он со всем соглашался и не настаивал на своих
+              желаниях.
+              Однако, он становится старше и тогда послушание перерастает в слабохарактерность. Такой подросток
+              соглашается на любые правила игры, пойдет с кем угодно и куда угодно, только потому, что боится сказать
+              «нет».</p>
+
+            <div class="article__infoblock">
+              Будьте внимательны к желаниям своего малыша.
+            </div>
+            <p>Не нужно категорически протестовать или наказывать его за неповиновение - аргументировано объясните,
+              почему
+              его желание осуществить невозможно. Если вы сомневаетесь, то попросите малыша объяснить вам, почему его
+              просьба должна быть выполнена.</p>
+            <p>Таким образом, ребенок научится аргументировать и отстаивать свою собственную точку зрения. -
+              <strong>Ребенок начинает врать.</strong></p>
+            <p>Если ребенок постоянно воспитывается по принципу «делай то, что я говорю», в нём просыпается протест.
+              Такие
+              дети склонны попадать в <span class="article__accent">неприятные ситуации</span> и начинают врать
+              родителям,
+              чтобы избежать определенных наказаний, ссор или неприятных разговоров.</p>
+            <div class="article__infoblock">
+              Лучшим способом предупредить возникновение такого поведения - это аргументировано доказать ребенку, почему
+              ваш вариант целесообразен.
+            </div>
+            <p>Но если все же родителям не удалось убедить отпрыска, то лучше принять его предпочтения.</p>
+          </div>
+          <div class="article__block">
+            <h3>
+              Низкая самооценка ребенка.
+            </h3>
+            <p>Строгость родителей, даже если она в определенных случаях обоснована, заставляет ребенка задуматься над
+              тем, достаточно ли он хорош, чтобы быть вашим ребенком. Ведь, когда его так часто ругают, осуждают,
+              указывают, значит, с ним что-то не так. Все это приводит к низкой самооценке. В таком случае ребенок будет
+              делать все, чтобы только заслужить вашу любовь и уважение.</p>
+
+            <div class="article__infoblock">
+              В первую очередь дайте понять, что любовь не нужно заслуживать, вы и так его любите, цените, и гордитесь
+              им.
+            </div>
+
+            <p>Ребенок, чувствуя вашу поддержку, будет пытаться достичь большего.</p>
+          </div>
+          <div class="article__block">
+            <h3>
+              Гиперкомпенсация ребенка.
+            </h3>
+            <p>Очень часто послушные дети в подростковом возрасте «уходят в отрыв». Они подвергаются дурному влиянию,
+              заводят <span class="article__accent">вредные привычки</span> - все это попытка компенсировать дефицит
+              свободы в детстве.</p>
+
+            <div class="article__infoblock">
+              Дайте ребенку больше свободы, позволяйте гулять,
+            </div>
+
+            <p>проводить время наедине со своими мыслями и делами, чтобы его личность могла комфортно развиваться, не
+              упираясь в рамки родительских запретов.</p>
+
+            <div class="article__pic">
+              <img src="/static/img/general/art-4.jpeg" alt="Почему нельзя в строгости воспитывать ребёнка.">
+            </div>
+            <p><strong>Психологи отмечают</strong>, что оптимальной стратегией воспитания является «авторитетное
+              воспитание» или «ограничения с соучастием». То есть происходит установление определенных границ, но с
+              соучастием.</p>
+            <p>Дети придерживаются границ только тогда, когда они установлены с любовью. Необходимо установить разумные
+              пределы и озвучить свои ожидания. Это нужно делать с любовью и безусловной поддержкой.</p>
+          </div>
+          <div class="article__finally color-blue">Сочетание ограничений и соучастия - золотая середина, которая поможет
+            правильно воспитать ребенка и достичь максимальных результатов самому ребенку во всех сферах жизни.</div>
+          <div class="article__footer">
+
+            <div class="article__actions">
+              <div class="article__likes article__actions-item">
+                <img class="article__actions-item__pic" src="/static/img/general/like.svg" alt="Лайки">
+                <span>123</span>
+              </div>
+              <div class="article__comments-count article__actions-item">
+                <img class="article__actions-item__pic" src="/static/img/general/comments.svg" alt="Комментарии">
+                <span>5</span>
               </div>
             </div>
-          </div>
-        {% endif %}
-
-        <button class="article__comments__btn" type="submit">Отправить</button>
-      </form>
-
-      <div class="article__comments-list">
-        <div class="article__comments-list__head">
-          <div class="article__comments-list__head__title">Комментарии</div>
-          <div class="article__comments-list__head__count">({{ comments.length }})</div>
-          <div class="article__comments-list__head__sort">
-            <span>Сначала</span>
-            <span class="article__comments-list__head__sort__item">новые</span>
-            <img class="article__comments-list__head__sort__img" src="/static/img/general/icon-sort.svg" alt="">
-          </div>
-        </div>
-        <div class="article__comments-list__content">
-          {% for item in comments %}
-            <div class="article__comments-list__content__item">
-              <div class="article__comments-list__content__item__author">{{ item.author }}</div>
-              <div class="article__comments-list__content__item__text">{{ item.text }}</div>
+            <a href="#" class="article__subscription">
+              Подписаться на рассылку
+            </a>
+            <div class="article__socials">
+                            <a class="article__socials-item" target="_blank" href="/">
+                <img src="/static/img/general/fb-art.svg" alt="">
+              </a>
+                            <a class="article__socials-item" target="_blank" href="/">
+                <img src="/static/img/general/vk-art.svg" alt="">
+              </a>
+                            <a class="article__socials-item" target="_blank" href="/">
+                <img src="/static/img/general/tg-art.svg" alt="">
+              </a>
+              
             </div>
-          {% endfor %}
+
+          </div>
+        </article>
+        <div class="article__comments">
+          <span>Комментарии (5)</span>
+
+          <div class="article__comments-item">
+            <div class="article__comments-item__user-info">
+              <div class="article__comments-item__user-pic">
+                <img src="/static/img/general/cat_user.jpeg" alt="Mr_Cat">
+              </div>
+              <div class="article__comments-item__user-name">
+                Mr_Cat
+              </div>
+            </div>
+            <div class="article__comments-item__text">
+              <p>
+                Не следует, однако, забывать, что новая модель организационной деятельности играет важную роль в
+                формировании приоритизации разума над эмоциями. И нет сомнений, что непосредственные участники
+                технического прогресса лишь добавляют фракционных разногласий и объединены в целые кластеры себе
+                подобных. Предварительные выводы неутешительны: разбавленное изрядной долей эмпатии, рациональное
+                мышление не оставляет шанса для благоприятных перспектив. Являясь всего лишь частью общей картины,
+                представители современных социальных резервов являются только методом политического участия и
+                подвергнуты целой серии независимых исследований. В своём стремлении повысить качество жизни, они
+                забывают, что постоянное информационно-пропагандистское обеспечение нашей деятельности прекрасно
+                подходит для реализации направлений прогрессивного развития.
+              </p>
+            </div>
+          </div>
+          <div class="article__comments-btns">
+            <a class="article__comments-btn" href="#">Читать все комментарии</a>
+            <a class="article__comments-btn" href="#">Добавить комментарий</a>
+          </div>
         </div>
+
+
+
       </div>
     </div>
   </section>
+</div>
+
+<div class="article__page-promo">
+  <section class="wihout-offset">
+    <span class="title color-green">Вы готовы изменить свою жизнь к лучшему? </span>
+    <p>Мы на 100% уверены в пользе курса. Поэтому предоставляем доступ к демо-неделе совершенно бесплатно, чтобы вы лично смогли убедиться в качестве его программы, понять насколько готовы работать над собой и воплощать свои желания. Уже тысячи людей воспользовались программой Фрэнка Пьюселика и стали счастливыми. 
+    </p>
+    <a href="/register/index.html" class="article__page-promo__btn">Начать учиться бесплатно</a>
+  </section>
+  <div class="additional-circle__promo"></div>
+</div>
+<section class="article__page-more-articles wihout-offset">
+  <h3>
+  Читайте также:
+  </h3>
+  <div class="article__page-more-articles__row">
+    {% for i in range(1, 3) %}
+      <div class="article__page-more__item">
+        <div class="article__page-more__item-pic">
+          <img src="/static/img/general/kids-rect.jpeg" alt="Сколько можно зарабатывать с One planet Club">
+        </div>
+        <h4>Сколько можно зарабатывать с One planet Club</h4>
+      </div>     
+    {% endfor %}
+      </div>
+</section>
+<section class="wihout-offset">
+  <div class="search-container">  
+    <h3>
+  Навигация по блогу
+  </h3>
+    <div class="useful-free__nav">
+          <form class="useful-free__nav-searchform">
+            <input type="search" placeholder="Поиск">
+            <button type="submit" class="useful-free__nav-searchbtn">
+              <img src="/static/img/general/search.svg" alt="Поиск">
+            </button>
+          </form>
+          <div class="useful-free__nav-taglist">
+            <a href="#" class="useful-free__nav-taglist__item">Про партнерку</a>
+            <a href="#" class="useful-free__nav-taglist__item active">Воспитание детей</a>
+            <a href="#" class="useful-free__nav-taglist__item">Саморазвитие</a>
+            <a href="#" class="useful-free__nav-taglist__item">Обучение</a>
+            <a href="#" class="useful-free__nav-taglist__item">Отношения</a>
+          </div>
+        </div>
+  </div>
+</section>
+<div class="form__wrapper mb">
+  <div class="form__additional__circle-top"></div>
+  <div class="pos-relative">
+    <div class="form__additional__circle-bottom"></div>
+    <section class="form">
+  <div class="form__card">
+    <div class="form__col center">
+      <div class="title">Начать учиться <span class="color-blue">бесплатно</span></div>
+      <div class="form__description">Далее от 3500 руб. за месяц участия в закрытом онлайн-клубе Мета-Встречи.</div>
+    </div>
+    <div class="form__col right">
+      <form class="order-form" name="order-form" id="order-form" novalidate>
+        <div class="form-row">
+          <div class="form-group form-col-2">
+            <label class="label">
+              <input type="text" class="input input-decorator" id="name" name="name" placeholder="Имя">
+              <span>Ваше имя</span>
+            </label>
+            <div class="form-error-text" id="error-name"></div>
+          </div>
+          <div class="form-group form-col-2">
+            <label class="label">
+              <input type="email" class="input input-decorator" id="email" name="email" placeholder="Email">
+              <span>Ваш email</span>
+            </label>
+            <div class="form-error-text" id="error-email"></div>
+          </div>
+        </div>
+        <div class="form-with-btn-row">
+          <div class="checkbox-wrap">
+            <div class="form-group">
+              <input type="checkbox" class="checkbox blue" id="checkbox" name="checkbox">
+              <label class="checkbox-label" for="checkbox">
+                Я согласен с
+                <a href="#" target="_blank" rel="noopener noreferrer">договором оферты</a>
+                и
+                <a href="#" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+              </label>
+            </div>
+            <div class="form-error-text" id="error-checkbox"></div>
+          </div>
+        </div>
+        
+        <button type="submit" class="form__btn blue">Начать бесплатно сейчас</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+  </div>
+</div>
+    <div id="toast" class="toast">
+      <img id="toast-image" class="toast__image">
+      <span id="toast-text">
+      </span>
+    </div>
 {% endblock %}
