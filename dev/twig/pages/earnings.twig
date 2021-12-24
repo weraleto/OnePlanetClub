@@ -424,54 +424,6 @@
     </div>
   </section>
 
-   {# <section class="earnings-tariffs">
-    <div class="earnings-tariffs__title">
-      <h2 class="color-blue">Выберите свой пакет</h2>
-    </div>
-    <div class="tariffs-wrap">
-      <table class="tariffs">
-        <thead>
-        <tr>
-          <td></td>
-          <td><div class="earnings-tariffs__name">Base <div>$50</div></div></td>
-          <td><div class="earnings-tariffs__name">Bronze <div>$125</div></div></td>
-          <td><div class="earnings-tariffs__name">Silver <div>$250</div></div></td>
-          <td><div class="earnings-tariffs__name">Gold <div>$500</div></div></td>
-          <td><div class="earnings-tariffs__name">Platinum <div>$1500</div></div></td>
-        </tr>
-        </thead>
-        <tbody>
-        {% for row in table %}
-          <tr>
-            <td>{{ row.title }}</td>
-            {% for tariff in row.tariffs %}
-              <td>
-                {% if tariff.data == 'true' %}
-                  <img src="/static/img/general/icon-done.svg" alt="">
-                {% elseif tariff.data == 'false' %}
-                  <img src="/static/img/general/icon-undone.svg" alt="">
-                {% else %}
-                  {{ tariff.data }}
-                {% endif %}
-              </td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-        </tbody>
-        <tfoot>
-        <tr>
-          <td></td>
-          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
-          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
-          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
-          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
-          <td><a class="table__btn" href="/register/index.html">Купить</a></td>
-        </tr>
-        </tfoot>
-      </table>
-    </div>
-  </section> #}
-
   <section class="earnings-tariffs">
     <div class="earnings-tariffs__title">
       <h2 class="color-blue">Выберите свой пакет</h2>
