@@ -903,10 +903,23 @@ $tarif-3-bg: #FAE870;
 .study-tariffs {
   width: 100%;
   border-spacing: 25px 0;
-  // max-width: 1110px;
-  // margin-left: auto;
-  // margin-right: auto;
   border-collapse: collapse;
+
+  &.mobile-only {
+    display: none;
+  }
+  @include xs {
+    &.mobile-only {
+      display:grid;
+      text-align: center;
+      grid-template-columns: repeat(3,1fr);
+      grid-column-gap: 13px;
+      grid-row-gap: 15px
+    }
+    &.desktop-only {
+      display: none;
+    }
+  }
 
   &__name {
     width: 100%;
@@ -1016,6 +1029,10 @@ $tarif-3-bg: #FAE870;
             position: static;
           }
         }
+
+        img {
+          margin: auto;
+        }
       }
     }
   }
@@ -1081,6 +1098,61 @@ $tarif-3-bg: #FAE870;
     @include md {
       margin-top: 30px;
       margin-bottom: 50px;
+    }
+  }
+  &__mobile {
+    &-row--title {
+      font-size: 14px;
+      margin-top: 15px;
+      grid-column: 1/4;
+    }
+    &-item {
+      @extend %flex-center;
+      justify-content: center;
+    }
+    &-tarifname {
+      font-size: 12px;
+      line-height: 46px;
+      border-radius: 40px;
+      &:first-child {
+        background-color: rgba(196,196,196,.5)
+      }
+      &:nth-child(2) {
+        background-color: rgba(171,237,240,.5)
+      }
+      &:nth-child(3) {
+        background-color: rgba(250,232,112,.5)
+      }
+    }
+    &-tarifpicker {
+      width: 100%;
+      max-width: 300px;
+      grid-column: 1/4;
+      justify-self: center
+    }
+    &-btn {
+      @extend %btn;
+      @extend %btn-link;
+      @extend %btn-primary;
+      @extend %btn-yellow-shadowed;
+      font-size: 24px;
+      display: flex;
+      width: 100%;
+      max-width: 300px;
+      min-height: 66px;
+      margin: 40px auto 0;
+      text-align: center;
+      justify-content: center;
+      align-items: center
+    }
+    .tariff-subdata {
+      font-size: 15px
+    }
+    .tariff-subdata-2 {
+      color: #658789
+    }
+    .tariff-subdata-3 {
+      color: #6b674b
     }
   }
 }

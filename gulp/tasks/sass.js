@@ -31,6 +31,7 @@ module.exports = function () {
         // 'node_modules/slick-carousel/slick/slick.css',
         // 'node_modules/lightgallery/dist/css/lightgallery.css',
         'node_modules/magnific-popup/dist/magnific-popup.css',
+        'dev/static/sass/libs/select2.css'
         // 'dev/static/sass/libs/ion.calendar.css'
       ])
       .pipe(

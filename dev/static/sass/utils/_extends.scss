@@ -117,10 +117,7 @@ ul%default-style {
   vertical-align: middle;
   font-weight: bold;
   font-size: 24px;
-
-  -webkit-appearance: none;
-       -moz-appearance:    none;
-       appearance:         none;
+  appearance: none;
   @include sm {
     font-size: 18px;
   }

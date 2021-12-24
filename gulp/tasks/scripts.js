@@ -15,6 +15,7 @@ module.exports = function () {
         // 'node_modules/inputmask/dist/min/jquery.inputmask.bundle.min.js',
         'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         // 'node_modules/moment/min/moment-with-locales.min.js',
+        'dev/static/js/libs/select2.js'
         // 'dev/static/js/libs/ion.calendar.js'
       ])
       .pipe($.plugin.concat("libs.min.js"))

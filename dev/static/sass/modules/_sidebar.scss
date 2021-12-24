@@ -99,9 +99,21 @@
   }
 }
 
+.article__comments-btn,
+.useful-free__banner-btn,
+.useful-free__sidebar-btns__item,
 .useful-free__sidebar-promo-item__btn {
-  @extend %btn;
-  @extend %btn-link;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 35px;
+  appearance: none
+}
+
+.useful-free__sidebar-promo-item__btn {
+  @extend %default-style;
+  // @extend %btn;
   @extend %btn-md;
   font-size: 14px;
   width: calc(100% - 36px);

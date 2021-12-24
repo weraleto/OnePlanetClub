@@ -217,43 +217,6 @@
   },
 ] %}
 
-{# {
-    title: 'Выберите',
-    tariffs: [
-      { name: 'base',
-        data: '
-          <form id="base-form" class="study-tariffs__table-radio">
-            <div>
-              <input type="radio" id="base-1-month" name="base" value="1-month" checked>
-              <label class="study-tariffs__table-radio-label" for="base-1-month">1 мес.</label>
-            </div>
-          </form>
-        '
-      },
-      { name: 'bronze',
-        data: '
-          <form id="bronze-form" class="study-tariffs__table-radio">
-            <div>
-              <input type="radio" id="bronze-1-month" name="bronze" value="1-month" checked>
-              <label class="study-tariffs__table-radio-label" for="bronze-1-month">1 мес.</label>
-            </div>
-          </form>
-        '  
-      },
-      { name: 'silver', 
-        data: '
-          <form id="silver-form" class="study-tariffs__table-radio">
-            <div>
-              <input type="radio" id="silver-1-month" name="silver" value="1-month" checked>
-              <label class="study-tariffs__table-radio-label" for="silver-1-month">1 мес.</label>
-            </div>
-          </form>
-        '
-      },
-    ],
-  }, #}
-
-
 
 {% block content %}
   <section class="study offset-top">
@@ -466,37 +429,45 @@
   <section id="start-learning-anchor" class="study-tariffs-section">
     <div class="study-tariffs__main-text">
       <h2 class="color-blue">Варианты участия</h2>
-      <div class="study-tariffs__description">Обучайтесь НЛП онлайн у одного из трех основателей, чтобы преобразить свою жизнь в каждом аспекте, который сочтете важным</div>
+      <div class="study-tariffs__description">Обучайтесь НЛП онлайн у одного из трех основателей, чтобы преобразить свою
+        жизнь в каждом аспекте, который сочтете важным</div>
     </div>
     <div class="study-tariffs-wrap">
-      <table class="study-tariffs">
+      <table class="study-tariffs desktop-only">
         <thead>
           <tr>
             <th scope="col"></th>
-            <th scope="col"><div class="study-tariffs__name">Я сам</div></th>
-            <th scope="col"><div class="study-tariffs__name">Хочу результат</div></th>
-            <th scope="col"><div class="study-tariffs__name">Супер результат</div></th>
+            <th scope="col">
+              <div class="study-tariffs__name">Я сам</div>
+            </th>
+            <th scope="col">
+              <div class="study-tariffs__name">Хочу результат</div>
+            </th>
+            <th scope="col">
+              <div class="study-tariffs__name">Супер результат</div>
+            </th>
           </tr>
-          <tbody>
+        <tbody>
           {% for row in table %}
-            <tr>
-              <td>{{ row.title }}</td>
-              {% for tariff in row.tariffs %}
-                <td>
-                  {% if tariff.data == 'true' %}
-                    <img src="/static/img/general/icon-done.svg" alt="">
-                  {% elseif tariff.data == 'false' %}
-                    <img src="/static/img/general/icon-undone.svg" alt="">
-                  {% else %}
-                    {{ tariff.data }}
-                  {% endif %}
-                  {% if tariff.subdata %}
-                    <div class="tariff-subdata"><small>{{tariff.subdata}}</small></div>
-                  {% endif %}
-                </td>
-              {% endfor %}
-            </tr>
+          <tr>
+            <td>{{ row.title }}</td>
+            {% for tariff in row.tariffs %}
+            <td>
+              {% if tariff.data == 'true' %}
+              <img src="/static/img/general/icon-done.svg" alt="">
+              {% elseif tariff.data == 'false' %}
+              <img src="/static/img/general/icon-undone.svg" alt="">
+              {% else %}
+              {{ tariff.data }}
+              {% endif %}
+              {% if tariff.subdata %}
+              <div class="tariff-subdata"><small>{{tariff.subdata}}</small></div>
+              {% endif %}
+            </td>
+            {% endfor %}
+          </tr>
           {% endfor %}
+
         </tbody>
         <tfoot>
           <tr>
@@ -507,6 +478,50 @@
           </tr>
         </tfoot>
       </table>
+
+      <div class="study-tariffs study-tariffs__mobile mobile-only">
+        <div class="study-tariffs__mobile-item study-tariffs__mobile-tarifname">
+          Теория
+        </div>
+        <div class="study-tariffs__mobile-item study-tariffs__mobile-tarifname">
+          Практика
+        </div>
+        <div class="study-tariffs__mobile-item study-tariffs__mobile-tarifname">
+          Результат
+        </div>
+
+        {% for row in table %}
+        {% if not loop.last %}
+        <div class="study-tariffs__mobile-row--title">{{ row.title }}</div>
+        {% for tariff in row.tariffs %}
+        <div class="study-tariffs__mobile-item">
+          {% if tariff.data == 'true' %}
+          <img src="/static/img/general/icon-done-{{loop.index}}.svg" alt="">
+          {% elseif tariff.data == 'false' %}
+          <img src="/static/img/general/icon-undone-{{loop.index}}.svg" alt="">
+          {% else %}
+          {{ tariff.data }}
+          {% endif %}
+          {% if tariff.subdata %}
+          <div class="tariff-subdata tariff-subdata-{{loop.index}}"><small>{{tariff.subdata}}</small></div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+
+        <div class="study-tariffs__mobile-tarifpicker study-tariffs__mobile-row--title">
+          <select style="width: 100%" class="js-tarif-picker" name="tarif">
+            <option value="1">Теория</option>
+            <option value="2">Практика</option>
+            <option value="3">Результат</option>
+          </select>
+          <a href="/register/index.html" class="study-tariffs__mobile-btn">Выбрать</a>
+        </div>
+
+
+      </div>
     </div>
   </section>
 

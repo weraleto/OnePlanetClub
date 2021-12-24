@@ -61,8 +61,11 @@
 .article__pic {
   overflow: hidden;
   margin: 15px 0;
-  -webkit-border-radius: 50px;
   border-radius: 50px;
+
+  img {
+    width: 100%;
+  }
 
   @include sm {
     border-radius: 31px

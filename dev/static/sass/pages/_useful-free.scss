@@ -187,6 +187,10 @@
   border-radius: 61px;
   justify-content: center;
 
+  img {
+    width: 100%;
+  }
+
   @include md {
     max-width: 100%;
     border-radius: 28px
