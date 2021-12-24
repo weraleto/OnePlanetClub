@@ -190,6 +190,7 @@
   img {
     width: 100px;
     height: 100px;
+    margin: auto;
     @include lg {
       width: 70px;
       height: 70px;

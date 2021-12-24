@@ -556,7 +556,65 @@
 .free-materials {
   margin-bottom: 20px;
   .useful-free__items {
-    margin-bottom: 0;
+    @extend %flex;
+    width: 100%;
+    max-width: 1140px;
+    margin: 20px auto 50px;
+    @include md {
+      margin-bottom: 70px;
+    }
+    @include sm {
+      margin-top: 5px;
+      margin-bottom: 40px
+    }
+  }
+
+  .useful-free__items-item {
+    width: calc(100%/3 - 30px);
+    margin: 20px 15px;
+    @include md {
+      width:calc(100%/2 - 30px);
+    }
+    @include xs {
+      width:calc(100% - 30px);
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .useful-free__items-item__img-wrap {
+    height: 228px;
+    border-radius: 40px;
+    background-size: cover;
+    justify-content: center;
+    @include sm {
+      border-radius: 30px
+    }
+  }
+
+  .useful-free__items-item__text {
+    padding: 20px 0
+  }
+
+  .useful-free__items-item__text__category {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 20px;
+    background-color: #f7f2ed;
+  }
+
+  .useful-free__items-item__text__title {
+    @extend %default-style;
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    transition: all .2s ease-out;
+    &:hover {
+      opacity: .6
+    }
   }
 }
 
