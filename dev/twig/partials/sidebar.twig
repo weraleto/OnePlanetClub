@@ -1,20 +1,46 @@
-<aside class="sidebar">
-  <div class="sidebar__title">Читайте также</div>
-  <div class="sidebar__items">
-    {% for item in blog %}
-      {% if loop.index <= 4 %}
-        <div class="sidebar__items-item">
-          <div class="sidebar__items-item__img-wrap" style="background-image: url({{ item.img }});"></div>
-          <div class="sidebar__items-item__text">
-            <a class="sidebar__items-item__text__title" href="{{ item.href }}">{{ item.title }}</a>
-            <div class="sidebar__items-item__text__time">
-              <span>{{ item.date }}</span>
-              <span class="sidebar__items-item__text__dot">·</span>
-              <span>{{ item.time }}</span>
+<aside class="useful-free__sidebar">
+        <div class="useful-free__sidebar-container">
+          <div class="useful-free__sidebar-tags">
+            <h3 class="useful-free__sidebar-tag__title">Темы блога: </h3>
+            {% for cat in blog_categories %}
+            <div class="useful-free__sidebar-tag__group">
+              <h4 class="useful-free__sidebar-tag__link">{{cat.title}}</h3>
+              {% for cat_name in cat.cat_list %}
+                <a class="useful-free__sidebar-tag__link" href="#">{{cat_name}}</a>
+                {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="useful-free__sidebar-promo-item"
+            style="background-image: url(/static/img/general/about-start-1.jpeg)">
+            <div class="useful-free__sidebar-promo-item__col left">
+              <div class="useful-free__sidebar-promo-item__title">
+                Начните учиться бесплатно
+              </div>
+              <div class="useful-free__sidebar-promo-item__description">Обучайтесь у основателя НЛП первые 7 дней
+                бесплатно, далее от 3500 рублей в месяц</div>
+            </div>
+            <div class="useful-free__sidebar-promo-item__col right">
+              <a class="useful-free__sidebar-promo-item__btn" href="#">Подробнее</a>
             </div>
           </div>
         </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</aside>
+        <div class="useful-free__sidebar-btns">
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться на YouTube
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться в VK
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться на Instagram
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться на Telegram
+          </a>
+          <a href="#" class="useful-free__sidebar-btns__item">
+            Подписаться в Facebook
+          </a>
+        </div>
+      </aside>
