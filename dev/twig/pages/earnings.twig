@@ -422,24 +422,9 @@
         </div>
       </div>
     </div>
-    {# <div class="earnings-partnership__cta">
-      <div class="earnings-partnership__cta__col left">
-        <div class="earnings-partnership__cta__title">Интересует эта возможность, но не уверены на 100%?</div>
-        <div class="earnings-partnership__cta__subtitle">Набор вводных уроков о том, как устроена система и что надо делать, чтобы преуспеть. Начните с демо-пакета.</div>
-        <a class="earnings-partnership__cta__btn" href="#">Подробнее</a>
-      </div>
-      <div class="earnings-partnership__cta__col right">
-        <div class="earnings-partnership__cta__circle"></div>
-        <div class="earnings-partnership__cta__img-wrap">
-          <img class="earnings-partnership__cta__img" src="/static/img/general/hand-ok.png" alt="">
-        </div>
-      </div>
-      <div class="earnings-partnership__additional-circle-blue"></div>
-      <div class="earnings-partnership__additional-circle-pink"></div>
-    </div> #}
   </section>
 
-   <section class="earnings-tariffs">
+   {# <section class="earnings-tariffs">
     <div class="earnings-tariffs__title">
       <h2 class="color-blue">Выберите свой пакет</h2>
     </div>
@@ -485,7 +470,167 @@
         </tfoot>
       </table>
     </div>
+  </section> #}
+
+  <section class="earnings-tariffs">
+    <div class="earnings-tariffs__title">
+      <h2 class="color-blue">Выберите свой пакет</h2>
+    </div>
+    <div class="tariffs-wrap">
+      <table class="tariffs table-desktop">
+        <thead>
+          <tr>
+            <td></td>
+            <td>
+              <div class="earnings-tariffs__name">Base <div>$50</div>
+              </div>
+            </td>
+            <td>
+              <div class="earnings-tariffs__name">Bronze <div>$125</div>
+              </div>
+            </td>
+            <td>
+              <div class="earnings-tariffs__name">Silver <div>$250</div>
+              </div>
+            </td>
+            <td>
+              <div class="earnings-tariffs__name">Gold <div>$500</div>
+              </div>
+            </td>
+            <td>
+              <div class="earnings-tariffs__name">Platinum <div>$1500</div>
+              </div>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in table %}
+          <tr>
+            <td>{{ row.title }}</td>
+            {% for tariff in row.tariffs %}
+            <td>
+              {% if tariff.data == 'true' %}
+              <img src="/static/img/general/icon-done.svg" alt="">
+              {% elseif tariff.data == 'false' %}
+              <img src="/static/img/general/icon-undone.svg" alt="">
+              {% else %}
+              {{ tariff.data }}
+              {% endif %}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            {% for i in range(1, 5) %}
+            <td><a class="table__btn" href="/register/index.html">Купить</a></td>
+            {% endfor %}
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="tariffs tariffs__mobile table-mobile">
+        <div class="tariffs__row title-row">
+          <div class="tariffs__cell tariffs__cell-title">Base <div>$50</div>
+          </div>
+          <div class="tariffs__cell tariffs__cell-title">Bronze <div>$125</div>
+          </div>
+          <div class="tariffs__cell tariffs__cell-title">Silver <div>$250</div>
+          </div>
+          <div class="tariffs__cell tariffs__cell-title">Gold <div>$500</div>
+          </div>
+          <div class="tariffs__cell tariffs__cell-title">Platinum <div>$1500</div>
+          </div>
+        </div>
+
+        {% for row in table %}
+        <div class="tariffs__row">
+          <div class="tariffs__row-inner">
+            <div class="tariffs__row-title">
+              {{ row.title }}
+            </div>
+          </div>
+        </div>
+          {% for tariff in row.tariffs %}
+          <div class="tariffs__cell">
+            {% if tariff.data == 'true' %}
+              <img src="/static/img/general/icon-done.svg" alt="">
+            {% elseif tariff.data == 'false' %}
+              <img src="/static/img/general/icon-undone.svg" alt="">
+            {% else %}
+              <small class="tariffs__cell-subdata">
+                {{ tariff.data }}
+              </small>
+            {% endif %}
+          </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="tariffs__mobile-tarifpicker study-tariffs__mobile-row--title">
+      <select style="width: 100%" class="js-tarif-picker" name="tarif">
+        <option value="1">Base</option>
+        <option value="2">Bronze</option>
+        <option value="3">Silver</option>
+        <option value="3">Gold</option>
+        <option value="3">Platinum</option>
+      </select>
+      <a href="/register/index.html" class="study-tariffs__mobile-btn">Выбрать</a>
+    </div>
   </section>
+
+  <div class="earnings-author__wrapper pos-relative">
+    <div class="earnings-author__header">
+      <h2>
+        <span class="color-blue">Бонус для партнеров</span> – авторский курс Фрэнка Пьюселика
+      </h2>
+    </div>
+
+    <section class="about-author ">
+      <div class="about-author__card">
+        <div class="about-author__card__author title">АВТОР КУРСОВ</div>
+        <div class="about-author__card__name color-green">Фрэнк Пьюселик</div>
+        <div class="about-author__card__row">
+          <div class="about-author__card__row__col left">
+            <div class="author-img-wrap"></div>
+          </div>
+          <div class="about-author__card__row__col right">
+            <div class="about-author__card-items__wrapper">
+              <div class="about-author__card-items">
+                <div class="about-author__card-item" data-aos="fade-up">
+                  <span class="about-author__card-item__text">Всемирно известный тренер <div class="about-highlight">с
+                      сотнями тысяч</div> положительных отзывов</span>
+                </div>
+                <div class="about-author__card-item" data-aos="fade-up">
+                  <span class="about-author__card-item__text">Один из трех <div class="about-highlight">создателей</div>
+                    всемирно известной системы НЛП</span>
+                </div>
+                <div class="about-author__card-item" data-aos="fade-up">
+                  <span class="about-author__card-item__text">
+                    <div class="about-highlight">45 лет ведет</div> свои обучающие программы. Его методики проверены
+                    сотнями тысяч людей из СНГ, Европы и Азии
+                  </span>
+                </div>
+              </div>
+              <div class="about-author__card-items">
+                <div class="about-author__card-item" data-aos="fade-up">
+                  <span class="about-author__card-item__text">С 2014 года обучил <div class="about-highlight">более 8000
+                    </div> психологов для работы с ветеранами боевых действий</span>
+                </div>
+                <div class="about-author__card-item" data-aos="fade-up">
+                  <span class="about-author__card-item__text">Автор одной из самых эффективных <div
+                      class="about-highlight">за всю историю США</div> программы по реабилитации для наркозависимой
+                    молодежи</span>
+                </div>
+              </div>
+            </div>
+            <a class="about-author__btn" href="/about-frank.html">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <div class="earnings-author__wrapper pos-relative">  
     <div class="earnings-author__header"> 
