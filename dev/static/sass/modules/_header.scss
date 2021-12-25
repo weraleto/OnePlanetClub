@@ -73,6 +73,10 @@ header {
       display: none;
     }
   }
+  @include xxs {
+    font-size: 12px!important;
+    padding: 6px 10px;
+  }
 }
 
 .header-right__btn-burger {

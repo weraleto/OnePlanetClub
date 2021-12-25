@@ -9,6 +9,9 @@
   @include sm {
     width: 200px;
   }
+  @include xxs {
+    width: 180px;
+  }
 }
 
 // .logo__text {

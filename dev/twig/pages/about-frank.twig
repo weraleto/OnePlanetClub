@@ -1,265 +1,194 @@
 {% extends "../layouts/default.twig" %}
+{% set short_descrs = [
+	[
+		'Входит в <b>ТОП-100</b> бизнес-тренеров США',
+		'<b>Один из трех</b> основоположников НЛП',
+		'Консультант <b>Корпуса мира</b>',
+		'<div>Автор <b>десятков книг</b></div> и публикаций по психологии, саморазвитию, мотивации, управлению персоналом и работе с информацией'
+	],
+	[
+		'<div><b>Автор методик</b></div><div>по работе</div> с посттравматическим стрессовым расстройством у военнослужащих',
+		'<div><b>Создатель</b> одной из</div><div>самых эффективных</div> за всю историю США программы по реабилитации нарко- и алкозависимой молодежи',
+		'<div><b>Президент компании</b> «Pucelik</div> Consulting Group» с 2002 года'
+	],
+	[
+		'Регулярно проводит тренинги и обучающие программы <b>по всему миру</b>: СНГ, Европа, Азия.',
+		'Семейный психотерапевт со стажем <b>более 45 лет</b>, автор собственного метода терапии по работе с диссоциированными состояниями (DST)'
+	]
+] 
+%}
 
 
 {% block content %}
-  <section class="about-frank">
-    <div class="about-frank__card__row">
-      <div class="about-frank__card__row__col left">
-        <div class="title">О Фрэнке Пьюселике</div>
-        <div class="about-frank__desctiption">Всемирно известный семейный психотерапевт, один из трех создателей НЛП, впервые и эксклюзивно онлайн для Вас на платформе One Planet Club</div>
-        <a class="about-frank__btn" href="#">Обучаться 7 дней бесплатно</a>
-      </div>
-      <div class="about-frank__card__row__col">
-        <div class="frank-img-wrap"></div>
-        <div class="frank-additional-circle"></div>
-      </div>
-    </div>
-    <div class="about-frank__additional-plus-orange js-rotate"></div>
-    <div class="about-frank__additional-plus-green js-rotate"></div>
-    <div class="about-frank__additional-plus-blue js-rotate"></div>
-    <div class="about-frank__additional-circle-green"></div>
-  </section>
+<section class="about-frank__header">
+	<div class="about-frank__header-inner">
+		<h1>Фрэнк Пьюселик</h1>
+		<h2>Бизнес-тренер, семейный психотерапевт, тренер тренеров с мировым именем</h2>
+	</div>
+	<div class="about-frank__header-pic">
+		<img src="/static/img/general/about-port.svg" />
+	</div>
+</section>
+<section class="about-frank__descr">
+	{% for col in short_descrs %}
+	<div class="about-frank__descr--col col-{{loop.index}}">
+		{% for item in col %}
+		<div class="about-frank__descr--item">
+			{{item}}
+		</div>
+		{% endfor %}
 
-  <section class="about-video">
-    <div class="about-video__row">
-      <div class="about-video__col">
-        <div class="about-video__img-wrap">
-          <img src="/static/img/general/desktop-video.png" alt="">
-          <div class="about-video__frame-wrap">
-            <iframe
-              class="about-video__frame"
-              src="https://player.vimeo.com/video/468581776"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-{#
-        <div class="about-video__img-wrap">
-          <img src="/static/img/general/desktop-video.png" alt="">
-          <iframe
-            class="about-video__frame"
-            src="https://player.vimeo.com/video/468581776"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-#}
-      </div>
-      <div class="about-video__col right">
-        <div class="title about-video__title">Создатель <span class="color-green">НЛП</span></div>
-        <div class="about-video__description">“Наука о мастерстве” - система из 50+ психологических навыков, созданная в 1970-х годах и получившая всемирное распространение. Один из трех основателей НЛП Фрэнк Пьюселик рассказывает первого лица историю и причины создания системы.</div>
-      </div>
-    </div>
-    <div class="about-video__additional-circle-yellow"></div>
-    <div class="about-video__additional-plus-blue_1 js-rotate"></div>
-    <div class="about-video__additional-plus-blue_2 js-rotate"></div>
-    <div class="about-video__additional-circle-blue"></div>
-  </section>
-
-  <section class="info">
-    <div class="info__card info__card--blue">
-      <div class="info__col left">
-        <div class="title">Корпоративные клиенты</div>
-        <div class="info__description">НЛП навыки оказались широко востребованы бизнесом. <br/>Компания PCG (Pucelik Consulting Group) успешно работает в СНГ с 2002 года.</div>
-      </div>
-      <div class="info__col">
-        <div class="info__img-wrap">
-          <img src="/static/img/general/info.png" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features-video bg-grey">
-    <div class="title">
-      Более <span class="color-blue">45 лет</span> опыта
-      <img src="/static/img/general/icon-books.png" alt="">
-    </div>
-    <div class="features-video__description">Психотерапевт со стажем 45+ лет, профессор университета в Калифорнии</div>
-    <div class="features-video__row">
-      <div class="features-video__col left">
-        <div class="features-video__frame-wrap">
-          <iframe
-            class="features-video__frame"
-            src="https://player.vimeo.com/video/468581776"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-      <div class="features-video__col right">
-        <div class="features-video__img-wrap">
-          <img class="features-video__img" src="/static/img/general/big-thumbls-up.png" alt="">
-        </div>
-        <div class="features-video__additional-circle"></div>
-      </div>
-    </div>
-    <div class="features-video__additional-circle-blue_1"></div>
-    <div class="features-video__additional-plus-blue_1 js-rotate"></div>
-    <div class="features-video__additional-plus-blue_2 js-rotate"></div>
-    <div class="features-video__additional-circle-blue_2"></div>
-    <div class="features-video__additional-circle-pink"></div>
-  </section>
-
-  <section class="info-video">
-    <div class="title">
-      <img src="/static/img/general/icon-order.png" alt="">
-      <span class="color-green">Ветеран</span> боевых действий
-    </div>
-    <div class="info-video__description">Провел год во Вьетнаме. С 1970-х работал с ветеранами боевых действий 7 войн, с 2014 года бесплатно обучил более 8000 психологов работе с ветеранами.</div>
-    <div class="info-video__video-wrap">
-      <img src="/static/img/general/laptop-video.png" alt="">
-      <div class="info-video__video-frame-wrap">
-        <iframe
-          class="info-video__video-frame"
-          src="https://player.vimeo.com/video/468581776"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
-{#
-    <div class="info-video__video-wrap">
-      <img src="/static/img/general/laptop-video.png" alt="">
-      <iframe
-        class="info-video__video-frame"
-        src="https://player.vimeo.com/video/468581776"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-#}
-    <div class="info-video__additional-circle-blue"></div>
-    <div class="info-video__additional-plus-blue js-rotate"></div>
-    <div class="info-video__additional-circle-yellow"></div>
-    <div class="info-video__additional-circle-green"></div>
-    <div class="info-video__additional-plus-orange js-rotate"></div>
-  </section>
-
-  <section class="info">
-    <div class="info__card info__card--orange">
-      <div class="info__col left_third">
-        <div class="title"><span class="color-orange">Основатель</span> сети центров реабилитации для наркозависимой молодежи</div>
-        <div class="info__description">Методика была признана одной из самых эффективных в США, а затем в 2010 году один из центров, в основании которых участвовал Фрэнк, получил награду Государственной Думы РФ.</div>
-      </div>
-      <div class="info__col">
-        <div class="info__img-wrap">
-          <img src="/static/img/general/addresses.svg" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="features-video bg-grey">
-    <div class="title">
-      Знает наш <span class="color-blue">менталитет</span>
-      <img src="/static/img/general/icon-brain.png" alt="">
-    </div>
-    <div class="features-video__description">Уже несколько десятилей Фрэнк живет и работает на просторах СНГ. Посмотрите короткий ролик и узнайте больше фактов из жизни основателя НЛП.</div>
-    <div class="features-video__row">
-      <div class="features-video__col left">
-        <div class="features-video__frame-wrap">
-          <iframe
-            class="features-video__frame"
-            src="https://player.vimeo.com/video/468581776"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-      <div class="features-video__col right">
-        <div class="features-video__img-wrap">
-          <img class="features-video__img_sec" src="/static/img/general/hand-ok.png" alt="">
-        </div>
-        <div class="features-video__additional-circle"></div>
-      </div>
-    </div>
-    <div class="features-video_sec__additional-plus-blue_1 js-rotate"></div>
-    <div class="features-video_sec__additional-circle-yellow"></div>
-    <div class="features-video_sec__additional-plus-blue_2 js-rotate"></div>
-  </section>
-
-  <section class="info info--offset">
-    <div class="info__card info__card_third info__card--blue">
-      <div class="info__col left_sec">
-        <div class="info__img-wrap">
-          <img src="/static/img/general/frank-speaker.png" alt="">
-        </div>
-        <div class="info__place">Москва, Россия</div>
-        <div class="info__year">2007</div>
-      </div>
-      <div class="info__col right_sec">
-        <div class="title">Впервые полноценно <span class="color-green">онлайн</span></div>
-        <div class="info__description">С 1970-х годов Фрэнк ведет очные офлайн программы премиального уровня. Сейчас Вам доступно обучение у живой легенды, одного из трех основателей НЛП.</div>
-        <a class="info__btn" href="#">Подробнее о курсах</a>
-      </div>
-      <div class="info__additional-circle-blue"></div>
-      <div class="info__additional-circle-pink"></div>
-      <div class="info__additional-circle-yellow"></div>
-    </div>
-  </section>
-
-  <section class="who-needs">
-    <div class="title">
-      <img src="/static/img/general/icon-think.png" alt="">
-      Кому и чем <span class="color-green">полезно</span> НЛП?
-    </div>
-    <div class="who-needs__description">Система, которая приближает счастье и успех</div>
-    <div class="who-needs__btns">
-      <button class="who-needs__btn js-btn active" data-target="#row-1">Сферы жизни, где будете применять</button>
-      <button class="who-needs__btn js-btn" data-target="#row-2">Для каких целей отлично подойдет</button>
-    </div>
-    {# ROW 1 #}
-    <div class="who-needs__row js-content" id="row-1">
-      <div class="who-needs__row-inner">
-        <div class="who-needs__item">
-          <img class="who-needs__item__img" src="/static/img/general/icon-give-five.png" alt="">
-          <div class="who-needs__item__title">Для себя</div>
-          <div class="who-needs__item__description">внутренний комфорт, спокойствие и уверенность</div>
-        </div>
-        <div class="who-needs__item">
-          <img class="who-needs__item__img" src="/static/img/general/icon-case.png" alt="">
-          <div class="who-needs__item__title">Карьера и бизнес</div>
-          <div class="who-needs__item__description">пройти собеседование или провести его, правильно нанять или уволить, выстроить отношения с коллегами и партнерами</div>
-        </div>
-        <div class="who-needs__item">
-          <img class="who-needs__item__img" src="/static/img/general/icon-family.png" alt="">
-          <div class="who-needs__item__title">Семья</div>
-          <div class="who-needs__item__description">помочь ребенку в развитии и наладить отношения в паре</div>
-        </div>
-      </div>
-    </div>
-    {# ROW 2 #}
-    <div class="who-needs__row js-content" id="row-2" style="display: none;">
-      <div class="who-needs__row-inner">
-        <div class="who-needs__item">
-          <img class="who-needs__item__img" src="/static/img/general/icon-family.png" alt="">
-          <div class="who-needs__item__title">Семья</div>
-          <div>помочь ребенку в развитии и наладить отношения в паре</div>
-        </div>
-        <div class="who-needs__item">
-          <img class="who-needs__item__img" src="/static/img/general/icon-give-five.png" alt="">
-          <div class="who-needs__item__title">Для себя</div>
-          <div>внутренний комфорт, спокойствие и уверенность</div>
-        </div>
-        <div class="who-needs__item">
-          <img class="who-needs__item__img" src="/static/img/general/icon-case.png" alt="">
-          <div class="who-needs__item__title">Карьера и бизнес</div>
-          <div>пройти собеседование или провести его, правильно нанять или уволить, выстроить отношения с коллегами и партнерами</div>
-        </div>
-      </div>
-    </div>
-    <div class="who-needs__additional-triangle-pink"></div>
-    <div class="who-needs__additional-plus-green js-rotate"></div>
-  </section>
-
-  {% include "../partials/form.twig" with {color: 'blue', title_text: 'Начать учиться'} %}
+		{% if loop.last %}
+		<div class="about-frank__descr--icon">
+			<img src="/static/img/general/about-icon.svg">
+		</div>
+		{% endif %}
+	</div>
+	{% endfor %}
+</section>
+<section>
+	<div class="about-frank__subtitle">
+		<h3 class="title">
+			Фрэнка Пьюселика можно назвать <span class="color-blue">живой легендой</span>.
+		</h3>
+		<p>
+			За его консультацией обращаются ведущие мировые компании, крупные бизнесмены и даже первые лица государств.
+			Места на его тренинги разбираются моментально, потому что многие мечтают учиться у персоны такого уровня, а
+			количество мест на очных занятиях ограничено.
+		</p>
+	</div>
+</section>
+<section class="about-frank__bio">
+	<img src="/static/img/general/bio.svg" alt="bio">
+	<h3>Биография Фрэнка Пьюселика</h3>
+	<p style="margin-bottom: 3em;">Дорога к успеху Фрэнка не была легкой и гладкой. Его личность закалялась в сложных обстоятельствах: непростое
+		детство, участие в военных действиях, проблемы с наркотиками, потеря себя. И всё это до 25 лет. Как ему
+		удалось, несмотря на это, стать тем, кто он есть сейчас?</p>
+		<article>
+			<div class="about-frank__pic-float">
+				<img src="/static/img/general/about-frank-p.png" alt="Frank">
+			</div>
+			<h4>“Счастливого детства у меня не было”. </h4>
+			<p>Фрэнк родился и рос в неблагополучном мексиканском районе в Сан-Диего, штат Калифорния. Его родители
+				выпивали, часто ругались, набрасывались друг на друга с кулаками. Полиция и скорая регулярно приезжали к их
+				дому.
+			</p>
+			<p>Мать избивала маленького Фрэнка в нетрезвом виде, а отец просто отсутствовал большую часть времени.
+				Находится дома Фрэнк не любил, но обстановка на улице была не менее напряженной. Почти каждую неделю
+				случались агрессивные потасовки местных банд. Фрэнк был низкого роста, худощавее сверстников, поэтому
+				старался не участвовать в драках и избегать неприятностей. Но это не всегда получалось. </p>
+		</article>
+		
+	<article>
+		<h4>Вместо колледжа — на войну.</h4>
+		<p>Когда Фрэнку исполнилось 17 лет, он был рад покинуть дом. Но еще не знал, какие потрясения ждут его в
+			ближайшие 2 года. В то время все молодые дееспособные парни направлялись во Вьетнам. Избежать этого можно
+			было только попав в колледж. Фрэнк начал учёбу, но через 2 месяца его отчислили. И он всё-таки оказался на
+			той войне.
+		</p>
+	</article>
+	<article class="biography-block">
+		<p>“Меня определили в фельдшеры. Я год проучился в медицинской школе при армии, и думал, что следующие 4 года
+			буду работать в госпитале. Но все повернулось так, что я оказался в джунглях с оружием в руках и еще с
+			десятью напарниками. Фельдшером я был, когда кто-то из-них получал травму, а все остальное время я был
+			солдатом. После боевых столкновений я собирал части тела своих товарищей, засовывал в черный мешок и думал:
+			“Буду ли я следующим?” </p>
+	</article>
+	<div class="about-frank__frame-wrap">
+		<iframe class="about-frank__frame" src="https://player.vimeo.com/video/468581776" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
+	<p style="margin-bottom: 2em">13 месяцев спустя Фрэнк вышел из самолета в Сан-Диего живым и невредимым, но мыслями
+		был еще на войне. Он не
+		доверял людям, не мог расслабиться, испытывал неконтролируемую внутреннюю агрессию.
+	</p>
+	<article class="biography-block">
+		<p>“Психологически я был полностью разрушен войной. Во Вьетнаме мне нужно было стать зверем, нельзя было думать
+			ни о чем, кроме выживания. По возвращению было невозможно жить нормальной жизнью. Я был абсолютно потерян и
+			опасен для окружающих”.
+		</p>
+	</article>
+	<article>
+		<h4>Потребовался путь длиною в 15 лет, чтобы создать себя заново.
+		</h4>
+		<p>После войны Фрэнк ощущал себя абсолютно потерянным. Он решил изучать психологию, чтобы ответить себе на
+			вопрос «Что со мной не так?». Фрэнк получил диплом бакалавра гуманитарных наук по специальности “Психология”
+			в Калифорнийском университете. А затем продолжил собственные исследования на этом поприще вместе с группой
+			единомышленников, благодаря их экспериментам зародилось новое учение Мета, впоследствии оно легло в основу
+			НЛП.
+		</p>
+	</article>
+	<article>
+		<h4>“Я выжил на войне, чтобы стать наркоманом?”
+		</h4>
+		<p>В 70-е годы в Америке расцветал культ психотропных веществ, многие психологи еще не понимали их вреда и
+			пропагандировали прием психоделических препаратов.
+			Фрэнк в то время обучался и вел свои исследования в Санта-Крузе — городе- эпицентре наркожизни. Кокаин, ЛСД
+			и другие психоделики были здесь повсюду. Фрэнк был не исключением и в течение нескольких лет регулярно
+			употреблял наркотики. Но в какой-то момент он опомнился: “Неужели я выжил на войне, чтобы стать наркоманом?
+			Ну уж нет!”
+		</p>
+		<p>Самостоятельно пройдя через опыт зависимости и сумев полностью от неё избавиться, Фрэнк Пьюселик смог
+			составить самую эффективную в истории США программу по реабилитацию наркозавимых молодых людей. Сейчас по
+			этой программе работают центры в России, Украине и множество американских организаций. Их главная задача —
+			не просто избавление от зависимости, а полное восстановление и совершенствование личности.</p>
+	</article>
+	<div class="about-frank__frame-wrap">
+		<iframe class="about-frank__frame" src="https://player.vimeo.com/video/468581776" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
+	<article>
+		<div class="about-frank__pic-float">
+			<img src="/static/img/general/about-frank-p.png" alt="Frank">
+		</div>
+		<h4>Как появилось НЛП? 
+		</h4>
+		<p>В попытках найти способ помочь самому себе, Фрэнк изучал разные направления психотерапии. Вместе с другим студентом Калифорнийского университета Ричардом Бэндлером они глубоко погрузились в гештальт-терапию, показывали успехи в этой области и стали вести обучающие семинары. Спустя время они обратились к профессору лингвистики Джону Гриндеру, чтобы тот подсказал, как применять лингвистику в терапии и помогать клиентам получать быстрые и качественные результаты. 
+		</p>
+		<p>Их исследования велись несколько лет и получили название Мета. За 7 лет плотной работы Фрэнк Пьюселик, Джон Гриндер и Ричард Бендлер изучили и сформулировали основные постулаты поведения “гениев”, людей с уникальными способностями и выдающимися результатами в самых разных областях. В дальнейшем пути Фрэнка и его коллег по работе разошлись. Название “Мета” было зарегистрировано на Фрэнка и осталось за ним. Он продолжил работу в своем направлении. Джон и Ричард также дополнили материал своими оригинальными подходами и назвали его НЛП. Так еще в первые 7 лет зародилось 2 направления учения о мастерстве успеха: НЛП и другое НЛП. Именно отсюда идет множество споров и дискуссий о том, что такое НЛП на самом деле, ведь зачастую собеседники, называя одно и то же слово, имеют ввиду разное содержание. 
+		</p>
+	</article>
+	<div class="about-frank__frame-wrap">
+		<iframe class="about-frank__frame" src="https://player.vimeo.com/video/468581776" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
+	<p class="about-frank__text-highlight">
+		С помощью оригинального НЛП-подхода Фрэнк изменил свои ментальные привычки и реакции, стал по-новому мыслить, избавился от внутренней агрессии. Он применял все принципы на себе. 
+	</p>
+	<article class="biography-block">
+		<p>“Мне было 35, когда я впервые лег в постель тем человеком, который мне искренне нравится. До этого момента я считал себя неудачником, куском мусора и не знал, что мне делать в жизни.			
+		</p>
+		<p>НЛП дало мне возможность быть тем, кем я хочу, а не тем, кем меня запрограммировали родители или мой жизненный опыт. Если бы я опирался на это, то стал бы пьяницей или убийцей, потому что моя мать пила, избивала меня и я лично участвовал в ужасах войны”.</p>
+	</article>
+	<div class="about-frank__frame-wrap">
+		<iframe class="about-frank__frame" src="https://player.vimeo.com/video/468581776" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen></iframe>
+	</div>
+	<article>
+		<h4>Люди — волшебники,
+		</h4>
+		<p>которые могут создавать свою жизнь, управляя собственными мыслительными процессами. В этом Фрэнк убеждён и своим примером показывает, что эффективное мышление способно помочь достичь больших успехов во всех сферах жизни: внутренний комфорт, отношения, бизнес и карьера, воспитание детей, саморазвитие. 
+		</p>
+		<div class="article-images">
+			<img src="/static/img/general/ab-group.png" alt="Группа людей">
+		</div>
+		<p class="text-center">Авторский курс Фрэнка Пьюселика “Мастерство успеха” это система проверенных и отточенных, конкретных навыков для улучшения вашей жизни. Вас ждет увлекательное обучение в группе единомышленников, видеоуроки от Фрэнка и профессиональных тренеров-психологов (все прошли обучение у Фрэнка и имеют многолетний опыт работы), еженедельные онлайн-встречи, полезные задания для улучшения именно ваших ситуаций.
+		</p>
+	</article>
+</section>
+<section>
+	<div class="about-frank__join">
+		<h3 class="title">Мы на 100% уверены в пользе курса.</h3>
+		<p>Поэтому предоставляем Вам доступ к демо-неделе курса “Мастерство успеха” (полный вариант участия) <span class="color-blue">совершенно бесплатно</span>. Вы сможете лично убедиться в качестве учебной программы и поймете насколько готовы работать над улучшением своей жизни по этой системе. Уже тысячи людей по всему миру прошли обучение у Фрэнка Пьюселика и стали счастливее. Присоединяйтесь и Вы!</p>
+		
+		<div class="about-frank__join--btn__wrap">
+			<a href="/register/index.html" class="about-frank__join--btn">Начать обучение бесплатно</a>
+		</div>
+	</div>
+</section>
 
 {% endblock %}
