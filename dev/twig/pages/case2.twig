@@ -1,0 +1,209 @@
+{% extends "../layouts/default.twig" %}
+
+{% set disableHeader = true %}
+{% set disableFooter = true %}
+
+{% set short_descrs = [
+    {title: 'Видеоуроки', text: 'от первоисточника НЛП, признанного мирового гуру', icon: 'pl2-ic1'},
+    {title: 'Сопровождение', text: 'профессиональных кураторов-психологов, учеников самого Фрэнка ', icon: 'pl2-ic2'},
+    {title: 'Домашние задания', text: 'для прокачки “навыков успеха”', icon: 'pl2-ic3'},
+    {title: 'Общение', text: 'с единомышленниками', icon: 'pl2-ic4'},
+    {title: 'Вдохновение', text: 'на рост и развитие', icon: 'pl2-ic5'},
+] %}
+{% set results = [
+    {text: 'Получите эффективные инструменты для преобразования жизни', icon: 'lp2-r1'},
+    {text: 'Узнаете, как применять методы НЛП в повседневных ситуациях', icon: 'lp2-r2'},
+    {text: 'Научитесь управлять собой и своими реакциями', icon: 'lp2-r3'},
+    {text: 'Сможете предотвращать конфликты и наладите отношения с окружающими', icon: 'lp2-r4'},
+    {text: 'Научитесь противостоять манипуляциям и провокациям', icon: 'lp2-r5'},
+    {text: 'Получите свободу, чтобы быть тем, кем вы хотите, и взять жизнь в свои руки', icon: 'lp2-r6'},
+] %}
+
+{% block content %}
+<div id="case2">
+    <section class="lp2_header wihout-offset bg-enter">
+        <div class="container lp2_header__container">
+            <h1>Ключевые навыки успеха</h1>
+            <h2>
+                <div>Гайд <span class="color-yellow">от всемирно известного</span></div>
+                <div class="color-yellow">психолога, коуча</div>
+                <div class="color-yellow">и сооснователя НЛП</div>
+            </h2>
+        </div>
+    </section>
+    <section class="section guide-description wihout-offset">
+        <div class="container guide-description__container">
+            <h3 class="guide-description__header">Из гайда вы узнаете:</h3>
+            <div class="guide-description__items">
+                <img src="/static/img/general/short-desc-d.svg" alt="Краткое описание гайда">
+            </div>
+        </div>
+    </section>
+    <section class="section just-now wihout-offset">
+        <div class="container just-now__container">
+            <div class="just-now__col just-now__img">
+                <img src="/static/img/general/just-now-bg.jpeg" alt="Удивленный мужчина">
+            </div>
+            <div class="just-now__col just-now__text">
+                <h3 class="color-blue">Только сейчас вы можете получить бонус к гайду!</h3>
+                <p>Вы всерьез решили улучшить свою жизнь? Тогда это предложение для вас! </p>
+                <p><span class="highlight">Приглашаем принять участие</span> в демо-неделе авторского курса
+                    “Мастерство успеха” от всемирно известного коуча <span class="highlight color-blue">Фрэнка
+                        Пьюселика!</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="section without-offset gain">
+        <div class="gain__description">
+            <p>Получите ценные знания для развития себя 
+                от легендарного основателя НЛП
+                и психотерапевта со стажем более
+                45 лет совершенно <span class="highlight color-green">БЕСПЛАТНО</span>!
+            </p>
+            <img src="/static/img/general/about-frank-p.png" alt="Frank">
+        </div>
+        <div class="gain__limited">
+            <div class="gain__limited--header">
+                <img src="/static/img/general/limited.svg" alt="warning">
+                <span>Это предложение действует только 15 минут! </span>
+            </div>
+            <div class="gain__limited--timer">
+                <div class="gain__limited--timer__item mins">
+                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <g class="base-timer__circle">
+                          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                          <path
+                            id="base-timer-path-remaining"
+                            stroke-dasharray="251 283"
+                            class="base-timer__path-remaining"
+                            d="
+                              M 50, 50
+                              m -45, 0
+                              a 45,45 0 1,0 90,0
+                              a 45,45 0 1,0 -90,0
+                            "
+                          ></path>
+                        </g>
+                      </svg>
+                      <span id="base-timer-label-mins" class="base-timer__label">
+                        14
+                      </span>
+                </div>
+                :
+                <div class="gain__limited--timer__item secs">
+                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <g class="base-timer__circle">
+                          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                          <path
+                            id="base-timer-path-remaining"
+                            stroke-dasharray="198 283"
+                            class="base-timer__path-remaining"
+                            d="
+                              M 50, 50
+                              m -45, 0
+                              a 45,45 0 1,0 90,0
+                              a 45,45 0 1,0 -90,0
+                            "
+                          ></path>
+                        </g>
+                      </svg>
+                      <span id="base-timer-label-secs" class="base-timer__label">
+                        36
+                      </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wihout-offset">
+        <div class="gain-form__additional__circle-top"></div>
+        <div class="gain-form__additional__circle-bottom"></div>
+        <div class="gain__form ">
+            {% include "../partials/form-lp2.twig"  with {color: 'blue', title_color: 'blue', title_align: 'center'} %}
+        </div>
+    </section>
+    <section class="without-offset">
+        <div class="gain__meeting">
+            <h3 class="title">
+                Видеознакомство с Фрэнком Пьюселиком
+            </h3>
+            <div class="gain__meeting--frame-wrap">
+                <iframe class="gain__meeting--frame" src="https://player.vimeo.com/video/468581776" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+        </div>
+    </section>
+    <section class="section wihout-offset about-frank bg-darken">
+        <h3>Фрэнк Пьюселик</h3>
+        <h4 class="color-yellow">Один из основоположников НЛП, психотерапевт,
+            тренер тренеров с мировым именем</h4>
+        <div class="about-frank__row">
+            <div class="about-frank__col left">
+                <p>Входит в <strong>ТОП-100</strong> бизнес-тренеров США</p>
+                <p>Консультант <strong>Корпуса мира</strong></p>
+                <p>Семейный психотерапевт со стажем <strong>более 45 лет</strong></p>
+                <p>Автор <strong>десятков книг и публикаций</strong> по психологии, саморазвитию, мотивации, управлению
+                    персоналом и работе с информацией</p>
+                <p>Регулярно проводит тренинги и обучающие программы <strong>по всему миру</strong>: СНГ, Европа, Азия.
+                </p>
+            </div>
+            <div class="about-frank__col right">
+                <img src="/static/img/general/lp2-fr.png" alt="Frank">
+            </div>
+        </div>
+    </section>
+    <section class="section wihout-offset whaton">
+        <img class="whaton__additional-circle__left" src="/static/img/general/lp2-c1-bg.svg" alt="Фоновое изображение">
+        <img class="whaton__additional-circle__right" src="/static/img/general/lp2-c2-bg.svg" alt="Фоновое изображение">
+        <h3>
+            <div class="color-green">Что ждет вас на демо-неделе</div>с Фрэнком Пьюселиком?
+        </h3>
+        <div class="whaton__row">
+            {% for item in short_descrs %}
+            <div class="whaton__item">
+                <div class="whaton__item--icon">
+                    <img src="/static/img/general/{{item.icon}}.svg" alt="{{item.title}}">
+                </div>
+                <div class="whaton__item--txt"><strong>{{ item.title }}</strong> {{item.text}}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="section wihout-offset result">
+        <h3 class="color-blue title">
+            В результате вы:
+        </h3>
+        <div class="result__row">
+            {% for item in results %}
+            <div class="result__item">
+                <div class="result__item--text">
+                    {{item.text}}
+                </div>
+                <div class="result__item--icon">
+                    <img src="/static/img/general/{{item.icon}}.svg" alt="{{item.text}}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="result__get-guide">
+            <a href="#" class="result__get-guide--btn blue">Получить гайд + доступ к ДЕМО-НЕДЕЛЕ</a>
+        </div>
+        <div class="result__reviews">
+            <div class="result__reviews--row">
+                <div class="result__reviews--col left">
+                    <h4>Что говорят ученики о пройденном курсе?</h4>
+                    <p>Отзывы участников из социальных сетей VK, Facebook, Instagram</p>
+                </div>
+                <div class="result__reviews--col right">
+                    <img src="/static/img/general/lp2-rev.svg" alt="Отзывы">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="lp2_form--wrapper bg-darken bg-enter">
+        <div class="lp2_form__additional__circle-top"></div>
+        <div class="lp2_form__additional__circle-bottom"></div>
+        {% include "../partials/form-lp2.twig"  with {color: 'green', title_color: 'yellow', title_align: 'center', text_color: 'white'} %}
+    </section>
+</div>
+{% endblock %}

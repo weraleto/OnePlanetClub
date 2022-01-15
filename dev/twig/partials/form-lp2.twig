@@ -1,0 +1,55 @@
+<div class="lp2_form">
+  <div class="form__card color-{{text_color}}">
+    <div class="form__col {{ title_align }}">
+      <div class="title">Заполните форму, чтобы <span class="color-{{title_color}}">скачать гайд
+        бесплатно и получить доступ к демо-неделе</span>:</div>
+    </div>
+    <div class="form__col right">
+      <form class="order-form" name="order-form" id="order-form" >
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label">
+              <input type="text" class="input input-decorator" id="name" name="name" placeholder="Имя">
+              <span class="color-{{title_color}}">Ваше имя</span>
+            </label>
+            <div class="form-error-text" id="error-name"></div>
+          </div>
+          <div class="form-group">
+            <label class="label">
+              <input type="email" class="input input-decorator" id="email" name="email" placeholder="Email">
+              <span class="color-{{title_color}}">Ваш email</span>
+            </label>
+            <div class="form-error-text" id="error-email"></div>
+          </div>
+          <div class="form-group">
+            <label class="label">
+              <input type="phone" class="input input-decorator" id="phone" name="phone" placeholder="Телефон">
+              <span class="color-{{title_color}}">Ваш телефон</span>
+            </label>
+            <div class="form-error-text" id="error-phone"></div>
+          </div>
+        </div>
+        <div class="form-with-btn-row">
+          <div class="checkbox-wrap">
+            <div class="form-group">
+              <input type="checkbox" class="checkbox {{color}}" id="checkbox" name="checkbox">
+              <label class="checkbox-label" for="checkbox">
+                Я согласен с
+                <a class="color-{{title_color}}" href="#" target="_blank" rel="noopener noreferrer">договором оферты</a>
+                и
+                <a class="color-{{title_color}}" href="#" target="_blank" rel="noopener noreferrer">политикой конфиденциальности</a>
+              </label>
+            </div>
+            <div class="form-error-text" id="error-checkbox"></div>
+          </div>
+        </div>
+        <div class="result__get-guide">
+          <button type="submit" href="#" class="result__get-guide--btn {{color}}">Получить гайд + доступ к ДЕМО-НЕДЕЛЕ</button>
+        </div>
+        <a href="#" class="lp2_form--nodemo color-{{title_color}}">
+          Или получить гайд без доступа к демо-неделе 
+        </a>
+      </form>
+    </div>
+  </div>
+</div>
