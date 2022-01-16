@@ -1,5 +1,7 @@
 #case2 {
 
+    font-size: 24px;
+
     h1,
     h2,
     h3,
@@ -12,8 +14,8 @@
     .lp2_header {
         padding-top: 7.85vw;
         padding-bottom: 5.56vw;
-        height: 59.72vw;
-        max-height: 99vh;
+        height: 59vw;
+        min-height: 860px;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -29,20 +31,32 @@
 
         h1 {
             color: #595959;
-            font-size: 72px;
             text-transform: uppercase;
         }
 
         h2 {
             color: white;
-            font-size: 64px;
             font-weight: 700;
+        }
+
+        @include lg {
+            height: auto;
+            min-height: 650px;
+        }
+
+        @include sm {
+            min-height: 550px;
+        }
+
+        @include xs {
+            padding: 50px 0;
+            min-height: 400px;
         }
     }
 
 
     .guide-description {
-        padding-top: 40px;
+        padding-top: 60px;
         padding-bottom: 90px;
         background-color: $main-font-color;
         color: white;
@@ -54,7 +68,7 @@
         }
 
         &__header {
-            font-size: 36px;
+            // font-size: 36px;
             font-weight: 500;
             margin: 0;
         }
@@ -62,12 +76,104 @@
         &__items {
             display: flex;
             justify-content: space-between;
+
+            &.desktop-only {
+                @include sm {
+                    display: none;
+                }
+            }
+
+            &.mobile-only {
+                display: none;
+
+                @include sm {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        &__item {
+            white-space: pre-line;
+            position: relative;
+
+            &.top-left {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 103px;
+                    height: 103px;
+                    background: url('/static/img/general/lp2-de-1.svg') no-repeat;
+                    background-size: contain;
+                    top: 0;
+                    left: 0;
+                    transform: translate(-30%, -70%);
+                }
+            }
+
+            &.bottom-left {
+                margin-top: 70px;
+                margin-bottom: 65px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 173px;
+                    height: 173px;
+                    background: url('/static/img/general/lp2-de-2.svg') no-repeat;
+                    background-size: contain;
+                    bottom: 0;
+                    left: 0;
+                    transform: translate(-23%, 46%);
+                }
+            }
+
+            &.top-right {
+                margin-top: 120px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 153px;
+                    height: 153px;
+                    background: url('/static/img/general/lp2-de-3.svg') no-repeat;
+                    background-size: contain;
+                    top: 0;
+                    right: 0;
+                    transform: translate(0%, -45%);
+                }
+            }
+
+            &.bottom-right {
+                margin-top: 80px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 153px;
+                    height: 153px;
+                    background: url('/static/img/general/lp2-de-4.svg') no-repeat;
+                    background-size: contain;
+                    bottom: 0;
+                    right: 0;
+                    transform: translate(30%, 30%);
+                }
+            }
+
+
+            .highlight {
+                font-size: 1.33em;
+                position: relative;
+                z-index: 3;
+            }
         }
     }
 
     .just-now {
+        @extend %flex-col;
         min-height: 622px;
-        display: flex;
         background-color: #E2E2E2;
         padding-top: 10px;
 
@@ -75,11 +181,26 @@
             display: flex;
             justify-content: space-between;
             min-height: 100%;
+
+            @include xs {
+                flex-direction: row-reverse;
+            }
+
+            @media screen and (max-width: 420px) {
+                flex-direction: column-reverse;
+                align-items: flex-end;
+            }
+
         }
 
         &__col {
             flex: 0 1 50%;
             min-height: 100%;
+
+            @include md {
+                flex: 0 1 auto;
+                min-height: unset;
+            }
         }
 
         &__img {
@@ -89,27 +210,86 @@
             img {
                 width: 100%;
             }
+
+            @include md {
+                max-width: 30%;
+            }
+
+            @include xs {
+                max-width: 50%;
+                transform: scale(-1, 1);
+            }
         }
 
         &__text {
             margin-left: 7%;
             padding: 40px 0 60px;
-            font-size: 24px;
             line-height: 1.2;
+
+            @include md {
+                padding: 0;
+            }
+
+            @include xs {
+                margin-right: 3%;
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: 420px) {
+                margin: 0;
+            }
         }
 
         h3 {
             font-size: 64px;
             margin-bottom: 0.5em;
             font-weight: 800;
+
+            &.mobile-only {
+                display: none;
+
+                @include md {
+                    display: block;
+                }
+
+                @include xs {
+                    margin: 0;
+                    font-size: 30px;
+                }
+            }
+
+            &.desktop-only {
+
+                @include md {
+                    display: none;
+                }
+            }
         }
 
         p {
             margin: 2em 0;
+
+            @include xs {
+                margin: 1.5em 0;
+            }
+
+            @media screen and (max-width: 420px) {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
 
         .highlight {
             font-size: 1.5em;
+        }
+
+        @include lg {
+            min-height: 43.19vw;
+
+            h3 {
+                font-size: 48px;
+            }
         }
     }
 
@@ -118,7 +298,6 @@
         padding-bottom: 40px;
         background-color: $main-font-color;
         color: white;
-        font-size: 24px;
 
         background: url('/static/img/general/lp2-fr-bg.jpg') no-repeat center center;
         background-size: cover;
@@ -130,12 +309,10 @@
         }
 
         h3 {
-            font-size: 64px;
             margin-bottom: 10px;
         }
 
         h4 {
-            font-size: 36px;
             font-weight: 400;
             max-width: 850px;
         }
@@ -143,13 +320,20 @@
         &__row {
             display: flex;
             margin-top: 50px;
+
+            @include xs {
+                flex-direction: column-reverse;
+                text-align: center;
+                align-items: center;
+                margin-top: 30px;
+            }
         }
 
         &__col {
             flex: 1 0 50%;
 
             &.right {
-                min-width: 53.22%;
+                max-width: 53.22%;
                 transform: translate(7.64%, -8%);
                 position: relative;
 
@@ -158,6 +342,16 @@
                     top: 0;
                     left: 0;
                     right: 0;
+                    width: 100%;
+
+                }
+
+                @include xs {
+                    transform: translate(10%, 0);
+
+                    img {
+                        position: static;
+                    }
                 }
             }
         }
@@ -181,12 +375,30 @@
             position: absolute;
             bottom: 0;
             left: 0;
+
+            @include xl {
+                max-width: 300px;
+                transform: translate(-30%, 0);
+            }
+
+            @include sm {
+                display: none;
+            }
         }
 
         &__additional-circle__right {
             position: absolute;
             bottom: 0;
             right: 0;
+
+            @include xl {
+                max-width: 300px;
+                transform: translate(30%, 0);
+            }
+
+            @include sm {
+                display: none;
+            }
         }
 
         &__row {
@@ -199,7 +411,6 @@
             width: 100%;
             max-width: 30%;
             text-align: center;
-            font-size: 24px;
             font-weight: 300;
             margin-bottom: 3.7em;
 
@@ -208,6 +419,7 @@
             }
 
             &--icon {
+                @extend %flex-center;
                 min-height: 95px;
                 margin-bottom: 1em;
             }
@@ -215,12 +427,46 @@
             strong {
                 font-weight: 800;
             }
+
+            @include sm {
+                margin-bottom: 2em;
+
+                &,
+                &:nth-child(2) {
+                    max-width: 45%;
+                }
+
+                &--icon {
+                    min-height: 55px;
+                    max-width: 55px;
+                }
+
+                strong {
+                    display: block;
+                }
+            }
+
+            @include xxs {
+
+                &,
+                &:nth-child(2) {
+                    max-width: 80%;
+                }
+
+            }
         }
 
         h3 {
-            font-size: 48px;
             text-align: center;
             margin-bottom: 2em;
+
+            @include sm {
+                margin-bottom: 1em;
+            }
+        }
+
+        @include md {
+            padding-top: 40px;
         }
     }
 
@@ -233,9 +479,12 @@
         }
 
         h4 {
-            font-size: 48px;
             margin-bottom: 1.1em;
             font-weight: 700;
+
+            @include md {
+                margin-bottom: 0;
+            }
         }
 
         &__row {
@@ -252,7 +501,6 @@
             max-width: 45.76%;
             border-bottom: 1px solid $main-font-color;
             padding: 20px 0;
-            font-size: 24px;
 
             &:nth-child(2),
             &:first-child {
@@ -260,8 +508,24 @@
             }
 
             &--icon {
-                min-width: 104px;
+                width: 100%;
+                max-width: 104px;
                 margin-left: 19px;
+            }
+
+            @include sm {
+                &--icon {
+                    max-width: 50px;
+                    margin-left: 10px;
+                }
+
+                &:nth-child(2) {
+                    border-top: none;
+                }
+            }
+
+            @include xs {
+                max-width: unset;
             }
         }
 
@@ -279,8 +543,22 @@
                     @extend %flex-col;
                     justify-content: center;
                     padding-right: 3.5em;
-                    font-size: 24px;
                 }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            @include md {
+                &--row {
+                    flex-direction: column;
+                }
+
+                &--col.left {
+                    padding: 0;
+                }
+
             }
         }
 
@@ -323,12 +601,33 @@
 
             p {
                 white-space: pre-line;
+                margin: 0;
             }
 
-            img {
+            &--img {
                 max-width: 302px;
                 margin-left: 5%;
                 margin-right: 6.1%;
+            }
+
+            @include sm {
+                &--img {
+                    margin-left: 30px;
+                    margin-right: 0;
+                    max-width: 200px;
+                }
+
+                p {
+                    white-space: normal;
+                }
+            }
+
+            @include xs {
+                text-align: center;
+
+                &--img {
+                    display: none;
+                }
             }
         }
 
@@ -336,7 +635,6 @@
             margin: 46px 0 115px;
 
             &--header {
-                font-size: 36px;
                 font-weight: 800;
                 text-transform: uppercase;
                 display: flex;
@@ -347,6 +645,20 @@
                 span {
                     display: inline-block;
                     margin-left: 19.5px;
+                    text-align: center;
+                }
+
+                @include xs {
+                    flex-direction: column;
+
+                    img {
+                        max-width: 50px;
+                    }
+
+                    span {
+                        margin-left: 0;
+                        margin-top: 10px;
+                    }
                 }
             }
 
@@ -354,20 +666,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-weight: normal;
                 font-size: 48px;
 
                 &__item {
-                    min-width: 181px;
-                    min-height: 181px;
+                    width: 181px;
+                    height: 181px;
                     position: relative;
                     margin: 0 30px;
+                    display: flex;
 
                     &::after {
+                        font-size: 24px;
                         position: absolute;
-                        top: 100%;
+                        top: calc(100% + 10px);
                         left: 50%;
                         transform: translate(-50%, 0);
-                        font-size: 24px;
                         text-transform: uppercase;
                     }
 
@@ -378,53 +692,61 @@
                     &.secs::after {
                         content: 'секунд';
                     }
+
+                    @include xs {
+                        font-size: 36px;
+                        width: 30vw;
+                        height: 30vw;
+
+                        &::after {
+                            font-size: 18px;
+                        }
+                    }
+
+                    @include xxs {
+                        font-size: 24px;
+                    }
                 }
 
                 .base-timer__path-remaining {
-                    /* Just as thick as the original ring */
                     stroke-width: 7px;
-
-                    /* Rounds the line endings to create a seamless circle */
-                    // stroke-linecap: round;
-
-                    /* Makes sure the animation starts at the top of the circle */
                     transform: rotate(118.39deg);
                     transform-origin: center;
-
-                    /* One second aligns with the speed of the countdown timer */
                     transition: 1s linear all;
 
-                    /* Allows the ring to change color when the color value updates */
                     stroke: $main-font-color;
                     fill-rule: nonzero;
                 }
 
                 .base-timer__circle {
-                    fill: none;
+                    fill: transparent;
                     stroke-width: 7px;
                     stroke: $yellow-light-color;
                 }
 
                 .base-timer__svg {
-                    /* Flips the svg and makes the animation to move left-to-right */
                     transform: scaleX(-1);
                 }
 
                 .base-timer__label {
                     position: absolute;
 
-                    /* Size should match the parent container */
                     width: 181px;
                     height: 181px;
-
-                    /* Keep the label aligned to the top */
                     top: 0;
-
-                    /* Create a flexible box that centers content vertically and horizontally */
                     display: flex;
                     align-items: center;
                     justify-content: center;
+
+                    @include xs {
+                        width: 30vw;
+                        height: 30vw;
+                    }
                 }
+            }
+
+            @include xs {
+                margin-bottom: 60px;
             }
         }
 
@@ -455,6 +777,10 @@
                 @include sm {
                     border-radius: 31px
                 }
+            }
+
+            @include xs {
+                margin-top: 50px;
             }
         }
     }
@@ -494,6 +820,62 @@
             background-color: rgba($main-font-color, .6);
         }
     }
+
+    .fz-72 {
+        font-size: 72px;
+
+        @include lg {
+            font-size: 64px;
+        }
+
+        @include sm {
+            font-size: 48px;
+        }
+
+        @include xs {
+            font-size: 36px;
+        }
+    }
+
+    .fz-64 {
+        font-size: 64px;
+
+        @include lg {
+            font-size: 48px;
+        }
+
+        @include sm {
+            font-size: 36px;
+        }
+
+        @include xs {
+            font-size: 24px;
+        }
+    }
+
+    .fz-48 {
+        font-size: 48px;
+    }
+
+    .fz-36 {
+        font-size: 36px;
+
+        @include lg {
+            font-size: 24px;
+        }
+
+        @include sm {
+            font-size: 18px;
+        }
+    }
+
+    @include lg {
+        font-size: 18px;
+    }
+
+    @include sm {
+        font-size: 16px;
+    }
 }
 
 .gain-form__additional__circle-top {
@@ -530,15 +912,7 @@
     z-index: -2;
 
     @include sm {
-        width: 285px;
-        height: 389px;
-        transform: translate(25%, 20%);
-    }
-
-    @include xs {
-        bottom: -50px;
-        transform: translate(40%, 20%);
-
+        display: none;
     }
 
 }
@@ -555,6 +929,10 @@
     top: 0px;
     transform: translate(0, 20%);
     z-index: -1;
+
+    @include md {
+        display: none;
+    }
 }
 
 .lp2_form__additional__circle-bottom {
@@ -565,8 +943,10 @@
     background: url('../img/general/lp2-f-c2.svg') no-repeat center center;
     background-size: contain;
     bottom: 0px;
-    // top: 50%;
     transform: translate(0, 5%);
     z-index: -2;
 
+    @include md {
+        display: none;
+    }
 }
