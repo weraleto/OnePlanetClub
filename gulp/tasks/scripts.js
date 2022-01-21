@@ -30,7 +30,7 @@ module.exports = function () {
 
   $.gulp.task("js:copy", () => {
     return $.gulp
-      .src(["./dev/static/js/*.js", "!./dev/static/js/libs.min.js"])
+      .src(["./dev/static/js/*.js", "./dev/static/js/*.json", "!./dev/static/js/libs.min.js"])
       .pipe($.gulp.dest("./build/static/js/"))
       .pipe(
         $.browserSync.reload({

@@ -402,6 +402,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000)
   }
 
+  const case2 = document.querySelector('#case2')
+  if (case2) {
+    fetch("/static/js/reviews.json")
+    .then(response => response.json())
+    .then(json => console.log(json));
+  }
+
 
 });
 /* END DOCUMENT LISTENER*/
