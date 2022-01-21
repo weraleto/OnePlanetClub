@@ -89,13 +89,12 @@
                 <span>Это предложение действует только 15 минут! </span>
             </div>
             <div class="gain__limited--timer">
-                <div class="gain__limited--timer__item mins">
+                <div class="gain__limited--timer__item mins" id="base-timer-label-mins">
                     <svg class="base-timer__svg" viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                         <g class="base-timer__circle">
                           <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
                           <path
-                            id="base-timer-path-remaining"
-                            stroke-dasharray="251 283"
+                            stroke-dasharray="217 283"
                             class="base-timer__path-remaining"
                             d="
                               M 50, 50
@@ -106,18 +105,17 @@
                           ></path>
                         </g>
                       </svg>
-                      <span id="base-timer-label-mins" class="base-timer__label">
+                      <span class="base-timer__label">
                         14
                       </span>
                 </div>
                 :
-                <div class="gain__limited--timer__item secs">
+                <div class="gain__limited--timer__item secs" id="base-timer-label-secs">
                     <svg class="base-timer__svg" viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                         <g class="base-timer__circle">
                           <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
                           <path
-                            id="base-timer-path-remaining"
-                            stroke-dasharray="198 283"
+                            stroke-dasharray="5 283"
                             class="base-timer__path-remaining"
                             d="
                               M 50, 50
@@ -128,8 +126,8 @@
                           ></path>
                         </g>
                       </svg>
-                      <span id="base-timer-label-secs" class="base-timer__label">
-                        36
+                      <span class="base-timer__label">
+                        59
                       </span>
                 </div>
             </div>

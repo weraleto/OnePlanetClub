@@ -3,6 +3,10 @@ const toastModes = {
   alert: "alert",
 };
 
+const TIME_LIMIT = 60,
+      FULL_DASH_ARRAY = 283;
+
+
 function showToast(text, toastMode) {
   const toastColor = {
     [toastModes.succes]: "#4caf50",
@@ -362,8 +366,45 @@ document.addEventListener("DOMContentLoaded", function () {
     width: 'resolve'
   })
 
-  /* END DOCUMENT LISTENER*/
+
+  // timer
+  // TIMER
+
+  let mins = 14;
+  let secs = 59;
+  
+  const minsTimer = document.querySelector('#base-timer-label-mins'),
+      secsTimer = document.querySelector('#base-timer-label-secs');
+
+  if(minsTimer){
+    const minsTimerLabel = minsTimer.querySelector('.base-timer__label'),
+          secsTimerLabel = secsTimer.querySelector('.base-timer__label'),
+          minsTimerPath = minsTimer.querySelector('.base-timer__path-remaining'),
+          secsTimerPath = secsTimer.querySelector('.base-timer__path-remaining');
+
+    minsTimerLabel.innerHTML = mins;
+    secsTimerLabel.innerHTML = secs;
+
+    let timerCase2 = setInterval(function(){
+      secs -= 1;
+      if (secs < 0) {
+        secs = 59;
+        mins -= 1;
+      }
+      if (mins < 0) {
+        mins = secs = 0;
+        clearInterval(timerCase2)
+      }
+      minsTimerLabel.innerHTML = mins;
+      secsTimerLabel.innerHTML = secs;
+      setCircleDasharray(minsTimerPath, mins);
+      setCircleDasharray(secsTimerPath, secs);
+    }, 1000)
+  }
+
+
 });
+/* END DOCUMENT LISTENER*/
 
 /* FUNCTIONS */
 
@@ -516,4 +557,15 @@ function validate(form, fields) {
   });
 
   return errors.length === 0;
+}
+
+function calculateTimeFraction(timeLeft) {
+  return timeLeft / TIME_LIMIT;
+}
+
+function setCircleDasharray(el, timeLeft) {
+  const circleDasharray = `${(
+    Math.abs(FULL_DASH_ARRAY - calculateTimeFraction(timeLeft) * FULL_DASH_ARRAY)
+  ).toFixed(0)} 283`;
+  el.setAttribute("stroke-dasharray", circleDasharray);
 }

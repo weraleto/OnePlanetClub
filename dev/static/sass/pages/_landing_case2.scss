@@ -889,6 +889,10 @@
     transform: translate(-43%, 10%);
     z-index: -1;
 
+    @include lg {
+        width: 300px;
+        height: 280px;
+    }
     @include sm {
         width: 250px;
         height: 230px;
@@ -911,6 +915,10 @@
     transform: translate(33%, 0px);
     z-index: -2;
 
+    @include lg {
+        width: 300px;
+        height: 280px;
+    }
     @include sm {
         display: none;
     }
