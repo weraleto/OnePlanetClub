@@ -545,8 +545,13 @@
                     padding-right: 3.5em;
                 }
 
-                img {
-                    width: 100%;
+                &.right {
+                    max-height: 366px;
+                    overflow-y: scroll;
+                    border: 2px solid $main-font-color;
+                    border-right-width: 8px;
+                    padding-top: 10px;
+                    padding-bottom: 20px;
                 }
             }
 

@@ -384,6 +384,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     minsTimerLabel.innerHTML = mins;
     secsTimerLabel.innerHTML = secs;
+    // setCircleDasharray(minsTimerPath, mins);
+    // setCircleDasharray(secsTimerPath, secs);
 
     let timerCase2 = setInterval(function(){
       secs -= 1;
@@ -406,7 +408,37 @@ document.addEventListener("DOMContentLoaded", function () {
   if (case2) {
     fetch("/static/js/reviews.json")
     .then(response => response.json())
-    .then(json => console.log(json));
+    .then(json => {
+      let reviewsContainer = document.querySelector("#bt_rows")
+      let reviews = []
+      json.forEach(r=>{
+        let el = document.createElement('div')
+        el.classList.add("bp_post", "clearfix")
+        el.innerHTML = `
+        <a class="bp_thumb _online" mb-checked="1" data-tip="">
+          ${r.photo ? '<img class="bp_img" alt="'+r.name+'"src="'+r.photo+'">' : '<div class="bp_img bg-beige"></div>'}
+        </a>
+        <div class="bp_info">
+            <div class="bp_author_wrap">
+                <span class="bp_author" mb-checked="1" data-tip="">${r.name}</span>
+                <span class="bp_date" dir="auto" mb-checked="1" data-tip="">${r.date}</span>
+                <span class="bp_topic"></span>
+            </div>
+            <div class="bp_content">
+                <div class="bp_text">${r.content}</div>
+                <div></div>
+            </div>
+            <div class="bp_bottom clear_fix">
+                <div class="like_wrap lite">
+                </div>
+                <div class="bp_reply"><a>Ответить</a></div>
+            </div>
+        </div>
+        <div class="bp_deleted_text"></div>
+        `
+        reviewsContainer.append(el)
+      })
+    });
   }
 
 
